@@ -1,0 +1,9 @@
+{
+  "name": "L-Alanine",
+  "smiles": "N[C@@H](C)C(=O)O",
+  "cas": "56-41-7",
+  "category": "amino acids",
+  "concepts": ["chirality", "zwitterion"],
+  "kit": "Biochemistry Basics",
+  "makerworld_url": "https://makerworld.com/..."
+}
