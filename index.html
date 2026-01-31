@@ -86,6 +86,7 @@
       margin: 0;
       font-size: 0.875rem;
       color: var(--text-muted);
+      line-height: 1.4;
     }
 
     .search-wrapper {
@@ -164,24 +165,31 @@
       overflow: hidden;
     }
 
-    .card img {
+    .card-img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease;
     }
 
-    .card:hover img {
+    .card:hover .card-img {
       transform: scale(1.05);
     }
 
-    .badge {
+    .badges {
       position: absolute;
       top: 1rem;
       right: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .badge {
       background: rgb(255 255 255 / 0.9);
       backdrop-filter: blur(4px);
       padding: 0.25rem 0.75rem;
@@ -190,6 +198,11 @@
       font-weight: 600;
       color: var(--text-main);
       box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+    }
+
+    .badge-pack {
+      background: rgb(15 23 42 / 0.8);
+      color: white;
     }
 
     .card-content {
@@ -203,6 +216,7 @@
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      text-transform: capitalize;
     }
 
     .smiles-code {
@@ -289,7 +303,8 @@
     </div>
     <div class="search-wrapper">
       <span class="search-icon">🔍</span>
-      <input type="text" id="search" class="search-input" placeholder="Search molecules..." aria-label="Search">
+      <input type="text" id="search" class="search-input" placeholder="Search molecules, packs, or concepts..."
+        aria-label="Search">
     </div>
   </header>
 
@@ -306,6 +321,7 @@
 
   <script>
     let molecules = [];
+    let globalImageIndex = 0;
 
     // Initialize
     fetch("./molecules.json")
@@ -318,6 +334,9 @@
         console.log("Number of molecules:", data.length);
         molecules = data;
         render(molecules);
+
+        // Start Image Carousel (15 seconds)
+        setInterval(cycleImages, 15000);
       })
       .catch(err => {
         console.error("Failed to load data:", err);
@@ -332,9 +351,12 @@
         return;
       }
 
+      // Split term into multiple keywords for better searching (optional)
+      // For now, strict inclusion
       const filtered = molecules.filter(m => {
         const searchString = [
           m.name,
+          m.pack,
           m.smiles,
           m.category,
           ...(m.concepts || [])
@@ -345,12 +367,10 @@
       render(filtered);
     });
 
-    // Helper to slugify name for image filename
-    function getImagePath(name) {
-      // Converts "L-Alanine" -> "l-alanine"
-      // Handles spaces, special chars if needed, currently assumes simple slug
-      const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-      return `data/${slug}.jpeg`;
+    // Format pack name for display (e.g., "pack_01_alkanes" -> "Pack 01: Alkanes")
+    function formatPackName(pack) {
+      if (!pack) return "";
+      return pack.replace(/pack_(\d+)_/i, "Pack $1: ").replace(/_/g, " ");
     }
 
     function render(items) {
@@ -366,34 +386,81 @@
         const card = document.createElement("article");
         card.className = "card";
 
-        const imagePath = getImagePath(m.name);
+        // Store images for carousel
+        // Escape potential quotes in JSON if necessary, simplistic replace for now
+        const imagesJson = JSON.stringify(m.images || []).replace(/"/g, '&quot;');
+        card.setAttribute('data-images', imagesJson);
 
-        const tagsHtml = (m.concepts || []).map(topic =>
+        const firstImage = (m.images && m.images.length > 0) ? m.images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
+
+        // Use existing metadata logic if available, otherwise graceful fallback
+        const tagsHtml = (m.concepts || []).slice(0, 5).map(topic =>
           `<span class="tag">${topic}</span>`
         ).join('');
 
+        const packDisplayName = formatPackName(m.pack);
+
+        const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
+
         card.innerHTML = `
         <div class="card-image-wrapper">
-          <span class="badge">${m.category}</span>
+          <div class="badges">
+            ${m.category ? `<span class="badge">${m.category}</span>` : ''}
+            <span class="badge badge-pack">${packDisplayName}</span>
+          </div>
           <img 
-            src="${imagePath}" 
+            src="${firstImage}" 
+            class="card-img"
             alt="3D Model of ${m.name}"
+            loading="lazy"
             onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'"
           >
         </div>
         <div class="card-content">
           <h3>${m.name}</h3>
-          <code class="smiles-code">${m.smiles}</code>
+          ${smilesHtml}
           <div class="tags">
             ${tagsHtml}
           </div>
-          <a href="${m.makerworld_url}" target="_blank" class="btn-action">
+          <a href="${m.makerworld_url || 'https://makerworld.com/en/@Mira/collections?order=title&status=2'}" 
+             target="_blank" 
+             class="btn-action">
             Download Model
           </a>
         </div>
       `;
 
         container.appendChild(card);
+      });
+    }
+
+    function cycleImages() {
+      globalImageIndex++;
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const rawImages = card.getAttribute('data-images');
+        if (!rawImages) return;
+
+        try {
+          const images = JSON.parse(rawImages.replace(/&quot;/g, '"'));
+          if (images.length > 1) {
+            const imgEl = card.querySelector('.card-img');
+            // Start loading next image
+            const nextIndex = globalImageIndex % images.length;
+            const nextSrc = images[nextIndex];
+
+            if (imgEl && nextSrc) {
+              imgEl.style.opacity = '0.5'; // Fade out slightly
+              setTimeout(() => {
+                imgEl.src = nextSrc;
+                imgEl.style.opacity = '1';
+              }, 200);
+            }
+          }
+        } catch (e) {
+          // Ignore parsing errors
+        }
       });
     }
   </script>
