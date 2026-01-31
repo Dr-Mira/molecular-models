@@ -305,8 +305,13 @@
 
     // Initialize
     fetch("./molecules.json")
-      .then(res => res.json())
+      .then(res => {
+        console.log("Fetch response:", res);
+        return res.json();
+      })
       .then(data => {
+        console.log("Data loaded successfully:", data);
+        console.log("Number of molecules:", data.length);
         molecules = data;
         render(molecules);
       })
