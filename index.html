@@ -15,16 +15,26 @@
 
   <style>
     :root {
-      --primary: #4f46e5;
-      --primary-hover: #4338ca;
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      /* Dark Theme Palette */
+      --primary: #6366f1;
+      /* Indigo-500 */
+      --primary-hover: #818cf8;
+      /* Indigo-400 */
+      --bg: #0f172a;
+      /* Slate-900 */
+      --surface: #1e293b;
+      /* Slate-800 */
+      --text-main: #f1f5f9;
+      /* Slate-100 */
+      --text-muted: #94a3b8;
+      /* Slate-400 */
+      --border: #334155;
+      /* Slate-700 */
+
+      /* Darker Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
     }
 
     * {
@@ -45,6 +55,7 @@
     h3 {
       font-family: 'Outfit', sans-serif;
       margin: 0;
+      color: var(--text-main);
     }
 
     /* Sticky Header */
@@ -52,7 +63,8 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgb(255 255 255 / 0.8);
+      /* Dark semi-transparent background */
+      background: rgb(15 23 42 / 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -100,17 +112,22 @@
       padding: 0.625rem 1rem 0.625rem 2.5rem;
       border: 1px solid var(--border);
       border-radius: 9999px;
-      /* Pill shape */
       font-size: 0.95rem;
       background: var(--bg);
+      /* Dark input background */
+      color: var(--text-main);
       transition: all 0.2s;
+    }
+
+    .search-input::placeholder {
+      color: var(--text-muted);
     }
 
     .search-input:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgb(79 70 229 / 0.15);
-      background: white;
+      box-shadow: 0 0 0 3px rgb(99 102 241 / 0.2);
+      background: var(--surface);
     }
 
     .search-icon {
@@ -163,12 +180,14 @@
       cursor: pointer;
       transition: all 0.2s;
       font-size: 0.9rem;
-      color: var(--text-main);
+      color: var(--text-muted);
+      /* Muted by default */
       border: 1px solid transparent;
     }
 
     .pack-item:hover {
       background: var(--bg);
+      color: var(--text-main);
       border-color: var(--border);
     }
 
@@ -176,13 +195,20 @@
       background: var(--primary);
       color: white;
       font-weight: 500;
+      border-color: transparent;
     }
 
     .pack-item.all-packs {
       font-weight: 600;
+      color: var(--text-main);
       border-bottom: 2px solid var(--border);
       margin-bottom: 1rem;
       padding-bottom: 1rem;
+    }
+
+    .pack-item.all-packs.active {
+      color: white;
+      border-bottom-color: var(--border);
     }
 
     /* Content Area */
@@ -192,7 +218,7 @@
       padding-right: 0;
     }
 
-    /* Grid Layout - responsive with centered tiles */
+    /* Grid Layout */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -217,6 +243,8 @@
       .sidebar {
         width: 100%;
         position: static;
+        border-left: 1px solid var(--border);
+        border-radius: 16px;
       }
 
       .grid {
@@ -248,16 +276,17 @@
     .card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-lg);
-      border-color: rgb(79 70 229 / 0.3);
+      border-color: var(--primary);
     }
 
     .card-image-wrapper {
       position: relative;
       width: 100%;
       padding-top: 85%;
-      /* Taller aspect ratio for better visibility */
-      background: #f1f5f9;
+      background: #020617;
+      /* Very dark placeholder */
       overflow: hidden;
+      border-bottom: 1px solid var(--border);
     }
 
     .card-img {
@@ -269,10 +298,12 @@
       object-fit: cover;
       transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1;
+      opacity: 0.9;
+      /* Slight dim for dark mode integration */
     }
 
-    .card-img-slide {
-      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    .card:hover .card-img {
+      opacity: 1;
     }
 
     .badges {
@@ -287,19 +318,15 @@
     }
 
     .badge {
-      background: rgb(255 255 255 / 0.9);
+      background: rgb(15 23 42 / 0.8);
       backdrop-filter: blur(4px);
       padding: 0.25rem 0.75rem;
       border-radius: 9999px;
       font-size: 0.75rem;
       font-weight: 600;
       color: var(--text-main);
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
-    }
-
-    .badge-pack {
-      background: white;
-      color: var(--text-main);
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
+      border: 1px solid var(--border);
     }
 
     .card-content {
@@ -314,31 +341,21 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
       text-transform: capitalize;
+      color: var(--text-main);
     }
 
     .smiles-code {
       display: inline-block;
       font-family: 'Monaco', 'Consolas', monospace;
       font-size: 0.8rem;
-      background: #f1f5f9;
-      padding: 2px 6px;
+      background: var(--bg);
+      /* Dark background for code */
+      padding: 4px 8px;
       border-radius: 4px;
       color: var(--text-muted);
       margin-bottom: 1rem;
       word-break: break-all;
-    }
-
-    .tags {
-      display: none;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.75rem;
-      background: #e0e7ff;
-      color: var(--primary);
-      border-radius: 6px;
-      font-weight: 500;
+      border: 1px solid var(--border);
     }
 
     .btn-action {
@@ -354,16 +371,11 @@
       font-weight: 500;
       border-radius: 10px;
       transition: background 0.2s;
+      border: 1px solid transparent;
     }
 
     .btn-action:hover {
       background: var(--primary-hover);
-    }
-
-    /* Debugging style for fallback buttons */
-    .btn-action.fallback {
-      background-color: #64748b;
-      /* Grey for fallback */
     }
 
     /* Footer */
@@ -379,6 +391,10 @@
     footer a {
       color: var(--primary);
       text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     /* Empty State */
@@ -432,7 +448,6 @@
 
   <script>
     let molecules = [];
-    let globalImageIndex = 0;
     let currentPackFilter = 'all';
 
     // Initialize
@@ -444,21 +459,6 @@
       })
       .then(data => {
         console.log("Data loaded successfully. Total items:", data.length);
-
-        // DEBUG: Check the first item to see if 'url' exists
-        if (data.length > 0) {
-          console.log("DEBUG: First molecule keys:", Object.keys(data[0]));
-          console.log("DEBUG: First molecule URL value:", data[0].url);
-
-          // Check specifically for butane if possible
-          const butane = data.find(d => d.name.toLowerCase() === 'butane');
-          if (butane) {
-            console.log("DEBUG: Butane found. URL:", butane.url);
-          } else {
-            console.log("DEBUG: Butane not found in loaded data.");
-          }
-        }
-
         molecules = data;
 
         // Build pack list
@@ -571,27 +571,25 @@
         card._images = m.images || [];
         card._imgIndex = 0;
 
-        const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
+        const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/1e293b/94a3b8?text=No+Image";
 
         const packDisplayName = formatPackName(m.pack);
         // Fallback for missing SMILES
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
 
-        // --- URL LOGIC & DEBUGGING ---
+        // --- URL LOGIC ---
         // Check for 'url' (lowercase) or 'URL' (uppercase)
         const specificUrl = m.url || m.URL;
 
         // Determine if we have a valid URL
         const hasValidUrl = (specificUrl && specificUrl.trim().length > 0);
 
+        // Fallback to collection if no specific URL
         const downloadUrl = hasValidUrl
           ? specificUrl
           : 'https://makerworld.com/en/@Mira/collections?order=title&status=2';
 
-        // Visual debug indicator: Change text and class if fallback is used
-        const btnText = hasValidUrl ? 'Download Model' : 'Download (Fallback)';
-        const btnClass = hasValidUrl ? 'btn-action' : 'btn-action fallback';
-
+        // NOTE: Button now looks the same regardless of status
         card.innerHTML = `
         <div class="card-image-wrapper">
           <div class="badges">
@@ -602,7 +600,7 @@
             class="card-img"
             alt="3D Model of ${m.name}"
             loading="lazy"
-            onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'"
+            onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=No+Image'"
           >
         </div>
         <div class="card-content">
@@ -610,8 +608,8 @@
           ${smilesHtml}
           <a href="${downloadUrl}" 
              target="_blank" 
-             class="${btnClass}">
-            ${btnText}
+             class="btn-action">
+            Download Model
           </a>
         </div>
       `;
