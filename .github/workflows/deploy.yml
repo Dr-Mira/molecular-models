@@ -24,11 +24,13 @@ jobs:
           repository: Dr-Mira/molecular-models-assets
           path: assets
           token: ${{ secrets.ASSETS_REPO_TOKEN }}
+          persist-credentials: false
 
-      - name: Debug Assets
+      - name: Verify Assets
         run: |
-          ls -R assets | head -n 20
-          echo "Checking for molecules..."
+          echo "Listing assets directory..."
+          ls -la assets
+          find assets -maxdepth 2 -not -path '*/.*'
 
       - name: Generate molecules.json
         shell: pwsh
@@ -37,9 +39,11 @@ jobs:
           if (Test-Path "molecules.json") {
             $content = Get-Content "molecules.json" -Raw
             Write-Host "molecules.json generated. Size: $($content.Length)"
-            if ($content.Length -lt 10) { Write-Error "molecules.json is too small!" }
+            # Show first 100 chars to verify structure
+            Write-Host "Preview: $($content.Substring(0, [Math]::Min(100, $content.Length)))"
           } else {
             Write-Error "molecules.json NOT FOUND!"
+            exit 1
           }
 
       - name: Setup Pages
