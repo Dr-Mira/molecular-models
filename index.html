@@ -124,17 +124,108 @@
 
     /* Main Content */
     main {
-      max-width: 1280px;
+      max-width: 1600px;
       margin: 0 auto;
       padding: 2rem 1.5rem;
+      display: flex;
+      gap: 2rem;
     }
 
-    /* Grid Layout */
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      height: fit-content;
+      position: sticky;
+      top: 120px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sidebar h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .pack-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pack-item {
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      border: 1px solid transparent;
+    }
+
+    .pack-item:hover {
+      background: var(--bg);
+      border-color: var(--border);
+    }
+
+    .pack-item.active {
+      background: var(--primary);
+      color: white;
+      font-weight: 500;
+    }
+
+    .pack-item.all-packs {
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    /* Content Area */
+    .content-area {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Grid Layout - 4 columns */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
       padding-bottom: 3rem;
+    }
+
+    @media (max-width: 1400px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 1100px) {
+      main {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        position: static;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Card Styling */
@@ -311,8 +402,20 @@
   </header>
 
   <main>
-    <div id="catalog" class="grid">
-      <!-- Cards will be injected here -->
+    <aside class="sidebar">
+      <h2>📦 Packs</h2>
+      <ul class="pack-list" id="pack-list">
+        <li class="pack-item all-packs active" data-pack="all">
+          All Molecules
+        </li>
+        <!-- Pack items will be injected here -->
+      </ul>
+    </aside>
+
+    <div class="content-area">
+      <div id="catalog" class="grid">
+        <!-- Cards will be injected here -->
+      </div>
     </div>
   </main>
 
@@ -324,6 +427,7 @@
   <script>
     let molecules = [];
     let globalImageIndex = 0;
+    let currentPackFilter = 'all';
 
     // Initialize
     fetch("./molecules.json")
@@ -335,6 +439,11 @@
         console.log("Data loaded successfully:", data);
         console.log("Number of molecules:", data.length);
         molecules = data;
+
+        // Build pack list
+        buildPackList();
+
+        // Render all molecules initially
         render(molecules);
 
         // Start individual carousels with Intersection Observer
@@ -345,26 +454,75 @@
         document.getElementById('catalog').innerHTML = `<div class="empty-state">Error loading data. Check console.</div>`;
       });
 
+    // Build the pack list in the sidebar
+    function buildPackList() {
+      const packSet = new Set();
+      molecules.forEach(m => {
+        if (m.pack) packSet.add(m.pack);
+      });
+
+      const sortedPacks = Array.from(packSet).sort();
+      const packListEl = document.getElementById('pack-list');
+
+      // Add click handler for "All Molecules"
+      document.querySelector('.all-packs').addEventListener('click', () => filterByPack('all'));
+
+      sortedPacks.forEach(pack => {
+        const li = document.createElement('li');
+        li.className = 'pack-item';
+        li.dataset.pack = pack;
+        li.textContent = formatPackName(pack);
+        li.addEventListener('click', () => filterByPack(pack));
+        packListEl.appendChild(li);
+      });
+    }
+
+    // Filter molecules by pack
+    function filterByPack(pack) {
+      currentPackFilter = pack;
+
+      // Update active state in sidebar
+      document.querySelectorAll('.pack-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // Filter and render
+      if (pack === 'all') {
+        render(molecules);
+      } else {
+        const filtered = molecules.filter(m => m.pack === pack);
+        render(filtered);
+      }
+
+      // Re-initialize carousels for new cards
+      initCarousels();
+    }
+
     // Search Logic
     document.getElementById("search").addEventListener("input", (e) => {
       const term = e.target.value.toLowerCase().trim();
-      if (!term) {
-        render(molecules);
-        return;
+
+      let filtered = molecules;
+
+      // Apply pack filter first
+      if (currentPackFilter !== 'all') {
+        filtered = filtered.filter(m => m.pack === currentPackFilter);
       }
 
-      // Split term into multiple keywords for better searching (optional)
-      // For now, strict inclusion
-      const filtered = molecules.filter(m => {
-        const searchString = [
-          m.name,
-          m.pack,
-          m.smiles,
-          m.category,
-          ...(m.concepts || [])
-        ].join(" ").toLowerCase();
-        return searchString.includes(term);
-      });
+      // Apply search filter
+      if (term) {
+        filtered = filtered.filter(m => {
+          const searchString = [
+            m.name,
+            m.pack,
+            m.smiles,
+            m.category,
+            ...(m.concepts || [])
+          ].join(" ").toLowerCase();
+          return searchString.includes(term);
+        });
+      }
 
       render(filtered);
     });
