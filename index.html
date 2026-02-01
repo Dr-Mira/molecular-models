@@ -337,8 +337,8 @@
         molecules = data;
         render(molecules);
 
-        // Start Image Carousel (15 seconds)
-        setInterval(cycleImages, 15000);
+        // Start individual carousels with Intersection Observer
+        initCarousels();
       })
       .catch(err => {
         console.error("Failed to load data:", err);
@@ -435,45 +435,80 @@
     }
 
     // Improved individual carousel to avoid "blinking" page-wide
-    function cycleImages() {
-      const cards = document.querySelectorAll('.card');
+    function initCarousels() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '100px', // Start a bit before coming into view
+        threshold: 0.1
+      };
 
-      cards.forEach((card, index) => {
-        const images = card._images;
-        if (!images || images.length <= 1) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const card = entry.target;
+          if (entry.isIntersecting) {
+            startCardCarousel(card);
+          } else {
+            stopCardCarousel(card);
+          }
+        });
+      }, observerOptions);
 
-        setTimeout(() => {
-          const wrapper = card.querySelector('.card-image-wrapper');
-          const currentImg = card.querySelector('.card-img');
-          if (!wrapper || !currentImg) return;
-
-          // Prepare next image
-          card._imgIndex = (card._imgIndex + 1) % images.length;
-          const nextSrc = images[card._imgIndex];
-
-          const nextImg = document.createElement('img');
-          nextImg.src = nextSrc;
-          nextImg.className = 'card-img';
-          nextImg.alt = currentImg.alt;
-          nextImg.style.transform = 'translateX(-100%)'; // Start from left
-
-          wrapper.appendChild(nextImg);
-
-          // Force reflow
-          nextImg.offsetHeight;
-
-          // Animate both
-          currentImg.style.transform = 'translateX(100%)'; // Push out to right
-          nextImg.style.transform = 'translateX(0)';      // Push in to center
-
-          // Cleanup
-          setTimeout(() => {
-            if (currentImg.parentNode === wrapper) {
-              wrapper.removeChild(currentImg);
-            }
-          }, 800);
-        }, index * 100);
+      document.querySelectorAll('.card').forEach(card => {
+        if (card._images && card._images.length > 1) {
+          observer.observe(card);
+        }
       });
+    }
+
+    function startCardCarousel(card) {
+      if (card._carouselTimeout) return;
+
+      const scheduleNext = () => {
+        const delay = Math.floor(Math.random() * 10000) + 10000; // 10-20s
+        card._carouselTimeout = setTimeout(() => {
+          cycleCardImage(card);
+          scheduleNext();
+        }, delay);
+      };
+
+      // Stagger initial start
+      const initialDelay = Math.random() * 5000;
+      card._carouselTimeout = setTimeout(scheduleNext, initialDelay);
+    }
+
+    function stopCardCarousel(card) {
+      if (card._carouselTimeout) {
+        clearTimeout(card._carouselTimeout);
+        card._carouselTimeout = null;
+      }
+    }
+
+    function cycleCardImage(card) {
+      const images = card._images;
+      const wrapper = card.querySelector('.card-image-wrapper');
+      const currentImg = card.querySelector('.card-img');
+      if (!wrapper || !currentImg) return;
+
+      card._imgIndex = (card._imgIndex + 1) % images.length;
+      const nextSrc = images[card._imgIndex];
+
+      const nextImg = document.createElement('img');
+      nextImg.src = nextSrc;
+      nextImg.className = 'card-img';
+      nextImg.alt = currentImg.alt;
+      nextImg.style.transform = 'translateX(-100%)';
+
+      wrapper.appendChild(nextImg);
+      nextImg.offsetHeight; // force reflow
+
+      currentImg.style.transform = 'translateX(100%)';
+      nextImg.style.transform = 'translateX(0)';
+
+      setTimeout(() => {
+        if (currentImg.parentNode === wrapper) {
+          wrapper.removeChild(currentImg);
+        }
+      }, 800);
     }
   </script>
 
