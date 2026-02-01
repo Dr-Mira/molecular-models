@@ -360,6 +360,12 @@
       background: var(--primary-hover);
     }
 
+    /* Debugging style for fallback buttons */
+    .btn-action.fallback {
+      background-color: #64748b;
+      /* Grey for fallback */
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -430,15 +436,29 @@
     let currentPackFilter = 'all';
 
     // Initialize
-    // FIX ADDED: Added timestamp query param to prevent caching of the JSON file
+    // Using timestamp to bust cache
     fetch("./molecules.json?t=" + new Date().getTime())
       .then(res => {
         console.log("Fetch response:", res);
         return res.json();
       })
       .then(data => {
-        console.log("Data loaded successfully:", data);
-        console.log("Number of molecules:", data.length);
+        console.log("Data loaded successfully. Total items:", data.length);
+
+        // DEBUG: Check the first item to see if 'url' exists
+        if (data.length > 0) {
+          console.log("DEBUG: First molecule keys:", Object.keys(data[0]));
+          console.log("DEBUG: First molecule URL value:", data[0].url);
+
+          // Check specifically for butane if possible
+          const butane = data.find(d => d.name.toLowerCase() === 'butane');
+          if (butane) {
+            console.log("DEBUG: Butane found. URL:", butane.url);
+          } else {
+            console.log("DEBUG: Butane not found in loaded data.");
+          }
+        }
+
         molecules = data;
 
         // Build pack list
@@ -557,16 +577,20 @@
         // Fallback for missing SMILES
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
 
-        // Logic to determine the download URL
-        // If m.url exists in JSON, use it. Otherwise use the collection fallback.
-        const downloadUrl = (m.url && m.url.trim() !== "")
-          ? m.url
+        // --- URL LOGIC & DEBUGGING ---
+        // Check for 'url' (lowercase) or 'URL' (uppercase)
+        const specificUrl = m.url || m.URL;
+
+        // Determine if we have a valid URL
+        const hasValidUrl = (specificUrl && specificUrl.trim().length > 0);
+
+        const downloadUrl = hasValidUrl
+          ? specificUrl
           : 'https://makerworld.com/en/@Mira/collections?order=title&status=2';
 
-        // Debug: log the molecule data to verify URL is loading
-        if (!m.url) {
-          console.warn(`Molecule ${m.name} is missing 'url' property, using fallback.`);
-        }
+        // Visual debug indicator: Change text and class if fallback is used
+        const btnText = hasValidUrl ? 'Download Model' : 'Download (Fallback)';
+        const btnClass = hasValidUrl ? 'btn-action' : 'btn-action fallback';
 
         card.innerHTML = `
         <div class="card-image-wrapper">
@@ -586,8 +610,8 @@
           ${smilesHtml}
           <a href="${downloadUrl}" 
              target="_blank" 
-             class="btn-action">
-            Download Model
+             class="${btnClass}">
+            ${btnText}
           </a>
         </div>
       `;
