@@ -1,48 +1,48 @@
+$jsonPath = "molecules.json"
 $assetsPath = "assets"
-$molecules = @()
 
-# Get all pack folders
-$packs = Get-ChildItem -Path $assetsPath -Directory -Filter "pack_*"
+# 1. Check if Ground Truth exists
+if (-not (Test-Path $jsonPath)) {
+    Write-Error "molecules.json not found! This script requires an existing JSON file to update."
+    exit 1
+}
 
-foreach ($pack in $packs) {
-    # Get all molecule folders inside the pack
-    $molFolders = Get-ChildItem -Path $pack.FullName -Directory
+# 2. Read the Ground Truth JSON
+$jsonContent = Get-Content -Raw $jsonPath
+# Force into an array even if there is only one item
+$molecules = @($jsonContent | ConvertFrom-Json)
 
-    foreach ($molFolder in $molFolders) {
-        $molName = $molFolder.Name.Replace("_", " ") # Prettify name slightly? Or keep raw? Let's keep raw folder name or try to capitalize. 
-        # Actually user wants "reflect pack folders", so folder name is safe.
-        # But let's Title Case it if possible? Powershell Get-Culture... maybe just Replace underscores with spaces for display, but keep ID?
-        # Let's keep "name" as the folder name for now, but maybe add a "displayName"
+Write-Host "Reading molecules.json... Found $($molecules.Count) entries."
+
+# 3. Iterate through existing entries and update ONLY images
+foreach ($mol in $molecules) {
+    # Construct the expected folder path based on JSON data
+    # Assumes structure: assets/{pack}/{name}
+    $folderPath = Join-Path $assetsPath $mol.pack
+    $folderPath = Join-Path $folderPath $mol.name
+
+    if (Test-Path $folderPath) {
+        # Scan for current images in that folder
+        $images = Get-ChildItem -Path $folderPath -Include *.jpg,*.jpeg -Recurse | Sort-Object Name
         
-        # Get images
-        $images = Get-ChildItem -Path $molFolder.FullName -Include *.jpg,*.jpeg -Recurse
-        # Sort images by name so _4, _5, _6 are in order
-        $images = $images | Sort-Object Name
-
         if ($images.Count -gt 0) {
-            $imagePaths = $images | ForEach-Object { ("assets/" + $pack.Name + "/" + $molFolder.Name + "/" + $_.Name).Replace("\", "/") }
+            # Generate new image paths
+            $newImagePaths = $images | ForEach-Object { 
+                ("assets/" + $mol.pack + "/" + $mol.name + "/" + $_.Name).Replace("\", "/") 
+            }
             
-            # Determine tags (try to read tags file)
-            $tags = @()
-            $tagFile = Get-ChildItem -Path $molFolder.FullName -Filter "*_tags.txt" | Select-Object -First 1
-            if ($tagFile) {
-                $tags = Get-Content $tagFile.FullName
-                # Force to simple string array to avoid PS metadata serialization
-                $tags = $tags | ForEach-Object { "$_" }
-            }
-
-            # Create object
-            $molObj = [PSCustomObject]@{
-                name = $molName
-                pack = $pack.Name
-                images = $imagePaths
-                concepts = $tags
-                category = $pack.Name
-            }
-            $molecules += $molObj
+            # Update the existing JSON object with the new file list
+            $mol.images = $newImagePaths
+            Write-Host "Updated images for: $($mol.name)"
+        } else {
+            Write-Warning "Folder exists but no images found for: $($mol.name)"
+            $mol.images = @()
         }
+    } else {
+        Write-Warning "Folder not found for JSON entry: $($mol.name) (Expected at $folderPath)"
     }
 }
 
-$molecules | ConvertTo-Json -Depth 5 | Set-Content "molecules.json"
-Write-Host "Generated molecules.json with $($molecules.Count) molecules."
+# 4. Save the updated JSON back to file
+$molecules | ConvertTo-Json -Depth 5 | Set-Content $jsonPath
+Write-Host "molecules.json updated successfully."
