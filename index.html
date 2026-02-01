@@ -387,21 +387,19 @@
       items.forEach(m => {
         const card = document.createElement("article");
         card.className = "card";
+        
+        // Store images and current index on the element
+        card._images = m.images || [];
+        card._imgIndex = 0;
 
-        // Store images for carousel
-        // Escape potential quotes in JSON if necessary, simplistic replace for now
-        const imagesJson = JSON.stringify(m.images || []).replace(/"/g, '&quot;');
-        card.setAttribute('data-images', imagesJson);
+        const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
 
-        const firstImage = (m.images && m.images.length > 0) ? m.images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
-
-        // Use existing metadata logic if available, otherwise graceful fallback
         const tagsHtml = (m.concepts || []).slice(0, 5).map(topic =>
           `<span class="tag">${topic}</span>`
         ).join('');
 
         const packDisplayName = formatPackName(m.pack);
-
+        // Fallback for missing SMILES
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
 
         card.innerHTML = `
@@ -436,33 +434,28 @@
       });
     }
 
+    // Improved individual carousel to avoid "blinking" page-wide
     function cycleImages() {
-      globalImageIndex++;
       const cards = document.querySelectorAll('.card');
+      
+      cards.forEach((card, index) => {
+        const images = card._images;
+        if (!images || images.length <= 1) return;
 
-      cards.forEach(card => {
-        const rawImages = card.getAttribute('data-images');
-        if (!rawImages) return;
-
-        try {
-          const images = JSON.parse(rawImages.replace(/&quot;/g, '"'));
-          if (images.length > 1) {
-            const imgEl = card.querySelector('.card-img');
-            // Start loading next image
-            const nextIndex = globalImageIndex % images.length;
-            const nextSrc = images[nextIndex];
-
-            if (imgEl && nextSrc) {
-              imgEl.style.opacity = '0.5'; // Fade out slightly
-              setTimeout(() => {
-                imgEl.src = nextSrc;
-                imgEl.style.opacity = '1';
-              }, 200);
-            }
+        // Stagger the animation so they don't all flip at once
+        setTimeout(() => {
+          card._imgIndex = (card._imgIndex + 1) % images.length;
+          const nextSrc = images[card._imgIndex];
+          const imgEl = card.querySelector('.card-img');
+          
+          if (imgEl) {
+            imgEl.style.opacity = '0.7';
+            setTimeout(() => {
+              imgEl.src = nextSrc;
+              imgEl.style.opacity = '1';
+            }, 300);
           }
-        } catch (e) {
-          // Ignore parsing errors
-        }
+        }, index * 100); // 100ms stagger between each card
       });
     }
   </script>
