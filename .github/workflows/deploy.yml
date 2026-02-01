@@ -25,13 +25,25 @@ jobs:
           path: assets
           token: ${{ secrets.ASSETS_REPO_TOKEN }}
 
+      - name: Debug Assets
+        run: |
+          ls -R assets | head -n 20
+          echo "Checking for molecules..."
+
       - name: Generate molecules.json
         shell: pwsh
         run: |
           ./generate_json.ps1
+          if (Test-Path "molecules.json") {
+            $content = Get-Content "molecules.json" -Raw
+            Write-Host "molecules.json generated. Size: $($content.Length)"
+            if ($content.Length -lt 10) { Write-Error "molecules.json is too small!" }
+          } else {
+            Write-Error "molecules.json NOT FOUND!"
+          }
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
