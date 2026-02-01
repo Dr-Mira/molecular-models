@@ -556,6 +556,11 @@
         // Fallback for missing SMILES
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
 
+        // Debug: log the molecule data
+        console.log('Rendering molecule:', m.name, 'URL:', m.url);
+
+        const downloadUrl = m.url || 'https://makerworld.com/en/@Mira/collections?order=title&status=2';
+
         card.innerHTML = `
         <div class="card-image-wrapper">
           <div class="badges">
@@ -572,7 +577,7 @@
         <div class="card-content">
           <h3>${m.name}</h3>
           ${smilesHtml}
-          <a href="${m.url}" 
+          <a href="${downloadUrl}" 
              target="_blank" 
              class="btn-action">
             Download Model
