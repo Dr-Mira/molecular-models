@@ -125,8 +125,8 @@
     /* Main Content */
     main {
       max-width: 1600px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
+      margin: 0;
+      padding: 2rem 0 2rem 0;
       display: flex;
       gap: 2rem;
     }
@@ -136,8 +136,9 @@
       width: 280px;
       flex-shrink: 0;
       background: var(--surface);
-      border-radius: 16px;
+      border-radius: 0 16px 16px 0;
       border: 1px solid var(--border);
+      border-left: none;
       padding: 1.5rem;
       height: fit-content;
       position: sticky;
@@ -146,10 +147,7 @@
     }
 
     .sidebar h2 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--text-main);
+      display: none;
     }
 
     .pack-list {
@@ -191,12 +189,13 @@
     .content-area {
       flex: 1;
       min-width: 0;
+      padding-right: 1.5rem;
     }
 
     /* Grid Layout - 4 columns */
     .grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       padding-bottom: 3rem;
     }
@@ -250,8 +249,8 @@
     .card-image-wrapper {
       position: relative;
       width: 100%;
-      padding-top: 66.66%;
-      /* 3:2 Aspect Ratio */
+      padding-top: 85%;
+      /* Taller aspect ratio for better visibility */
       background: #f1f5f9;
       overflow: hidden;
     }
@@ -294,8 +293,8 @@
     }
 
     .badge-pack {
-      background: rgb(15 23 42 / 0.8);
-      color: white;
+      background: white;
+      color: var(--text-main);
     }
 
     .card-content {
@@ -325,10 +324,7 @@
     }
 
     .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      display: none;
     }
 
     .tag {
@@ -403,7 +399,6 @@
 
   <main>
     <aside class="sidebar">
-      <h2>📦 Packs</h2>
       <ul class="pack-list" id="pack-list">
         <li class="pack-item all-packs active" data-pack="all">
           All Molecules
@@ -552,10 +547,6 @@
 
         const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
 
-        const tagsHtml = (m.concepts || []).slice(0, 5).map(topic =>
-          `<span class="tag">${topic}</span>`
-        ).join('');
-
         const packDisplayName = formatPackName(m.pack);
         // Fallback for missing SMILES
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
@@ -563,7 +554,6 @@
         card.innerHTML = `
         <div class="card-image-wrapper">
           <div class="badges">
-            ${m.category ? `<span class="badge">${m.category}</span>` : ''}
             <span class="badge badge-pack">${packDisplayName}</span>
           </div>
           <img 
@@ -577,9 +567,6 @@
         <div class="card-content">
           <h3>${m.name}</h3>
           ${smilesHtml}
-          <div class="tags">
-            ${tagsHtml}
-          </div>
           <a href="${m.makerworld_url || 'https://makerworld.com/en/@Mira/collections?order=title&status=2'}" 
              target="_blank" 
              class="btn-action">
