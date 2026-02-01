@@ -430,7 +430,8 @@
     let currentPackFilter = 'all';
 
     // Initialize
-    fetch("./molecules.json")
+    // FIX ADDED: Added timestamp query param to prevent caching of the JSON file
+    fetch("./molecules.json?t=" + new Date().getTime())
       .then(res => {
         console.log("Fetch response:", res);
         return res.json();
@@ -556,10 +557,16 @@
         // Fallback for missing SMILES
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
 
-        // Debug: log the molecule data
-        console.log('Rendering molecule:', m.name, 'URL:', m.url);
+        // Logic to determine the download URL
+        // If m.url exists in JSON, use it. Otherwise use the collection fallback.
+        const downloadUrl = (m.url && m.url.trim() !== "")
+          ? m.url
+          : 'https://makerworld.com/en/@Mira/collections?order=title&status=2';
 
-        const downloadUrl = m.url || 'https://makerworld.com/en/@Mira/collections?order=title&status=2';
+        // Debug: log the molecule data to verify URL is loading
+        if (!m.url) {
+          console.warn(`Molecule ${m.name} is missing 'url' property, using fallback.`);
+        }
 
         card.innerHTML = `
         <div class="card-image-wrapper">
