@@ -28,7 +28,6 @@ jobs:
 
       - name: Verify Assets
         run: |
-          echo "Listing assets directory..."
           ls -la assets
           find assets -maxdepth 2 -not -path '*/.*'
 
@@ -36,12 +35,7 @@ jobs:
         shell: pwsh
         run: |
           ./generate_json.ps1
-          if (Test-Path "molecules.json") {
-            $content = Get-Content "molecules.json" -Raw
-            Write-Host "molecules.json generated. Size: $($content.Length)"
-            # Show first 100 chars to verify structure
-            Write-Host "Preview: $($content.Substring(0, [Math]::Min(100, $content.Length)))"
-          } else {
+          if (-not (Test-Path "molecules.json")) {
             Write-Error "molecules.json NOT FOUND!"
             exit 1
           }
