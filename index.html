@@ -16,11 +16,9 @@
   <style>
     /* 
       THEME CONFIGURATION 
-      Default :root is LIGHT mode.
-      [data-theme="dark"] overrides for DARK mode.
     */
     :root {
-      /* Light Mode (Default) */
+      /* Light Mode */
       --primary: #4f46e5;
       --primary-hover: #4338ca;
       --bg: #f8fafc;
@@ -39,7 +37,7 @@
     }
 
     [data-theme="dark"] {
-      /* Dark Mode Overrides */
+      /* Dark Mode */
       --primary: #6366f1;
       --primary-hover: #818cf8;
       --bg: #0f172a;
@@ -67,7 +65,6 @@
       padding: 0;
       background-color: var(--bg);
       color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -79,15 +76,13 @@
       color: var(--text-main);
     }
 
-    /* Sticky Header */
+    /* Header */
     header {
       position: sticky;
       top: 0;
       z-index: 50;
       background: var(--surface);
-      /* Fallback */
       background: rgba(var(--surface), 0.85);
-      /* Need RGB vars for proper transparency, simply using surface here works for solid look or we rely on blur */
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -96,10 +91,8 @@
       flex-direction: column;
       gap: 1rem;
       box-shadow: var(--shadow-sm);
-      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
-    /* Fix for backdrop color in CSS variables context without RGB splitting */
     [data-theme="light"] header {
       background: rgb(255 255 255 / 0.85);
     }
@@ -107,7 +100,6 @@
     [data-theme="dark"] header {
       background: rgb(15 23 42 / 0.85);
     }
-
 
     @media (min-width: 768px) {
       header {
@@ -121,13 +113,11 @@
       display: flex;
       flex-direction: column;
       margin-right: auto;
-      /* Pushes everything else to the right */
     }
 
     .brand h1 {
       font-size: 1.25rem;
       font-weight: 600;
-      color: var(--text-main);
     }
 
     .brand p {
@@ -169,10 +159,6 @@
       transition: all 0.2s;
     }
 
-    .search-input::placeholder {
-      color: var(--text-muted);
-    }
-
     .search-input:focus {
       outline: none;
       border-color: var(--primary);
@@ -188,7 +174,7 @@
       pointer-events: none;
     }
 
-    /* --- THEME TOGGLE SWITCH --- */
+    /* Theme Switch */
     .theme-switch-wrapper {
       display: flex;
       align-items: center;
@@ -207,7 +193,6 @@
 
     .slider {
       background-color: #cbd5e1;
-      /* Light mode slider bg */
       bottom: 0;
       cursor: pointer;
       left: 0;
@@ -232,7 +217,6 @@
       z-index: 2;
     }
 
-    /* Sun/Moon Icons inside slider */
     .slider .icon-sun,
     .slider .icon-moon {
       position: absolute;
@@ -256,7 +240,6 @@
       transition: opacity 0.3s;
     }
 
-    /* Checked State (Dark Mode) */
     input:checked+.slider {
       background-color: var(--primary);
     }
@@ -275,15 +258,13 @@
 
     [data-theme="dark"] .slider {
       background-color: #334155;
-      /* Dark mode inactive state */
     }
 
     [data-theme="dark"] input:checked+.slider {
       background-color: var(--primary);
     }
 
-
-    /* Main Content */
+    /* Layout */
     main {
       max-width: 1600px;
       margin: 0 auto;
@@ -292,7 +273,6 @@
       gap: 2rem;
     }
 
-    /* Sidebar */
     .sidebar {
       width: 280px;
       flex-shrink: 0;
@@ -305,11 +285,6 @@
       position: sticky;
       top: 120px;
       box-shadow: var(--shadow-sm);
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    .sidebar h2 {
-      display: none;
     }
 
     .pack-list {
@@ -355,14 +330,12 @@
       border-bottom-color: var(--border);
     }
 
-    /* Content Area */
     .content-area {
       flex: 1;
       min-width: 0;
       padding-right: 0;
     }
 
-    /* Grid Layout */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -370,12 +343,6 @@
       padding-bottom: 3rem;
       justify-items: center;
       max-width: 100%;
-    }
-
-    @media (max-width: 1400px) {
-      .grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      }
     }
 
     @media (max-width: 1100px) {
@@ -390,10 +357,6 @@
         border-left: 1px solid var(--border);
         border-radius: 16px;
       }
-
-      .grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      }
     }
 
     @media (max-width: 768px) {
@@ -402,7 +365,7 @@
       }
     }
 
-    /* Card Styling */
+    /* Cards */
     .card {
       background: var(--surface);
       border-radius: 16px;
@@ -445,7 +408,6 @@
 
     [data-theme="dark"] .card-img {
       opacity: 0.9;
-      /* Slight dim for dark mode */
     }
 
     [data-theme="dark"] .card:hover .card-img {
@@ -523,7 +485,6 @@
       background: var(--primary-hover);
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 2rem;
@@ -531,7 +492,6 @@
       color: var(--text-muted);
       font-size: 0.875rem;
       background: var(--surface);
-      transition: background-color 0.3s ease;
     }
 
     footer a {
@@ -543,7 +503,6 @@
       text-decoration: underline;
     }
 
-    /* Empty State */
     .empty-state {
       text-align: center;
       padding: 4rem 1rem;
@@ -558,10 +517,7 @@
   <header>
     <div class="brand">
       <h1>3D Printable Molecular Models</h1>
-      <p>
-        Calculated with molecular force field<br>
-        Backed by quantum mechanics and experimental data
-      </p>
+      <p>Calculated with molecular force field<br>Backed by quantum mechanics</p>
     </div>
 
     <div class="header-controls">
@@ -585,17 +541,12 @@
   <main>
     <aside class="sidebar">
       <ul class="pack-list" id="pack-list">
-        <li class="pack-item all-packs active" data-pack="all">
-          All Molecules
-        </li>
-        <!-- Pack items will be injected here -->
+        <li class="pack-item all-packs active" data-pack="all">All Molecules</li>
       </ul>
     </aside>
 
     <div class="content-area">
-      <div id="catalog" class="grid">
-        <!-- Cards will be injected here -->
-      </div>
+      <div id="catalog" class="grid"></div>
     </div>
   </main>
 
@@ -608,50 +559,36 @@
     // --- THEME LOGIC ---
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
     const currentTheme = localStorage.getItem('theme');
-
-    // 1. Check for saved user preference on load
     if (currentTheme) {
       document.documentElement.setAttribute('data-theme', currentTheme);
-      if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-      }
+      if (currentTheme === 'dark') toggleSwitch.checked = true;
     }
-
-    // 2. Handle switch toggle
-    function switchTheme(e) {
-      if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      }
-    }
-
-    toggleSwitch.addEventListener('change', switchTheme);
-
+    toggleSwitch.addEventListener('change', (e) => {
+      const theme = e.target.checked ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    });
 
     // --- APP LOGIC ---
     let molecules = [];
     let currentPackFilter = 'all';
 
-    // Initialize
     fetch("./molecules.json?t=" + new Date().getTime())
-      .then(res => {
-        console.log("Fetch response:", res);
-        return res.json();
-      })
+      .then(res => res.json())
       .then(data => {
-        console.log("Data loaded successfully. Total items:", data.length);
-        molecules = data;
+        // FIX: Handle both Raw Array and { value: [...] } Object
+        if (Array.isArray(data)) {
+          molecules = data;
+        } else if (data.value && Array.isArray(data.value)) {
+          molecules = data.value;
+        } else {
+          console.error("Unknown JSON structure", data);
+          molecules = [];
+        }
 
-        // Build pack list
+        console.log("Data loaded. Items:", molecules.length);
         buildPackList();
-
-        // Render all molecules initially
         render(molecules);
-
-        // Start individual carousels with Intersection Observer
         initCarousels();
       })
       .catch(err => {
@@ -659,80 +596,49 @@
         document.getElementById('catalog').innerHTML = `<div class="empty-state">Error loading data. Check console.</div>`;
       });
 
-    // Build the pack list in the sidebar
     function buildPackList() {
       const packSet = new Set();
-      molecules.forEach(m => {
-        if (m.pack) packSet.add(m.pack);
-      });
-
+      molecules.forEach(m => { if (m.pack) packSet.add(m.pack); });
       const sortedPacks = Array.from(packSet).sort();
       const packListEl = document.getElementById('pack-list');
 
-      // Add click handler for "All Molecules"
-      document.querySelector('.all-packs').addEventListener('click', () => filterByPack('all'));
+      document.querySelector('.all-packs').addEventListener('click', (e) => filterByPack('all', e.target));
 
       sortedPacks.forEach(pack => {
         const li = document.createElement('li');
         li.className = 'pack-item';
-        li.dataset.pack = pack;
         li.textContent = formatPackName(pack);
-        li.addEventListener('click', () => filterByPack(pack));
+        li.addEventListener('click', (e) => filterByPack(pack, e.target));
         packListEl.appendChild(li);
       });
     }
 
-    // Filter molecules by pack
-    function filterByPack(pack) {
+    function filterByPack(pack, targetElement) {
       currentPackFilter = pack;
+      document.querySelectorAll('.pack-item').forEach(item => item.classList.remove('active'));
+      if (targetElement) targetElement.classList.add('active');
 
-      // Update active state in sidebar
-      document.querySelectorAll('.pack-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      event.target.classList.add('active');
-
-      // Filter and render
       if (pack === 'all') {
         render(molecules);
       } else {
-        const filtered = molecules.filter(m => m.pack === pack);
-        render(filtered);
+        render(molecules.filter(m => m.pack === pack));
       }
-
-      // Re-initialize carousels for new cards
       initCarousels();
     }
 
-    // Search Logic
     document.getElementById("search").addEventListener("input", (e) => {
       const term = e.target.value.toLowerCase().trim();
-
       let filtered = molecules;
-
-      // Apply pack filter first
-      if (currentPackFilter !== 'all') {
-        filtered = filtered.filter(m => m.pack === currentPackFilter);
-      }
-
-      // Apply search filter
+      if (currentPackFilter !== 'all') filtered = filtered.filter(m => m.pack === currentPackFilter);
       if (term) {
         filtered = filtered.filter(m => {
-          const searchString = [
-            m.name,
-            m.pack,
-            m.smiles,
-            m.category,
-            ...(m.concepts || [])
-          ].join(" ").toLowerCase();
+          const searchString = [m.name, m.pack, m.smiles, m.category, ...(m.concepts || [])].join(" ").toLowerCase();
           return searchString.includes(term);
         });
       }
-
       render(filtered);
     });
 
-    // Format pack name for display (e.g., "pack_01_alkanes" -> "Pack 01: Alkanes")
     function formatPackName(pack) {
       if (!pack) return "";
       return pack.replace(/pack_(\d+)_/i, "Pack $1: ").replace(/_/g, " ");
@@ -741,7 +647,6 @@
     function render(items) {
       const container = document.getElementById("catalog");
       container.innerHTML = "";
-
       if (items.length === 0) {
         container.innerHTML = `<div class="empty-state">No molecules found matching your search.</div>`;
         return;
@@ -750,105 +655,55 @@
       items.forEach(m => {
         const card = document.createElement("article");
         card.className = "card";
-
-        // Store images and current index on the element
         card._images = m.images || [];
         card._imgIndex = 0;
 
         const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
-
         const packDisplayName = formatPackName(m.pack);
-        // Fallback for missing SMILES
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
+        const downloadUrl = (m.url || m.URL || 'https://makerworld.com/en/@Mira/collections?order=title&status=2');
 
-        // --- URL LOGIC ---
-        // Check for 'url' (lowercase) or 'URL' (uppercase)
-        const specificUrl = m.url || m.URL;
-
-        // Determine if we have a valid URL
-        const hasValidUrl = (specificUrl && specificUrl.trim().length > 0);
-
-        // Fallback to collection if no specific URL
-        const downloadUrl = hasValidUrl
-          ? specificUrl
-          : 'https://makerworld.com/en/@Mira/collections?order=title&status=2';
-
-        // NOTE: Button now looks the same regardless of status
         card.innerHTML = `
         <div class="card-image-wrapper">
-          <div class="badges">
-            <span class="badge badge-pack">${packDisplayName}</span>
-          </div>
-          <img 
-            src="${firstImage}" 
-            class="card-img"
-            alt="3D Model of ${m.name}"
-            loading="lazy"
-            onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'"
-          >
+          <div class="badges"><span class="badge">${packDisplayName}</span></div>
+          <img src="${firstImage}" class="card-img" alt="${m.name}" loading="lazy" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'">
         </div>
         <div class="card-content">
           <h3>${m.name}</h3>
           ${smilesHtml}
-          <a href="${downloadUrl}" 
-             target="_blank" 
-             class="btn-action">
-            Download Model
-          </a>
-        </div>
-      `;
-
+          <a href="${downloadUrl}" target="_blank" class="btn-action">Download Model</a>
+        </div>`;
         container.appendChild(card);
       });
     }
 
-    // Improved individual carousel to avoid "blinking" page-wide
     function initCarousels() {
-      const observerOptions = {
-        root: null,
-        rootMargin: '100px', // Start a bit before coming into view
-        threshold: 0.1
-      };
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          const card = entry.target;
-          if (entry.isIntersecting) {
-            startCardCarousel(card);
-          } else {
-            stopCardCarousel(card);
-          }
+          if (entry.isIntersecting) startCardCarousel(entry.target);
+          else stopCardCarousel(entry.target);
         });
-      }, observerOptions);
+      }, { rootMargin: '100px', threshold: 0.1 });
 
       document.querySelectorAll('.card').forEach(card => {
-        if (card._images && card._images.length > 1) {
-          observer.observe(card);
-        }
+        if (card._images && card._images.length > 1) observer.observe(card);
       });
     }
 
     function startCardCarousel(card) {
       if (card._carouselTimeout) return;
-
       const scheduleNext = () => {
-        const delay = Math.floor(Math.random() * 10000) + 10000; // 10-20s
+        const delay = Math.floor(Math.random() * 10000) + 10000;
         card._carouselTimeout = setTimeout(() => {
           cycleCardImage(card);
           scheduleNext();
         }, delay);
       };
-
-      // Stagger initial start
-      const initialDelay = Math.random() * 5000;
-      card._carouselTimeout = setTimeout(scheduleNext, initialDelay);
+      card._carouselTimeout = setTimeout(scheduleNext, Math.random() * 5000);
     }
 
     function stopCardCarousel(card) {
-      if (card._carouselTimeout) {
-        clearTimeout(card._carouselTimeout);
-        card._carouselTimeout = null;
-      }
+      if (card._carouselTimeout) { clearTimeout(card._carouselTimeout); card._carouselTimeout = null; }
     }
 
     function cycleCardImage(card) {
@@ -858,28 +713,19 @@
       if (!wrapper || !currentImg) return;
 
       card._imgIndex = (card._imgIndex + 1) % images.length;
-      const nextSrc = images[card._imgIndex];
-
       const nextImg = document.createElement('img');
-      nextImg.src = nextSrc;
+      nextImg.src = images[card._imgIndex];
       nextImg.className = 'card-img';
-      nextImg.alt = currentImg.alt;
       nextImg.style.transform = 'translateX(-100%)';
 
       wrapper.appendChild(nextImg);
-      nextImg.offsetHeight; // force reflow
-
+      nextImg.offsetHeight; // Force reflow
       currentImg.style.transform = 'translateX(100%)';
       nextImg.style.transform = 'translateX(0)';
 
-      setTimeout(() => {
-        if (currentImg.parentNode === wrapper) {
-          wrapper.removeChild(currentImg);
-        }
-      }, 800);
+      setTimeout(() => { if (currentImg.parentNode === wrapper) wrapper.removeChild(currentImg); }, 800);
     }
   </script>
-
 </body>
 
 </html>

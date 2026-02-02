@@ -35,8 +35,12 @@ jobs:
         shell: pwsh
         run: |
           ./generate_json.ps1
+          
+          # Debug: List file to prove existence
+          Get-ChildItem "molecules.json"
+          
           if (-not (Test-Path "molecules.json")) {
-            Write-Error "molecules.json NOT FOUND!"
+            Write-Error "molecules.json NOT FOUND in $(Get-Location)"
             exit 1
           }
 
