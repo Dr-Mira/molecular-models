@@ -1,13 +1,11 @@
 <#
 .SYNOPSIS
-    Validates that folders exist for molecules defined in a JSON file.
+    Validates folders exist AND updates the JSON file with found JPG images.
 #>
 
 # --- Configuration ---
-# CHANGE THIS to the actual name of your json file
 $JsonFileName = "molecules.json" 
 
-# We get the directory where this script is running to avoid path confusion
 $ScriptRoot = $PSScriptRoot 
 $JsonFilePath = Join-Path $ScriptRoot $JsonFileName
 $AssetsBaseDir = Join-Path $ScriptRoot "assets"
@@ -15,35 +13,32 @@ $AssetsBaseDir = Join-Path $ScriptRoot "assets"
 # --- Main Script ---
 
 Clear-Host
-Write-Host "Starting Folder Validation..." -ForegroundColor Cyan
+Write-Host "Starting Folder Validation and Image Sync..." -ForegroundColor Cyan
 
 # 1. Check if JSON file exists
 if (-not (Test-Path $JsonFilePath)) {
     Write-Error "Could not find the JSON file at: $JsonFilePath"
-    Write-Host "Please check the `$JsonFileName variable at the top of the script."
-    exit
+    exit 1
 }
 
 # 2. Load and Parse JSON
 try {
-    # -Raw reads the file as one single string, which is faster and safer for JSON
-    $jsonObj = Get-Content -Path $JsonFilePath -Raw | ConvertFrom-Json
+    $jsonContent = Get-Content -Path $JsonFilePath -Raw
+    $jsonObj = $jsonContent | ConvertFrom-Json
 }
 catch {
     Write-Error "Failed to parse JSON. Please check the file syntax."
     Write-Error $_.Exception.Message
-    exit
+    exit 1
 }
 
-# 3. Loop through the items
-# We specifically target $jsonObj.value because your JSON wraps the array in a "value" property.
 $countFound = 0
 $countMissing = 0
+$filesUpdated = 0
 
+# 3. Loop through the items
 foreach ($mol in $jsonObj.value) {
     
-    # Construct the path: assets/pack_name/molecule_name
-    # We use Join-Path to automatically handle backslashes correctly
     $packPath = Join-Path $AssetsBaseDir $mol.pack
     $fullPath = Join-Path $packPath $mol.name
 
@@ -52,6 +47,30 @@ foreach ($mol in $jsonObj.value) {
         Write-Host " [OK] Found: " -NoNewline -ForegroundColor Green
         Write-Host "$($mol.name)" -ForegroundColor Gray
         $countFound++
+
+        # --- NEW LOGIC: SCAN AND UPDATE IMAGES ---
+        
+        # Find all jpg/jpeg files in this folder
+        $imageFiles = Get-ChildItem -Path $fullPath -Include "*.jpg", "*.jpeg" -File
+
+        # Create an empty array (ArrayList) to hold the new paths
+        $newImageList = [System.Collections.Generic.List[string]]::new()
+
+        foreach ($img in $imageFiles) {
+            # Convert absolute path to relative path (e.g., assets/pack/name/image.jpg)
+            # We remove the ScriptRoot length plus one for the slash
+            $relativePath = $img.FullName.Substring($ScriptRoot.Length + 1)
+            
+            # Ensure we use forward slashes for JSON (web standard)
+            $relativePath = $relativePath -replace '\\', '/'
+            
+            $newImageList.Add($relativePath)
+        }
+
+        # Update the JSON object in memory
+        # We sort them to keep the JSON tidy
+        $mol.images = $newImageList | Sort-Object
+        $filesUpdated += $newImageList.Count
     }
     else {
         Write-Host "[MISSING] Could not find folder: " -NoNewline -ForegroundColor Red
@@ -60,8 +79,34 @@ foreach ($mol in $jsonObj.value) {
     }
 }
 
+# 5. Save the updated JSON back to disk
+# Only save if we actually found folders to avoid wiping data on a bad run
+if ($countFound -gt 0) {
+    try {
+        # Depth 10 ensures nested arrays don't get cut off
+        $newJsonContent = $jsonObj | ConvertTo-Json -Depth 10
+        Set-Content -Path $JsonFilePath -Value $newJsonContent
+        Write-Host "`nJSON file updated successfully." -ForegroundColor Cyan
+    }
+    catch {
+        Write-Error "Failed to save JSON file."
+        exit 1
+    }
+}
+
 # --- Summary ---
 Write-Host "`n-----------------------------"
 Write-Host "Validation Complete."
 Write-Host "Folders Found:   $countFound" -ForegroundColor Green
 Write-Host "Folders Missing: $countMissing" -ForegroundColor Red
+Write-Host "Images Linked:   $filesUpdated" -ForegroundColor Magenta
+
+# --- Explicit Exit Codes ---
+if ($countMissing -gt 0) {
+    # Exit with error code 1 so CI/CD pipelines know something failed
+    Write-Error "Process failed because $countMissing folders are missing."
+    exit 1
+} else {
+    # Exit with success code 0
+    exit 0
+}
