@@ -14,24 +14,44 @@
     rel="stylesheet">
 
   <style>
+    /* 
+      THEME CONFIGURATION 
+      Default :root is LIGHT mode.
+      [data-theme="dark"] overrides for DARK mode.
+    */
     :root {
-      /* Dark Theme Palette */
-      --primary: #6366f1;
-      /* Indigo-500 */
-      --primary-hover: #818cf8;
-      /* Indigo-400 */
-      --bg: #0f172a;
-      /* Slate-900 */
-      --surface: #1e293b;
-      /* Slate-800 */
-      --text-main: #f1f5f9;
-      /* Slate-100 */
-      --text-muted: #94a3b8;
-      /* Slate-400 */
-      --border: #334155;
-      /* Slate-700 */
+      /* Light Mode (Default) */
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --input-bg: #ffffff;
+      --card-placeholder: #f1f5f9;
+      --code-bg: #f1f5f9;
+      --badge-bg: rgb(255 255 255 / 0.9);
 
-      /* Darker Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    [data-theme="dark"] {
+      /* Dark Mode Overrides */
+      --primary: #6366f1;
+      --primary-hover: #818cf8;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --input-bg: #0f172a;
+      --card-placeholder: #020617;
+      --code-bg: #0f172a;
+      --badge-bg: rgb(15 23 42 / 0.8);
+
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
       --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
@@ -48,6 +68,7 @@
       background-color: var(--bg);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     h1,
@@ -63,8 +84,10 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      /* Dark semi-transparent background */
-      background: rgb(15 23 42 / 0.85);
+      background: var(--surface);
+      /* Fallback */
+      background: rgba(var(--surface), 0.85);
+      /* Need RGB vars for proper transparency, simply using surface here works for solid look or we rely on blur */
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -73,9 +96,20 @@
       flex-direction: column;
       gap: 1rem;
       box-shadow: var(--shadow-sm);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
-    @media (min-width: 640px) {
+    /* Fix for backdrop color in CSS variables context without RGB splitting */
+    [data-theme="light"] header {
+      background: rgb(255 255 255 / 0.85);
+    }
+
+    [data-theme="dark"] header {
+      background: rgb(15 23 42 / 0.85);
+    }
+
+
+    @media (min-width: 768px) {
       header {
         flex-direction: row;
         align-items: center;
@@ -86,6 +120,8 @@
     .brand {
       display: flex;
       flex-direction: column;
+      margin-right: auto;
+      /* Pushes everything else to the right */
     }
 
     .brand h1 {
@@ -101,10 +137,25 @@
       line-height: 1.4;
     }
 
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 500px;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+      .header-controls {
+        width: auto;
+        justify-content: flex-end;
+      }
+    }
+
     .search-wrapper {
       position: relative;
-      width: 100%;
-      max-width: 400px;
+      flex: 1;
     }
 
     .search-input {
@@ -113,8 +164,7 @@
       border: 1px solid var(--border);
       border-radius: 9999px;
       font-size: 0.95rem;
-      background: var(--bg);
-      /* Dark input background */
+      background: var(--input-bg);
       color: var(--text-main);
       transition: all 0.2s;
     }
@@ -126,8 +176,7 @@
     .search-input:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgb(99 102 241 / 0.2);
-      background: var(--surface);
+      box-shadow: 0 0 0 3px rgb(79 70 229 / 0.15);
     }
 
     .search-icon {
@@ -138,6 +187,101 @@
       color: var(--text-muted);
       pointer-events: none;
     }
+
+    /* --- THEME TOGGLE SWITCH --- */
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .theme-switch {
+      display: inline-block;
+      height: 26px;
+      position: relative;
+      width: 50px;
+    }
+
+    .theme-switch input {
+      display: none;
+    }
+
+    .slider {
+      background-color: #cbd5e1;
+      /* Light mode slider bg */
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      background-color: #fff;
+      bottom: 3px;
+      content: "";
+      height: 20px;
+      left: 3px;
+      position: absolute;
+      transition: .4s;
+      width: 20px;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    /* Sun/Moon Icons inside slider */
+    .slider .icon-sun,
+    .slider .icon-moon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .slider .icon-sun {
+      left: 7px;
+      color: #f59e0b;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .slider .icon-moon {
+      right: 7px;
+      color: #f1f5f9;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    /* Checked State (Dark Mode) */
+    input:checked+.slider {
+      background-color: var(--primary);
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(24px);
+    }
+
+    input:checked+.slider .icon-sun {
+      opacity: 1;
+    }
+
+    input:checked+.slider .icon-moon {
+      opacity: 0;
+    }
+
+    [data-theme="dark"] .slider {
+      background-color: #334155;
+      /* Dark mode inactive state */
+    }
+
+    [data-theme="dark"] input:checked+.slider {
+      background-color: var(--primary);
+    }
+
 
     /* Main Content */
     main {
@@ -161,6 +305,7 @@
       position: sticky;
       top: 120px;
       box-shadow: var(--shadow-sm);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .sidebar h2 {
@@ -181,7 +326,6 @@
       transition: all 0.2s;
       font-size: 0.9rem;
       color: var(--text-muted);
-      /* Muted by default */
       border: 1px solid transparent;
     }
 
@@ -283,8 +427,7 @@
       position: relative;
       width: 100%;
       padding-top: 85%;
-      background: #020617;
-      /* Very dark placeholder */
+      background: var(--card-placeholder);
       overflow: hidden;
       border-bottom: 1px solid var(--border);
     }
@@ -298,11 +441,14 @@
       object-fit: cover;
       transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1;
-      opacity: 0.9;
-      /* Slight dim for dark mode integration */
     }
 
-    .card:hover .card-img {
+    [data-theme="dark"] .card-img {
+      opacity: 0.9;
+      /* Slight dim for dark mode */
+    }
+
+    [data-theme="dark"] .card:hover .card-img {
       opacity: 1;
     }
 
@@ -318,14 +464,14 @@
     }
 
     .badge {
-      background: rgb(15 23 42 / 0.8);
+      background: var(--badge-bg);
       backdrop-filter: blur(4px);
       padding: 0.25rem 0.75rem;
       border-radius: 9999px;
       font-size: 0.75rem;
       font-weight: 600;
       color: var(--text-main);
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
       border: 1px solid var(--border);
     }
 
@@ -348,8 +494,7 @@
       display: inline-block;
       font-family: 'Monaco', 'Consolas', monospace;
       font-size: 0.8rem;
-      background: var(--bg);
-      /* Dark background for code */
+      background: var(--code-bg);
       padding: 4px 8px;
       border-radius: 4px;
       color: var(--text-muted);
@@ -386,6 +531,7 @@
       color: var(--text-muted);
       font-size: 0.875rem;
       background: var(--surface);
+      transition: background-color 0.3s ease;
     }
 
     footer a {
@@ -417,10 +563,22 @@
         Backed by quantum mechanics and experimental data
       </p>
     </div>
-    <div class="search-wrapper">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search" class="search-input" placeholder="Search molecules, packs, or concepts..."
-        aria-label="Search">
+
+    <div class="header-controls">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" class="search-input" placeholder="Search..." aria-label="Search">
+      </div>
+
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider">
+            <span class="icon-sun">☀️</span>
+            <span class="icon-moon">🌙</span>
+          </div>
+        </label>
+      </div>
     </div>
   </header>
 
@@ -447,11 +605,37 @@
   </footer>
 
   <script>
+    // --- THEME LOGIC ---
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+
+    // 1. Check for saved user preference on load
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
+
+    // 2. Handle switch toggle
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme);
+
+
+    // --- APP LOGIC ---
     let molecules = [];
     let currentPackFilter = 'all';
 
     // Initialize
-    // Using timestamp to bust cache
     fetch("./molecules.json?t=" + new Date().getTime())
       .then(res => {
         console.log("Fetch response:", res);
@@ -571,7 +755,7 @@
         card._images = m.images || [];
         card._imgIndex = 0;
 
-        const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/1e293b/94a3b8?text=No+Image";
+        const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
 
         const packDisplayName = formatPackName(m.pack);
         // Fallback for missing SMILES
@@ -600,7 +784,7 @@
             class="card-img"
             alt="3D Model of ${m.name}"
             loading="lazy"
-            onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=No+Image'"
+            onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'"
           >
         </div>
         <div class="card-content">
