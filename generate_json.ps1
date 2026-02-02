@@ -84,7 +84,7 @@ foreach ($mol in $jsonObj.value) {
 if ($countFound -gt 0) {
     try {
         # Depth 10 ensures nested arrays don't get cut off
-        $newJsonContent = $jsonObj | ConvertTo-Json -Depth 10
+        $newJsonContent = $jsonObj.value | ConvertTo-Json -Depth 10
         Set-Content -Path $JsonFilePath -Value $newJsonContent
         Write-Host "`nJSON file updated successfully." -ForegroundColor Cyan
     }
