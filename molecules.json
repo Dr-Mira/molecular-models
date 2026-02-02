@@ -4124,7 +4124,7 @@
         "url": "https://makerworld.com/en/models/2205349-cocaine"
     },
     {
-        "name": "dmt",
+        "name": "Dimethyl Tryptamine (DMT)",
         "pack": "pack_15_psychoactive_molecules",
         "images": [
             "assets/pack_15_psychoactive_molecules/dmt/_4_dmt.jpeg",
@@ -4174,7 +4174,7 @@
         "url": "https://makerworld.com/en/models/2227357-fentanyl"
     },
     {
-        "name": "ghb",
+        "name": "gamma-Hydroxybutyrate (GHB)",
         "pack": "pack_15_psychoactive_molecules",
         "images": [
             "assets/pack_15_psychoactive_molecules/ghb/_4_ghb.jpeg",
@@ -4248,7 +4248,7 @@
         "category": "pack_15_psychoactive_molecules"
     },
     {
-        "name": "MDMA",
+        "name": "3,4-Methylenedioxymethamphetamine (MDMA)",
         "pack": "pack_15_psychoactive_molecules",
         "images": [
             "assets/pack_15_psychoactive_molecules/mdma/_4_mdma.jpeg",
