@@ -4224,7 +4224,7 @@
         "url": "https://makerworld.com/en/models/2241531-heroin"
     },
     {
-        "name": "lsd",
+        "name": "Lysergic Acid Diethylamide (LSD)",
         "pack": "pack_15_psychoactive_molecules",
         "images": [
             "assets/pack_15_psychoactive_molecules/lsd/_4_lsd.jpeg",
@@ -4248,7 +4248,7 @@
         "category": "pack_15_psychoactive_molecules"
     },
     {
-        "name": "mdma",
+        "name": "MDMA",
         "pack": "pack_15_psychoactive_molecules",
         "images": [
             "assets/pack_15_psychoactive_molecules/mdma/_4_mdma.jpeg",
@@ -4373,7 +4373,7 @@
         "url": "https://makerworld.com/en/models/2255218-oxycodone"
     },
     {
-        "name": "pcp",
+        "name": "Phencyclidine (PCP)",
         "pack": "pack_15_psychoactive_molecules",
         "images": [
             "assets/pack_15_psychoactive_molecules/pcp/_4_pcp.jpeg",
