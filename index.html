@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
     rel="stylesheet">
 
   <style>
@@ -30,6 +30,7 @@
       --card-placeholder: #f1f5f9;
       --code-bg: #f1f5f9;
       --badge-bg: rgb(255 255 255 / 0.9);
+      --overlay-bg: rgba(255, 255, 255, 0.8);
 
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -49,6 +50,7 @@
       --card-placeholder: #020617;
       --code-bg: #0f172a;
       --badge-bg: rgb(15 23 42 / 0.8);
+      --overlay-bg: rgba(15, 23, 42, 0.8);
 
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
@@ -71,7 +73,8 @@
 
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
       font-family: 'Outfit', sans-serif;
       margin: 0;
       color: var(--text-main);
@@ -131,9 +134,9 @@
     .header-controls {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1rem;
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       justify-content: space-between;
     }
 
@@ -147,14 +150,15 @@
     .search-wrapper {
       position: relative;
       flex: 1;
+      min-width: 200px;
     }
 
     .search-input {
       width: 100%;
-      padding: 0.625rem 1rem 0.625rem 2.5rem;
+      padding: 0.5rem 1rem 0.5rem 2.5rem;
       border: 1px solid var(--border);
       border-radius: 9999px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       background: var(--input-bg);
       color: var(--text-main);
       transition: all 0.2s;
@@ -168,11 +172,34 @@
 
     .search-icon {
       position: absolute;
-      left: 1rem;
+      left: 0.8rem;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
       pointer-events: none;
+      font-size: 0.9rem;
+    }
+
+    /* Info Button */
+    .btn-icon {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .btn-icon:hover {
+      background: var(--bg);
+      border-color: var(--primary);
+      color: var(--primary);
     }
 
     /* Theme Switch */
@@ -183,9 +210,9 @@
 
     .theme-switch {
       display: inline-block;
-      height: 26px;
+      height: 24px;
       position: relative;
-      width: 50px;
+      width: 46px;
     }
 
     .theme-switch input {
@@ -206,10 +233,10 @@
 
     .slider:before {
       background-color: #fff;
-      bottom: 3px;
+      bottom: 2px;
       content: "";
       height: 20px;
-      left: 3px;
+      left: 2px;
       position: absolute;
       transition: .4s;
       width: 20px;
@@ -223,19 +250,19 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 12px;
+      font-size: 10px;
       line-height: 1;
     }
 
     .slider .icon-sun {
-      left: 7px;
+      left: 6px;
       color: #f59e0b;
       opacity: 0;
       transition: opacity 0.3s;
     }
 
     .slider .icon-moon {
-      right: 7px;
+      right: 6px;
       color: #f1f5f9;
       opacity: 1;
       transition: opacity 0.3s;
@@ -246,7 +273,7 @@
     }
 
     input:checked+.slider:before {
-      transform: translateX(24px);
+      transform: translateX(22px);
     }
 
     input:checked+.slider .icon-sun {
@@ -270,10 +297,8 @@
       width: 100%;
       margin: 0;
       padding: 2rem 0 2rem 0;
-      /* Removed horizontal padding from main */
       display: flex;
       gap: 0;
-      /* Gap is handled by margin on the grid now */
     }
 
     .sidebar {
@@ -284,14 +309,11 @@
       border: 1px solid var(--border);
       border-left: none;
       padding: 1.5rem;
-
-      /* Anchor Logic */
       position: sticky;
       top: 110px;
       height: fit-content;
       max-height: calc(100vh - 140px);
       overflow-y: auto;
-
       box-shadow: var(--shadow-sm);
       scrollbar-width: thin;
       scrollbar-color: var(--text-muted) transparent;
@@ -358,7 +380,6 @@
       flex: 1;
       min-width: 0;
       padding-right: 0;
-      /* Ensures content area takes remaining space */
     }
 
     .grid {
@@ -367,14 +388,9 @@
       gap: 1.5rem;
       padding-bottom: 3rem;
       justify-items: center;
-
-      /* --- BREATHING ROOM CONFIGURATION --- */
       width: 85%;
-      /* Occupy 85% of the free space */
       margin: 0 auto;
-      /* Center the grid within the content area */
       max-width: 1920px;
-      /* Optional cap for very large screens */
     }
 
     @media (max-width: 1100px) {
@@ -392,7 +408,6 @@
         max-height: 300px;
       }
 
-      /* On smaller screens, remove the breathing room to maximize space */
       .grid {
         width: 100%;
       }
@@ -492,7 +507,7 @@
 
     .smiles-code {
       display: inline-block;
-      font-family: 'Monaco', 'Consolas', monospace;
+      font-family: 'JetBrains Mono', 'Monaco', monospace;
       font-size: 0.8rem;
       background: var(--code-bg);
       padding: 4px 8px;
@@ -547,6 +562,190 @@
       color: var(--text-muted);
       grid-column: 1 / -1;
     }
+
+    /* 
+      MODAL STYLES 
+    */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      width: 100%;
+      max-width: 700px;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modal-overlay.open .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .close-modal {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.25rem;
+      line-height: 1;
+      border-radius: 8px;
+    }
+
+    .close-modal:hover {
+      background: var(--bg);
+      color: var(--text-main);
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .modal-body h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+    }
+
+    .modal-body h3:first-child {
+      margin-top: 0;
+    }
+
+    .modal-body p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+
+    .modal-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+
+    .modal-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Visualizing the "Figures" mentioned in text */
+    .info-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .info-box-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .cpk-palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .cpk-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .cpk-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /* CPK Colors */
+    .bg-white {
+      background-color: #ffffff;
+    }
+
+    .bg-black {
+      background-color: #1a1a1a;
+    }
+
+    .bg-red {
+      background-color: #ef4444;
+    }
+
+    .bg-blue {
+      background-color: #3b82f6;
+    }
+
+    .bg-yellow {
+      background-color: #eab308;
+    }
+
+    .bg-green {
+      background-color: #22c55e;
+    }
+
+    .bg-orange {
+      background-color: #f97316;
+    }
+
+    .bg-purple {
+      background-color: #a855f7;
+    }
+
+    .citation {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 
@@ -559,9 +758,14 @@
     </div>
 
     <div class="header-controls">
+      <!-- Added Methods Button -->
+      <button id="open-methods-btn" class="btn-icon">
+        <span>ℹ️ Methods & Info</span>
+      </button>
+
       <div class="search-wrapper">
         <span class="search-icon">🔍</span>
-        <input type="text" id="search" class="search-input" placeholder="Search..." aria-label="Search">
+        <input type="text" id="search" class="search-input" placeholder="Search molecules..." aria-label="Search">
       </div>
 
       <div class="theme-switch-wrapper">
@@ -593,6 +797,78 @@
         target="_blank">View on MakerWorld</a></p>
   </footer>
 
+  <!-- MODAL STRUCTURE -->
+  <div id="methods-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Methods & Notes</h2>
+        <button id="close-methods-btn" class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <h3>Methods</h3>
+        <p>The models were generated using a custom Python script. All atomic XYZ coordinates were calculated with the
+          <strong>Merck Molecular Force Field (MMFF)</strong> [1]. The van der Waals atomic radii were adopted from the
+          2013 publication by Alvarez, "A cartography of the van der Waals territories" [2].</p>
+        <p>The bond order is modeled in such a way that the model represents the major resonance contributor. The model
+          was visually verified and colored to comply with the corresponding PubChem database entry [3]. Support
+          structures were also rigorously tested to ensure their easy removal.</p>
+
+        <h3>About Force Fields</h3>
+        <p>Force fields are mathematical models used to describe interactions between atoms and molecules. They are
+          based on empirical parameters that represent the forces and energies associated with different types of atomic
+          interactions, such as bond stretching, angle bending, and non-bonded interactions. These parameters are
+          derived from experimental data and quantum mechanical calculations.</p>
+
+        <h3>Printing Notes</h3>
+        <ul>
+          <li><strong>Material:</strong> Optimized/tested for print with Bambu PLA and Elegoo PLA+.</li>
+          <li><strong>Style:</strong> Ball-and-stick type (easiest to color, rigid, aesthetic).</li>
+          <li><strong>Orientation:</strong> Oriented for optimal strength/waste/time compromise. <em>Avoid placing
+              critical bonds along the Z-axis to prevent breakage.</em></li>
+          <li><strong>Supports:</strong> Removable with care (scalpel + sanding). Suggest using PETG as support
+            interface (Heatbed 70°C) or PVA for best results.</li>
+        </ul>
+
+        <div class="info-box">
+          <span class="info-box-title">Figure 2: Recommended CPK Color Palette</span>
+          <div class="cpk-palette">
+            <div class="cpk-item">
+              <div class="cpk-dot bg-white"></div> Hydrogen
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-black"></div> Carbon
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-red"></div> Oxygen
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-blue"></div> Nitrogen
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-yellow"></div> Sulfur
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-green"></div> Chlorine
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-orange"></div> Phosphorus
+            </div>
+          </div>
+        </div>
+
+        <p><em>Tip: If you want to save filament and time, print the model in full-white and paint it with a permanent
+            marker.</em></p>
+
+        <div class="citation">
+          [1] Merck Molecular Force Field (MMFF)<br>
+          [2] Alvarez, S. (2013). A cartography of the van der Waals territories.<br>
+          [3] PubChem Database
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     // --- THEME LOGIC ---
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -607,6 +883,34 @@
       localStorage.setItem('theme', theme);
     });
 
+    // --- MODAL LOGIC ---
+    const modal = document.getElementById('methods-modal');
+    const openBtn = document.getElementById('open-methods-btn');
+    const closeBtn = document.getElementById('close-methods-btn');
+
+    function openModal() {
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on click outside
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
     // --- APP LOGIC ---
     let molecules = [];
     let currentPackFilter = 'all';
@@ -614,7 +918,6 @@
     fetch("./molecules.json?t=" + new Date().getTime())
       .then(res => res.json())
       .then(data => {
-        // FIX: Handle both Raw Array and { value: [...] } Object
         if (Array.isArray(data)) {
           molecules = data;
         } else if (data.value && Array.isArray(data.value)) {
@@ -700,8 +1003,6 @@
         const packDisplayName = formatPackName(m.pack);
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
         const downloadUrl = (m.url || m.URL || 'https://makerworld.com/en/@Mira/collections?order=title&status=2');
-
-        // MODIFICATION: Use displayed_name if available, otherwise fallback to name
         const displayTitle = m.displayed_name || m.name;
 
         card.innerHTML = `
