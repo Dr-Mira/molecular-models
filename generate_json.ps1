@@ -1,30 +1,48 @@
 <#
 .SYNOPSIS
-    Validates folders exist AND updates the JSON file with found JPG images.
+    Updates the images array in molecules.json based on files in the assets folder.
+.DESCRIPTION
+    This script reads the existing molecules.json, scans the assets folder for JPG/JPEG files,
+    and updates only the images array for each molecule entry.
 #>
 
 # --- Configuration ---
-$JsonFileName = "molecules.json" 
-
-$ScriptRoot = $PSScriptRoot 
-$JsonFilePath = Join-Path $ScriptRoot $JsonFileName
+$ScriptRoot = $PSScriptRoot
 $AssetsBaseDir = Join-Path $ScriptRoot "assets"
+$JsonFilePath = Join-Path $ScriptRoot "molecules.json"
 
 # --- Main Script ---
-
 Clear-Host
-Write-Host "Starting Folder Validation and Image Sync..." -ForegroundColor Cyan
+Write-Host "Starting Image Path Update..." -ForegroundColor Cyan
 
 # 1. Check if JSON file exists
 if (-not (Test-Path $JsonFilePath)) {
-    Write-Error "Could not find the JSON file at: $JsonFilePath"
+    Write-Error "Could not find molecules.json at: $JsonFilePath"
     exit 1
 }
 
-# 2. Load and Parse JSON
+# 2. Check if assets directory exists
+if (-not (Test-Path $AssetsBaseDir)) {
+    Write-Error "Assets directory not found at: $AssetsBaseDir"
+    exit 1
+}
+
+# 3. Load and Parse JSON
+Write-Host "`nReading JSON file..." -ForegroundColor Yellow
 try {
-    $jsonContent = Get-Content -Path $JsonFilePath -Raw
-    $jsonObj = $jsonContent | ConvertFrom-Json
+    $rawJson = Get-Content -Path $JsonFilePath -Raw
+    Write-Host "File size: $($rawJson.Length) characters" -ForegroundColor Gray
+    Write-Host "First 200 characters:" -ForegroundColor Gray
+    Write-Host $rawJson.Substring(0, [Math]::Min(200, $rawJson.Length)) -ForegroundColor DarkGray
+    
+    $jsonContent = $rawJson | ConvertFrom-Json
+    
+    if ($null -eq $jsonContent) {
+        Write-Error "JSON parsed to null - file may be empty or invalid"
+        exit 1
+    }
+    
+    Write-Host "`nJSON parsed successfully!" -ForegroundColor Green
 }
 catch {
     Write-Error "Failed to parse JSON. Please check the file syntax."
@@ -32,81 +50,129 @@ catch {
     exit 1
 }
 
-$countFound = 0
-$countMissing = 0
-$filesUpdated = 0
+# Debug: Check JSON structure
+Write-Host "`nDEBUG: Examining JSON structure..." -ForegroundColor Yellow
+Write-Host "Type: $($jsonContent.GetType().Name)" -ForegroundColor Gray
+$properties = $jsonContent.PSObject.Properties | Select-Object -ExpandProperty Name
+Write-Host "Properties: $($properties -join ', ')" -ForegroundColor Gray
 
-# 3. Loop through the items
-foreach ($mol in $jsonObj.value) {
-    
-    $packPath = Join-Path $AssetsBaseDir $mol.pack
-    $fullPath = Join-Path $packPath $mol.name
-
-    # 4. Validate the path
-    if (Test-Path $fullPath) {
-        Write-Host " [OK] Found: " -NoNewline -ForegroundColor Green
-        Write-Host "$($mol.name)" -ForegroundColor Gray
-        $countFound++
-
-        # --- NEW LOGIC: SCAN AND UPDATE IMAGES ---
-        
-        # Find all jpg/jpeg files in this folder
-        $imageFiles = Get-ChildItem -Path $fullPath -Include "*.jpg", "*.jpeg" -File
-
-        # Create an empty array (ArrayList) to hold the new paths
-        $newImageList = [System.Collections.Generic.List[string]]::new()
-
-        foreach ($img in $imageFiles) {
-            # Convert absolute path to relative path (e.g., assets/pack/name/image.jpg)
-            # We remove the ScriptRoot length plus one for the slash
-            $relativePath = $img.FullName.Substring($ScriptRoot.Length + 1)
-            
-            # Ensure we use forward slashes for JSON (web standard)
-            $relativePath = $relativePath -replace '\\', '/'
-            
-            $newImageList.Add($relativePath)
-        }
-
-        # Update the JSON object in memory
-        # We sort them to keep the JSON tidy
-        $mol.images = $newImageList | Sort-Object
-        $filesUpdated += $newImageList.Count
+# Check if it's an array or object with 'value' property
+if ($jsonContent -is [Array]) {
+    Write-Host "`nJSON is an array with $($jsonContent.Count) items" -ForegroundColor Cyan
+    $molecules = $jsonContent
+}
+elseif ($properties -contains 'value') {
+    Write-Host "`nJSON has 'value' property" -ForegroundColor Cyan
+    $molecules = $jsonContent.value
+    if ($molecules -is [Array]) {
+        Write-Host "Value is an array with $($molecules.Count) items" -ForegroundColor Cyan
     }
     else {
-        Write-Host "[MISSING] Could not find folder: " -NoNewline -ForegroundColor Red
-        Write-Host "$fullPath" -ForegroundColor Yellow
-        $countMissing++
+        Write-Host "Value type: $($molecules.GetType().Name)" -ForegroundColor Gray
+    }
+}
+else {
+    Write-Error "Cannot find molecules in JSON. Unexpected structure."
+    Write-Host "Available properties: $($properties -join ', ')" -ForegroundColor Red
+    exit 1
+}
+
+Write-Host "`nTotal molecules to process: $($molecules.Count)" -ForegroundColor Cyan
+
+if ($molecules.Count -eq 0) {
+    Write-Warning "No molecules found in JSON!"
+    exit 0
+}
+
+# 4. Process each molecule in the JSON
+$updatedCount = 0
+$missingCount = 0
+$unchangedCount = 0
+
+Write-Host "`nProcessing molecules..." -ForegroundColor Yellow
+
+foreach ($molecule in $molecules) {
+    $moleculeName = $molecule.name
+    $packName = $molecule.pack
+    
+    Write-Host "`n[$packName] $moleculeName" -ForegroundColor Cyan
+    
+    # Build the path to the molecule folder
+    $moleculePath = Join-Path $AssetsBaseDir $packName
+    $moleculePath = Join-Path $moleculePath $moleculeName
+    
+    Write-Host "  Looking in: $moleculePath" -ForegroundColor DarkGray
+    
+    # Check if folder exists
+    if (-not (Test-Path $moleculePath)) {
+        Write-Host "  [WARNING] Folder not found!" -ForegroundColor Red
+        $missingCount++
+        continue
+    }
+    
+    # Find all JPG/JPEG images
+    $imageFiles = Get-ChildItem -Path $moleculePath -File | 
+                  Where-Object { $_.Extension -match '^\.(jpg|jpeg)$' } |
+                  Sort-Object Name
+    
+    Write-Host "  Files found: $($imageFiles.Count)" -ForegroundColor Gray
+    
+    if ($imageFiles.Count -eq 0) {
+        Write-Host "  [WARNING] No images in folder - clearing array" -ForegroundColor Yellow
+        $molecule.images = @()
+        $updatedCount++
+        continue
+    }
+    
+    # Build new image paths array (completely replace old array)
+    $newImagePaths = @()
+    foreach ($img in $imageFiles) {
+        $relativePath = "assets/$packName/$moleculeName/$($img.Name)"
+        $newImagePaths += $relativePath
+    }
+    
+    # Display changes
+    Write-Host "  Old: $($molecule.images.Count) images" -ForegroundColor DarkGray
+    Write-Host "  New: $($newImagePaths.Count) images" -ForegroundColor DarkGray
+    
+    # Compare arrays
+    $oldImagesStr = ($molecule.images | Sort-Object) -join "|"
+    $newImagesStr = ($newImagePaths | Sort-Object) -join "|"
+    
+    if ($oldImagesStr -ne $newImagesStr) {
+        Write-Host "  [UPDATED] Changes detected" -ForegroundColor Green
+        $molecule.images = $newImagePaths
+        $updatedCount++
+    }
+    else {
+        Write-Host "  [NO CHANGE] Already in sync" -ForegroundColor DarkGray
+        $unchangedCount++
     }
 }
 
-# 5. Save the updated JSON back to disk
-# Only save if we actually found folders to avoid wiping data on a bad run
-if ($countFound -gt 0) {
+# 5. Save updated JSON
+Write-Host "`n========================================" -ForegroundColor Cyan
+Write-Host "Summary:" -ForegroundColor Cyan
+Write-Host "  Updated:   $updatedCount" -ForegroundColor Green
+Write-Host "  Unchanged: $unchangedCount" -ForegroundColor Gray
+Write-Host "  Missing:   $missingCount" -ForegroundColor $(if ($missingCount -gt 0) { "Yellow" } else { "Gray" })
+
+if ($updatedCount -gt 0) {
     try {
-        # Depth 10 ensures nested arrays don't get cut off
-        $newJsonContent = $jsonObj.value | ConvertTo-Json -Depth 10
-        Set-Content -Path $JsonFilePath -Value $newJsonContent
-        Write-Host "`nJSON file updated successfully." -ForegroundColor Cyan
+        Write-Host "`nSaving changes to JSON..." -ForegroundColor Yellow
+        $jsonString = $jsonContent | ConvertTo-Json -Depth 10
+        $jsonString | Out-File -FilePath $JsonFilePath -Encoding UTF8 -Force
+        
+        Write-Host "[SUCCESS] molecules.json updated successfully!" -ForegroundColor Green
+        Write-Host "Output: $JsonFilePath" -ForegroundColor Gray
     }
     catch {
-        Write-Error "Failed to save JSON file."
+        Write-Error "Failed to write JSON file: $_"
         exit 1
     }
 }
-
-# --- Summary ---
-Write-Host "`n-----------------------------"
-Write-Host "Validation Complete."
-Write-Host "Folders Found:   $countFound" -ForegroundColor Green
-Write-Host "Folders Missing: $countMissing" -ForegroundColor Red
-Write-Host "Images Linked:   $filesUpdated" -ForegroundColor Magenta
-
-# --- Explicit Exit Codes ---
-if ($countMissing -gt 0) {
-    # Exit with error code 1 so CI/CD pipelines know something failed
-    Write-Error "Process failed because $countMissing folders are missing."
-    exit 1
-} else {
-    # Exit with success code 0
-    exit 0
+else {
+    Write-Host "`n[INFO] No changes needed" -ForegroundColor Cyan
 }
+
+Write-Host "`n[DONE]" -ForegroundColor Green
