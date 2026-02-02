@@ -66,6 +66,7 @@
       background-color: var(--bg);
       color: var(--text-main);
       transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
     }
 
     h1,
@@ -266,9 +267,11 @@
 
     /* Layout */
     main {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 2rem 0;
+      /* Full width configuration */
+      width: 100%;
+      margin: 0;
+      /* Padding right provides space, padding left is 0 so sidebar hits edge */
+      padding: 2rem 2rem 2rem 0;
       display: flex;
       gap: 2rem;
     }
@@ -281,10 +284,34 @@
       border: 1px solid var(--border);
       border-left: none;
       padding: 1.5rem;
-      height: fit-content;
+
+      /* Anchor Logic */
       position: sticky;
-      top: 120px;
+      top: 110px;
+      /* Below header */
+      height: fit-content;
+      max-height: calc(100vh - 140px);
+      /* Ensure it doesn't overflow viewport */
+      overflow-y: auto;
+      /* Scroll internally if list is long */
+
       box-shadow: var(--shadow-sm);
+      scrollbar-width: thin;
+      scrollbar-color: var(--text-muted) transparent;
+    }
+
+    /* Custom scrollbar for sidebar */
+    .sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      background-color: var(--border);
+      border-radius: 20px;
     }
 
     .pack-list {
@@ -338,11 +365,12 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      /* Changed to auto-fill with smaller min-width to fit as many as possible */
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.5rem;
       padding-bottom: 3rem;
       justify-items: center;
-      max-width: 100%;
+      width: 100%;
     }
 
     @media (max-width: 1100px) {
@@ -356,12 +384,14 @@
         position: static;
         border-left: 1px solid var(--border);
         border-radius: 16px;
+        max-height: 300px;
+        /* Limit height on mobile */
       }
     }
 
     @media (max-width: 768px) {
       .grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       }
     }
 
@@ -377,7 +407,7 @@
       flex-direction: column;
       position: relative;
       width: 100%;
-      max-width: 400px;
+      /* Removed max-width constraint to allow fluid grid filling */
     }
 
     .card:hover {
