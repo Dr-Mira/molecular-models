@@ -13,6 +13,8 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
     rel="stylesheet">
 
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="68976dce-dcfb-40bc-9717-6e6be5ec0e98"></script>
+
   <style>
     /* 
       THEME CONFIGURATION 
@@ -29,7 +31,6 @@
       --input-bg: #ffffff;
       --card-placeholder: #f1f5f9;
       --code-bg: #f1f5f9;
-      --badge-bg: rgb(255 255 255 / 0.9);
       --overlay-bg: rgba(255, 255, 255, 0.8);
 
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -49,7 +50,6 @@
       --input-bg: #0f172a;
       --card-placeholder: #020617;
       --code-bg: #0f172a;
-      --badge-bg: rgb(15 23 42 / 0.8);
       --overlay-bg: rgba(15, 23, 42, 0.8);
 
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
@@ -105,7 +105,7 @@
       background: rgb(15 23 42 / 0.85);
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       header {
         flex-direction: row;
         align-items: center;
@@ -113,10 +113,18 @@
       }
     }
 
+    /* Left side of header */
+    .header-left-group {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-right: auto;
+    }
+
     .brand {
       display: flex;
       flex-direction: column;
-      margin-right: auto;
+      flex-shrink: 0;
     }
 
     .brand h1 {
@@ -131,37 +139,78 @@
       line-height: 1.4;
     }
 
+    /* Header Button */
+    .btn-header {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+      height: fit-content;
+    }
+
+    .btn-header:hover {
+      background: var(--bg);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    @media (max-width: 900px) {
+      .header-left-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+      }
+
+      .btn-header {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Right side of header */
     .header-controls {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.5rem;
       width: 100%;
-      max-width: 600px;
+      flex: 1;
       justify-content: space-between;
+      max-width: 800px;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       .header-controls {
-        width: auto;
         justify-content: flex-end;
+        width: auto;
+        min-width: 400px;
       }
     }
 
     .search-wrapper {
       position: relative;
       flex: 1;
-      min-width: 200px;
     }
 
     .search-input {
       width: 100%;
-      padding: 0.5rem 1rem 0.5rem 2.5rem;
+      padding: 0.6rem 1rem 0.6rem 2.8rem;
       border: 1px solid var(--border);
       border-radius: 9999px;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       background: var(--input-bg);
       color: var(--text-main);
       transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
     }
 
     .search-input:focus {
@@ -172,40 +221,19 @@
 
     .search-icon {
       position: absolute;
-      left: 0.8rem;
+      left: 1rem;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
       pointer-events: none;
-      font-size: 0.9rem;
-    }
-
-    /* Info Button */
-    .btn-icon {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-main);
-      border-radius: 8px;
-      padding: 0.5rem 0.75rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.2s;
-    }
-
-    .btn-icon:hover {
-      background: var(--bg);
-      border-color: var(--primary);
-      color: var(--primary);
+      font-size: 1rem;
     }
 
     /* Theme Switch */
     .theme-switch-wrapper {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .theme-switch {
@@ -288,10 +316,6 @@
       background-color: #334155;
     }
 
-    [data-theme="dark"] input:checked+.slider {
-      background-color: var(--primary);
-    }
-
     /* Layout */
     main {
       width: 100%;
@@ -348,6 +372,8 @@
       font-size: 0.9rem;
       color: var(--text-muted);
       border: 1px solid transparent;
+      text-transform: capitalize;
+      /* Capitalizes Alkanes, Alkenes, etc */
     }
 
     .pack-item:hover {
@@ -369,6 +395,7 @@
       border-bottom: 2px solid var(--border);
       margin-bottom: 1rem;
       padding-bottom: 1rem;
+      text-transform: none;
     }
 
     .pack-item.all-packs.active {
@@ -405,7 +432,7 @@
         position: static;
         border-left: 1px solid var(--border);
         border-radius: 16px;
-        max-height: 300px;
+        max-height: none;
       }
 
       .grid {
@@ -465,29 +492,6 @@
 
     [data-theme="dark"] .card:hover .card-img {
       opacity: 1;
-    }
-
-    .badges {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.5rem;
-      z-index: 10;
-    }
-
-    .badge {
-      background: var(--badge-bg);
-      backdrop-filter: blur(4px);
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-main);
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
-      border: 1px solid var(--border);
     }
 
     .card-content {
@@ -666,7 +670,6 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Visualizing the "Figures" mentioned in text */
     .info-box {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -752,17 +755,20 @@
 <body>
 
   <header>
-    <div class="brand">
-      <h1>3D Printable Molecular Models</h1>
-      <p>Calculated with molecular force field<br>Backed by quantum mechanics</p>
-    </div>
+    <!-- Grouped: Brand + Methods Button -->
+    <div class="header-left-group">
+      <div class="brand">
+        <h1>3D Printable Molecular Models</h1>
+        <p>Digital downloads for education & research<br>Calculated with molecular force fields</p>
+      </div>
 
-    <div class="header-controls">
-      <!-- Added Methods Button -->
-      <button id="open-methods-btn" class="btn-icon">
+      <button id="open-methods-btn" class="btn-header">
         <span>ℹ️ Methods & Info</span>
       </button>
+    </div>
 
+    <!-- Grouped: Search + Theme -->
+    <div class="header-controls">
       <div class="search-wrapper">
         <span class="search-icon">🔍</span>
         <input type="text" id="search" class="search-input" placeholder="Search molecules..." aria-label="Search">
@@ -809,29 +815,26 @@
         <h3>Methods</h3>
         <p>The models were generated using a custom Python script. All atomic XYZ coordinates were calculated with the
           <strong>Merck Molecular Force Field (MMFF)</strong> [1]. The van der Waals atomic radii were adopted from the
-          2013 publication by Alvarez, "A cartography of the van der Waals territories" [2].</p>
+          2013 publication by Alvarez, "A cartography of the van der Waals territories" [2].
+        </p>
         <p>The bond order is modeled in such a way that the model represents the major resonance contributor. The model
-          was visually verified and colored to comply with the corresponding PubChem database entry [3]. Support
-          structures were also rigorously tested to ensure their easy removal.</p>
+          was visually verified and colored to comply with the corresponding PubChem database entry [3].</p>
 
         <h3>About Force Fields</h3>
         <p>Force fields are mathematical models used to describe interactions between atoms and molecules. They are
           based on empirical parameters that represent the forces and energies associated with different types of atomic
-          interactions, such as bond stretching, angle bending, and non-bonded interactions. These parameters are
-          derived from experimental data and quantum mechanical calculations.</p>
+          interactions.</p>
 
         <h3>Printing Notes</h3>
         <ul>
           <li><strong>Material:</strong> Optimized/tested for print with Bambu PLA and Elegoo PLA+.</li>
           <li><strong>Style:</strong> Ball-and-stick type (easiest to color, rigid, aesthetic).</li>
-          <li><strong>Orientation:</strong> Oriented for optimal strength/waste/time compromise. <em>Avoid placing
-              critical bonds along the Z-axis to prevent breakage.</em></li>
-          <li><strong>Supports:</strong> Removable with care (scalpel + sanding). Suggest using PETG as support
-            interface (Heatbed 70°C) or PVA for best results.</li>
+          <li><strong>Orientation:</strong> Oriented for optimal strength/waste/time compromise.</li>
+          <li><strong>Supports:</strong> Removable with care. Suggest using PETG as support interface.</li>
         </ul>
 
         <div class="info-box">
-          <span class="info-box-title">Figure 2: Recommended CPK Color Palette</span>
+          <span class="info-box-title">Recommended CPK Color Palette</span>
           <div class="cpk-palette">
             <div class="cpk-item">
               <div class="cpk-dot bg-white"></div> Hydrogen
@@ -856,9 +859,6 @@
             </div>
           </div>
         </div>
-
-        <p><em>Tip: If you want to save filament and time, print the model in full-white and paint it with a permanent
-            marker.</em></p>
 
         <div class="citation">
           [1] Merck Molecular Force Field (MMFF)<br>
@@ -890,26 +890,18 @@
 
     function openModal() {
       modal.classList.add('open');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
       modal.classList.remove('open');
-      document.body.style.overflow = ''; // Restore scrolling
+      document.body.style.overflow = '';
     }
 
     openBtn.addEventListener('click', openModal);
     closeBtn.addEventListener('click', closeModal);
-
-    // Close on click outside
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-    });
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
     // --- APP LOGIC ---
     let molecules = [];
@@ -926,11 +918,10 @@
           console.error("Unknown JSON structure", data);
           molecules = [];
         }
-
-        console.log("Data loaded. Items:", molecules.length);
         buildPackList();
         render(molecules);
         initCarousels();
+        initPlaceholderAnimation(molecules);
       })
       .catch(err => {
         console.error("Failed to load data:", err);
@@ -940,6 +931,7 @@
     function buildPackList() {
       const packSet = new Set();
       molecules.forEach(m => { if (m.pack) packSet.add(m.pack); });
+      // Sort naturally so pack_01 comes before pack_02
       const sortedPacks = Array.from(packSet).sort();
       const packListEl = document.getElementById('pack-list');
 
@@ -948,7 +940,8 @@
       sortedPacks.forEach(pack => {
         const li = document.createElement('li');
         li.className = 'pack-item';
-        li.textContent = formatPackName(pack);
+        // Remove "pack_XX_" and underscores, then CSS handles capitalization
+        li.textContent = cleanPackName(pack);
         li.addEventListener('click', (e) => filterByPack(pack, e.target));
         packListEl.appendChild(li);
       });
@@ -980,9 +973,11 @@
       render(filtered);
     });
 
-    function formatPackName(pack) {
+    // Helper to strip "pack_01_" prefix and replace underscores with spaces
+    function cleanPackName(pack) {
       if (!pack) return "";
-      return pack.replace(/pack_(\d+)_/i, "Pack $1: ").replace(/_/g, " ");
+      // Regex: Remove start of string if it looks like "pack_" followed by digits and underscore
+      return pack.replace(/^pack_\d+_/, "").replace(/_/g, " ");
     }
 
     function render(items) {
@@ -1000,14 +995,13 @@
         card._imgIndex = 0;
 
         const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
-        const packDisplayName = formatPackName(m.pack);
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
         const downloadUrl = (m.url || m.URL || 'https://makerworld.com/en/@Mira/collections?order=title&status=2');
         const displayTitle = m.displayed_name || m.name;
 
+        // NOTE: Badges removed from image wrapper as requested
         card.innerHTML = `
         <div class="card-image-wrapper">
-          <div class="badges"><span class="badge">${packDisplayName}</span></div>
           <img src="${firstImage}" class="card-img" alt="${displayTitle}" loading="lazy" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'">
         </div>
         <div class="card-content">
@@ -1019,6 +1013,7 @@
       });
     }
 
+    // --- Carousel & Animation Logic (Unchanged) ---
     function initCarousels() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1061,12 +1056,54 @@
       nextImg.style.transform = 'translateX(-100%)';
 
       wrapper.appendChild(nextImg);
-      nextImg.offsetHeight; // Force reflow
+      nextImg.offsetHeight;
       currentImg.style.transform = 'translateX(100%)';
       nextImg.style.transform = 'translateX(0)';
 
       setTimeout(() => { if (currentImg.parentNode === wrapper) wrapper.removeChild(currentImg); }, 800);
     }
+
+    function initPlaceholderAnimation(data) {
+      const input = document.getElementById("search");
+      const conceptSet = new Set();
+      data.forEach(m => {
+        if (m.displayed_name) conceptSet.add(m.displayed_name);
+        else if (m.name) conceptSet.add(m.name);
+      });
+      const words = Array.from(conceptSet);
+      if (words.length === 0) return;
+
+      let currentWordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typeSpeed = 120;
+
+      function type() {
+        if (input.value.length > 0) { setTimeout(type, 2000); return; }
+        const currentWord = words[currentWordIndex];
+        if (isDeleting) {
+          input.setAttribute('placeholder', "Search: " + currentWord.substring(0, charIndex - 1));
+          charIndex--;
+          typeSpeed = 60;
+        } else {
+          input.setAttribute('placeholder', "Search: " + currentWord.substring(0, charIndex + 1));
+          charIndex++;
+          typeSpeed = 120;
+        }
+        if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          typeSpeed = 5000;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          currentWordIndex = Math.floor(Math.random() * words.length);
+          typeSpeed = 500;
+        }
+        setTimeout(type, typeSpeed);
+      }
+      type();
+    }
+
+
   </script>
 </body>
 
