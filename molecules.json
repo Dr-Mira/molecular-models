@@ -4,50 +4,38 @@
             "name": "butane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Butane",
+            "smiles": "CCCC",
             "images": [
                 "assets/pack_01_alkanes/butane/_4_butane.jpg",
                 "assets/pack_01_alkanes/butane/_5_butane.jpg",
                 "assets/pack_01_alkanes/butane/_6_butane.jpg"
             ],
             "concepts": [
-                "Butane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "fuel",
+                "gas",
+                "lpg",
+                "linear hydrocarbon"
             ],
-            "category": "pivo",
+            "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1688099-butane"
         },
         {
             "name": "cyclohexane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Cyclohexane",
+            "smiles": "C1CCCCC1",
             "images": [
                 "assets/pack_01_alkanes/cyclohexane/_4_cyclohexane.jpg",
                 "assets/pack_01_alkanes/cyclohexane/_5_cyclohexane.jpg",
                 "assets/pack_01_alkanes/cyclohexane/_6_cyclohexane.jpg"
             ],
             "concepts": [
-                "Cyclohexane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
-                "alkane",
-                "cycloalkane"
+                "cycloalkane",
+                "solvent",
+                "cyclic hydrocarbon",
+                "chair conformation",
+                "nylon precursor"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1559164-cyclohexane"
@@ -56,24 +44,18 @@
             "name": "decane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Decane",
+            "smiles": "CCCCCCCCCC",
             "images": [
                 "assets/pack_01_alkanes/decane/_4_decane.jpg",
                 "assets/pack_01_alkanes/decane/_5_decane.jpg",
                 "assets/pack_01_alkanes/decane/_6_decane.jpg"
             ],
             "concepts": [
-                "Decane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "solvent",
+                "linear hydrocarbon",
+                "fuel component",
+                "hydrophobic"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1720229-decane"
@@ -82,24 +64,18 @@
             "name": "ethane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Ethane",
+            "smiles": "CC",
             "images": [
                 "assets/pack_01_alkanes/ethane/_4_ethane.jpg",
                 "assets/pack_01_alkanes/ethane/_5_ethane.jpg",
                 "assets/pack_01_alkanes/ethane/_6_ethane.jpg"
             ],
             "concepts": [
-                "Ethane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "natural gas",
+                "petrochemical feedstock",
+                "ethylene precursor",
+                "gas"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1684737-ethane"
@@ -108,24 +84,18 @@
             "name": "heptane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Heptane",
+            "smiles": "CCCCCCC",
             "images": [
                 "assets/pack_01_alkanes/heptane/_4_heptane.jpg",
                 "assets/pack_01_alkanes/heptane/_5_heptane.jpg",
                 "assets/pack_01_alkanes/heptane/_6_heptane.jpg"
             ],
             "concepts": [
-                "Heptane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "solvent",
+                "octane rating zero",
+                "linear hydrocarbon",
+                "fuel standard"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1705786-heptane"
@@ -134,24 +104,18 @@
             "name": "hexane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Hexane",
+            "smiles": "CCCCCC",
             "images": [
                 "assets/pack_01_alkanes/hexane/_4_hexane.jpg",
                 "assets/pack_01_alkanes/hexane/_5_hexane.jpg",
                 "assets/pack_01_alkanes/hexane/_6_hexane.jpg"
             ],
             "concepts": [
-                "Hexane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "industrial solvent",
+                "extraction agent",
+                "linear hydrocarbon",
+                "volatile"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1705776-hexane"
@@ -160,24 +124,18 @@
             "name": "isobutane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Isobutane",
+            "smiles": "CC(C)C",
             "images": [
                 "assets/pack_01_alkanes/isobutane/_4_isobutane.jpg",
                 "assets/pack_01_alkanes/isobutane/_5_isobutane.jpg",
                 "assets/pack_01_alkanes/isobutane/_6_isobutane.jpg"
             ],
             "concepts": [
-                "Isobutane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "isomer",
+                "refrigerant",
+                "aerosol propellant",
+                "branched hydrocarbon"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1692307-isobutane"
@@ -186,24 +144,18 @@
             "name": "methane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Methane",
+            "smiles": "C",
             "images": [
                 "assets/pack_01_alkanes/methane/_4_methane.jpg",
                 "assets/pack_01_alkanes/methane/_5_methane.jpg",
                 "assets/pack_01_alkanes/methane/_6_methane.jpg"
             ],
             "concepts": [
-                "Methane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "natural gas",
+                "greenhouse gas",
+                "simplest hydrocarbon",
+                "fuel"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1680076-methane"
@@ -212,24 +164,18 @@
             "name": "nonane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Nonane",
+            "smiles": "CCCCCCCCC",
             "images": [
                 "assets/pack_01_alkanes/nonane/_4_nonane.jpg",
                 "assets/pack_01_alkanes/nonane/_5_nonane.jpg",
                 "assets/pack_01_alkanes/nonane/_6_nonane.jpg"
             ],
             "concepts": [
-                "Nonane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "fuel component",
+                "solvent",
+                "linear hydrocarbon",
+                "kerosene"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1718484-nonane"
@@ -238,24 +184,18 @@
             "name": "octane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Octane",
+            "smiles": "CCCCCCCC",
             "images": [
                 "assets/pack_01_alkanes/octane/_4_octane.jpg",
                 "assets/pack_01_alkanes/octane/_5_octane.jpg",
                 "assets/pack_01_alkanes/octane/_6_octane.jpg"
             ],
             "concepts": [
-                "Octane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "fuel standard",
+                "gasoline component",
+                "linear hydrocarbon",
+                "solvent"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1709176-octane"
@@ -264,24 +204,18 @@
             "name": "pentane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Pentane",
+            "smiles": "CCCCC",
             "images": [
                 "assets/pack_01_alkanes/pentane/_4_pentane.jpg",
                 "assets/pack_01_alkanes/pentane/_5_pentane.jpg",
                 "assets/pack_01_alkanes/pentane/_6_pentane.jpg"
             ],
             "concepts": [
-                "Pentane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "blowing agent",
+                "solvent",
+                "volatile",
+                "linear hydrocarbon"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1701349-pentane"
@@ -290,24 +224,18 @@
             "name": "propane",
             "pack": "pack_01_alkanes",
             "displayed_name": "Propane",
+            "smiles": "CCC",
             "images": [
                 "assets/pack_01_alkanes/propane/_4_propane.jpg",
                 "assets/pack_01_alkanes/propane/_5_propane.jpg",
                 "assets/pack_01_alkanes/propane/_6_propane.jpg"
             ],
             "concepts": [
-                "Propane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkanes",
                 "alkane",
-                "cycloalkane"
+                "lpg",
+                "fuel",
+                "gas",
+                "heating"
             ],
             "category": "pack_01_alkanes",
             "url": "https://makerworld.com/en/models/1684841-propane"
@@ -316,23 +244,17 @@
             "name": "1-butene",
             "pack": "pack_02_alkenes",
             "displayed_name": "1-Butene",
+            "smiles": "C=CCC",
             "images": [
                 "assets/pack_02_alkenes/1-butene/_5_1-butene.jpg",
                 "assets/pack_02_alkenes/1-butene/_6_1-butene.jpg"
             ],
             "concepts": [
-                "1-Butene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
                 "alkene",
-                "double bond"
+                "monomer",
+                "alpha-olefin",
+                "polymerization",
+                "plasticizer"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1749823-1-butene"
@@ -341,23 +263,17 @@
             "name": "1-hexene",
             "pack": "pack_02_alkenes",
             "displayed_name": "1-Hexene",
+            "smiles": "C=CCCCC",
             "images": [
                 "assets/pack_02_alkenes/1-hexene/_5_1-hexene.jpg",
                 "assets/pack_02_alkenes/1-hexene/_6_1-hexene.jpg"
             ],
             "concepts": [
-                "1-Hexene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
                 "alkene",
-                "double bond"
+                "alpha-olefin",
+                "comonomer",
+                "polyethylene production",
+                "surfactant precursor"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1751215-1-hexene"
@@ -366,23 +282,17 @@
             "name": "butadiene",
             "pack": "pack_02_alkenes",
             "displayed_name": "Butadiene",
+            "smiles": "C=CC=C",
             "images": [
                 "assets/pack_02_alkenes/butadiene/_5_butadiene.jpg",
                 "assets/pack_02_alkenes/butadiene/_6_butadiene.jpg"
             ],
             "concepts": [
-                "Butadiene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
-                "alkene",
-                "double bond"
+                "diene",
+                "monomer",
+                "synthetic rubber",
+                "polymerization",
+                "conjugated system"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1755221-butadiene"
@@ -391,23 +301,17 @@
             "name": "cyclohexene",
             "pack": "pack_02_alkenes",
             "displayed_name": "Cyclohexene",
+            "smiles": "C1=CCCCC1",
             "images": [
                 "assets/pack_02_alkenes/cyclohexene/_5_cyclohexene.jpg",
                 "assets/pack_02_alkenes/cyclohexene/_6_cyclohexene.jpg"
             ],
             "concepts": [
-                "Cyclohexene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
-                "alkene",
-                "double bond"
+                "cycloalkene",
+                "intermediate",
+                "solvent",
+                "adipic acid precursor",
+                "cyclic hydrocarbon"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1758607-cyclohexene"
@@ -416,23 +320,17 @@
             "name": "e-but-2-ene",
             "pack": "pack_02_alkenes",
             "displayed_name": "(E)-But-2-ene",
+            "smiles": "C\\C=C\\C",
             "images": [
                 "assets/pack_02_alkenes/e-but-2-ene/_4_e-but-2-ene.jpeg",
                 "assets/pack_02_alkenes/e-but-2-ene/_6_e-but-2-ene.jpg"
             ],
             "concepts": [
-                "(E)-But-2-ene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
                 "alkene",
-                "trans"
+                "stereoisomer",
+                "trans-isomer",
+                "internal olefin",
+                "fuel component"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1768338-e-but-2-ene"
@@ -441,23 +339,17 @@
             "name": "e-hex-3-ene",
             "pack": "pack_02_alkenes",
             "displayed_name": "(E)-Hex-3-ene",
+            "smiles": "CC\\C=C\\CC",
             "images": [
                 "assets/pack_02_alkenes/e-hex-3-ene/_5_e-hex-3-ene.jpeg",
                 "assets/pack_02_alkenes/e-hex-3-ene/_6_e-hex-3-ene.jpeg"
             ],
             "concepts": [
-                "(E)-Hex-3-ene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
                 "alkene",
-                "trans"
+                "stereoisomer",
+                "trans-isomer",
+                "internal olefin",
+                "symmetric molecule"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1768343-e-hex-3-ene"
@@ -466,23 +358,17 @@
             "name": "ethene",
             "pack": "pack_02_alkenes",
             "displayed_name": "Ethene",
+            "smiles": "C=C",
             "images": [
                 "assets/pack_02_alkenes/ethene/_5_ethene.jpg",
                 "assets/pack_02_alkenes/ethene/_6_ethene.jpg"
             ],
             "concepts": [
-                "Ethene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
                 "alkene",
-                "double bond"
+                "ethylene",
+                "monomer",
+                "plant hormone",
+                "ripening agent"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1769670-ethene"
@@ -491,23 +377,17 @@
             "name": "isobutylene",
             "pack": "pack_02_alkenes",
             "displayed_name": "Isobutylene",
+            "smiles": "CC(=C)C",
             "images": [
                 "assets/pack_02_alkenes/isobutylene/_5_isobutylene.jpg",
                 "assets/pack_02_alkenes/isobutylene/_6_isobutylene.jpg"
             ],
             "concepts": [
-                "Isobutylene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
                 "alkene",
-                "double bond"
+                "monomer",
+                "butyl rubber",
+                "fuel additive",
+                "branched hydrocarbon"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1771536-isobutylene"
@@ -516,23 +396,17 @@
             "name": "isoprene",
             "pack": "pack_02_alkenes",
             "displayed_name": "Isoprene",
+            "smiles": "CC(=C)C=C",
             "images": [
                 "assets/pack_02_alkenes/isoprene/_5_isoprene.jpg",
                 "assets/pack_02_alkenes/isoprene/_6_isoprene.jpg"
             ],
             "concepts": [
-                "Isoprene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
-                "alkene",
-                "double bond"
+                "diene",
+                "monomer",
+                "natural rubber",
+                "terpene precursor",
+                "volatile"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1772750-isoprene"
@@ -541,23 +415,17 @@
             "name": "propene",
             "pack": "pack_02_alkenes",
             "displayed_name": "Propene",
+            "smiles": "C=CC",
             "images": [
                 "assets/pack_02_alkenes/propene/_5_propene.jpg",
                 "assets/pack_02_alkenes/propene/_6_propene.jpg"
             ],
             "concepts": [
-                "Propene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
                 "alkene",
-                "double bond"
+                "propylene",
+                "monomer",
+                "plastic production",
+                "petrochemical"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1777944-propene"
@@ -566,23 +434,17 @@
             "name": "styrene",
             "pack": "pack_02_alkenes",
             "displayed_name": "Styrene",
+            "smiles": "C1(=CC=CC=C1)C=C",
             "images": [
                 "assets/pack_02_alkenes/styrene/_5_styrene.jpg",
                 "assets/pack_02_alkenes/styrene/_6_styrene.jpg"
             ],
             "concepts": [
-                "Styrene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
-                "alkene",
-                "double bond"
+                "aromatic alkene",
+                "monomer",
+                "polystyrene",
+                "vinyl benzene",
+                "plastic production"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1783655-styrene"
@@ -591,23 +453,17 @@
             "name": "z-but-2-ene",
             "pack": "pack_02_alkenes",
             "displayed_name": "(Z)-But-2-ene",
+            "smiles": "C\\C=C/C",
             "images": [
                 "assets/pack_02_alkenes/z-but-2-ene/_5_z-but-2-ene.jpg",
                 "assets/pack_02_alkenes/z-but-2-ene/_6_z-but-2-ene.jpg"
             ],
             "concepts": [
-                "(Z)-But-2-ene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkenes",
                 "alkene",
-                "cis"
+                "stereoisomer",
+                "cis-isomer",
+                "internal olefin",
+                "fuel component"
             ],
             "category": "pack_02_alkenes",
             "url": "https://makerworld.com/en/models/1783717-z-but-2-ene"
@@ -616,23 +472,17 @@
             "name": "1-butyne",
             "pack": "pack_03_alkynes",
             "displayed_name": "1-Butyne",
+            "smiles": "C#CCC",
             "images": [
                 "assets/pack_03_alkynes/1-butyne/_5_1-butyne.jpeg",
                 "assets/pack_03_alkynes/1-butyne/_6_1-butyne.jpeg"
             ],
             "concepts": [
-                "1-Butyne",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "terminal alkyne",
+                "organic synthesis",
+                "reactive intermediate",
+                "gas"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1786844-1-butyne"
@@ -641,23 +491,17 @@
             "name": "1-heptyne",
             "pack": "pack_03_alkynes",
             "displayed_name": "1-Heptyne",
+            "smiles": "C#CCCCCC",
             "images": [
                 "assets/pack_03_alkynes/1-heptyne/_4_1-heptyne.jpeg",
                 "assets/pack_03_alkynes/1-heptyne/_5_1-heptyne.jpeg"
             ],
             "concepts": [
-                "1-Heptyne",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "terminal alkyne",
+                "organic synthesis",
+                "liquid",
+                "linear hydrocarbon"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1788002-1-heptyne"
@@ -666,23 +510,17 @@
             "name": "1-octyne",
             "pack": "pack_03_alkynes",
             "displayed_name": "1-Octyne",
+            "smiles": "C#CCCCCCC",
             "images": [
                 "assets/pack_03_alkynes/1-octyne/_4_1-octyne.jpeg",
                 "assets/pack_03_alkynes/1-octyne/_5_1-octyne.jpeg"
             ],
             "concepts": [
-                "1-Octyne",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "terminal alkyne",
+                "surfactant precursor",
+                "organic synthesis",
+                "liquid"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1791072-1-octyne"
@@ -691,23 +529,17 @@
             "name": "1-pentyne",
             "pack": "pack_03_alkynes",
             "displayed_name": "1-Pentyne",
+            "smiles": "C#CCCC",
             "images": [
                 "assets/pack_03_alkynes/1-pentyne/_5_1-pentyne.jpeg",
                 "assets/pack_03_alkynes/1-pentyne/_6_1-pentyne.jpeg"
             ],
             "concepts": [
-                "1-Pentyne",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "terminal alkyne",
+                "organic synthesis",
+                "liquid",
+                "isomer"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1794774-1-pentyne"
@@ -716,23 +548,17 @@
             "name": "2-butyne",
             "pack": "pack_03_alkynes",
             "displayed_name": "2-Butyne",
+            "smiles": "CC#CC",
             "images": [
                 "assets/pack_03_alkynes/2-butyne/_5_2-butyne.jpeg",
                 "assets/pack_03_alkynes/2-butyne/_6_2-butyne.jpeg"
             ],
             "concepts": [
-                "2-Butyne",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "internal alkyne",
+                "organic synthesis",
+                "symmetric molecule",
+                "volatile"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1819566-2-butyne"
@@ -741,23 +567,17 @@
             "name": "2-pentyne",
             "pack": "pack_03_alkynes",
             "displayed_name": "2-Pentyne",
+            "smiles": "CC#CCC",
             "images": [
                 "assets/pack_03_alkynes/2-pentyne/_5_2-pentyne.jpeg",
                 "assets/pack_03_alkynes/2-pentyne/_6_2-pentyne.jpeg"
             ],
             "concepts": [
-                "2-Pentyne",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "internal alkyne",
+                "organic synthesis",
+                "isomer",
+                "liquid"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1797778-2-pentyne"
@@ -766,23 +586,17 @@
             "name": "3-hexyne",
             "pack": "pack_03_alkynes",
             "displayed_name": "3-Hexyne",
+            "smiles": "CCC#CCC",
             "images": [
                 "assets/pack_03_alkynes/3-hexyne/_4_3-hexyne.jpeg",
                 "assets/pack_03_alkynes/3-hexyne/_5_3-hexyne.jpeg"
             ],
             "concepts": [
-                "3-Hexyne",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "internal alkyne",
+                "symmetric molecule",
+                "organic synthesis",
+                "reagent"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1800525-3-hexyne"
@@ -791,23 +605,17 @@
             "name": "acetylene",
             "pack": "pack_03_alkynes",
             "displayed_name": "Acetylene",
+            "smiles": "C#C",
             "images": [
                 "assets/pack_03_alkynes/acetylene/_5_acetylene.jpeg",
                 "assets/pack_03_alkynes/acetylene/_6_acetylene.jpeg"
             ],
             "concepts": [
-                "Acetylene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "ethyne",
+                "welding gas",
+                "simplest alkyne",
+                "fuel"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1810857-acetylene"
@@ -816,23 +624,17 @@
             "name": "allylene",
             "pack": "pack_03_alkynes",
             "displayed_name": "Allylene",
+            "smiles": "C#CC",
             "images": [
                 "assets/pack_03_alkynes/allylene/_5_allylene.jpeg",
                 "assets/pack_03_alkynes/allylene/_6_allylene.jpeg"
             ],
             "concepts": [
-                "Allylene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
                 "alkyne",
-                "triple bond"
+                "propyne",
+                "methylacetylene",
+                "rocket fuel",
+                "welding gas"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1810878-allylene"
@@ -841,23 +643,17 @@
             "name": "benzyne",
             "pack": "pack_03_alkynes",
             "displayed_name": "Benzyne",
+            "smiles": "C1=CC#CC=C1",
             "images": [
                 "assets/pack_03_alkynes/benzyne/_5_benzyne.jpeg",
                 "assets/pack_03_alkynes/benzyne/_6_benzyne.jpeg"
             ],
             "concepts": [
-                "Benzyne",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
-                "alkyne",
-                "triple bond"
+                "aryne",
+                "reactive intermediate",
+                "unstable",
+                "cyclic alkyne",
+                "reaction mechanism"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1810886-benzyne"
@@ -866,23 +662,17 @@
             "name": "diacetylene",
             "pack": "pack_03_alkynes",
             "displayed_name": "Diacetylene",
+            "smiles": "C#CC#C",
             "images": [
                 "assets/pack_03_alkynes/diacetylene/_5_diacetylene.jpeg",
                 "assets/pack_03_alkynes/diacetylene/_6_diacetylene.jpeg"
             ],
             "concepts": [
-                "Diacetylene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "alkynes",
-                "alkyne",
-                "triple bond"
+                "diyne",
+                "conjugated system",
+                "polymer precursor",
+                "organic synthesis",
+                "linear molecule"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1812439-diacetylene"
@@ -891,23 +681,17 @@
             "name": "ethynylbenzene",
             "pack": "pack_03_alkynes",
             "displayed_name": "Ethynylbenzene",
+            "smiles": "C(#C)C1=CC=CC=C1",
             "images": [
                 "assets/pack_03_alkynes/ethynylbenzene/_5_ethynylbenzene.jpeg",
                 "assets/pack_03_alkynes/ethynylbenzene/_6_ethynylbenzene.jpeg"
             ],
             "concepts": [
-                "Ethynylbenzene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
+                "aromatic alkyne",
                 "phenylacetylene",
-                "teaching",
-                "alkynes",
-                "alkyne",
-                "triple bond"
+                "terminal alkyne",
+                "organic synthesis",
+                "monomer"
             ],
             "category": "pack_03_alkynes",
             "url": "https://makerworld.com/en/models/1816362-ethynylbenzene"
@@ -916,23 +700,17 @@
             "name": "amyl_alcohol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Amyl Alcohol",
+            "smiles": "C(CCCC)O",
             "images": [
                 "assets/pack_04_alcohols/amyl_alcohol/_4_amyl_alcohol.jpeg",
                 "assets/pack_04_alcohols/amyl_alcohol/_6_amyl_alcohol.jpeg"
             ],
             "concepts": [
-                "Amyl Alcohol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "primary alcohol",
+                "pentanol",
+                "solvent",
+                "flavoring agent",
+                "industrial chemical"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1819543-amyl-alcohol"
@@ -941,23 +719,17 @@
             "name": "benzyl_alcohol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Benzyl Alcohol",
+            "smiles": "C1(=CC=CC=C1)CO",
             "images": [
                 "assets/pack_04_alcohols/benzyl_alcohol/_5_benzyl_alcohol.jpeg",
                 "assets/pack_04_alcohols/benzyl_alcohol/_6_benzyl_alcohol.jpeg"
             ],
             "concepts": [
-                "Benzyl Alcohol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "aromatic alcohol",
+                "solvent",
+                "preservative",
+                "fragrance ingredient",
+                "local anesthetic"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1825569-benzyl-alcohol"
@@ -966,23 +738,17 @@
             "name": "cyclohexanol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Cyclohexanol",
+            "smiles": "C1(CCCCC1)O",
             "images": [
                 "assets/pack_04_alcohols/cyclohexanol/_5_cyclohexanol.jpeg",
                 "assets/pack_04_alcohols/cyclohexanol/_6_cyclohexanol.jpeg"
             ],
             "concepts": [
-                "Cyclohexanol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "secondary alcohol",
+                "cyclic alcohol",
+                "nylon precursor",
+                "solvent",
+                "intermediate"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1828085-cyclohexanol"
@@ -991,23 +757,17 @@
             "name": "ethanol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Ethanol",
+            "smiles": "C(C)O",
             "images": [
                 "assets/pack_04_alcohols/ethanol/_4_ethanol.jpeg",
                 "assets/pack_04_alcohols/ethanol/_6_ethanol.jpeg"
             ],
             "concepts": [
-                "Ethanol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "primary alcohol",
+                "biofuel",
+                "disinfectant",
+                "solvent",
+                "beverage"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1830465-ethanol"
@@ -1016,23 +776,17 @@
             "name": "glycerol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Glycerol",
+            "smiles": "C(C(CO)O)O",
             "images": [
                 "assets/pack_04_alcohols/glycerol/_5_glycerol.jpeg",
                 "assets/pack_04_alcohols/glycerol/_6_glycerol.jpeg"
             ],
             "concepts": [
-                "Glycerol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "glycerin"
+                "polyol",
+                "humectant",
+                "food additive",
+                "pharmaceutical excipient",
+                "biodiesel byproduct"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1832866-glycerol"
@@ -1041,23 +795,17 @@
             "name": "isopropanol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Isopropanol",
+            "smiles": "CC(C)O",
             "images": [
                 "assets/pack_04_alcohols/isopropanol/_4_isopropanol.jpeg",
                 "assets/pack_04_alcohols/isopropanol/_6_isopropanol.jpeg"
             ],
             "concepts": [
-                "Isopropanol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "secondary alcohol",
+                "disinfectant",
+                "solvent",
+                "antiseptic",
+                "cleaning agent"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1836580-isopropanol"
@@ -1066,23 +814,17 @@
             "name": "methanol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Methanol",
+            "smiles": "CO",
             "images": [
                 "assets/pack_04_alcohols/methanol/_4_methanol.jpeg",
                 "assets/pack_04_alcohols/methanol/_5_methanol.jpeg"
             ],
             "concepts": [
-                "Methanol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "primary alcohol",
+                "wood alcohol",
+                "solvent",
+                "fuel",
+                "toxic"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1843507-methanol"
@@ -1091,23 +833,17 @@
             "name": "n-butanol",
             "pack": "pack_04_alcohols",
             "displayed_name": "N-Butanol",
+            "smiles": "C(CCC)O",
             "images": [
                 "assets/pack_04_alcohols/n-butanol/_5_n-butanol.jpeg",
                 "assets/pack_04_alcohols/n-butanol/_6_n-butanol.jpeg"
             ],
             "concepts": [
-                "n-Butanol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "primary alcohol",
+                "solvent",
+                "biofuel",
+                "intermediate",
+                "industrial chemical"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1843521-n-butanol"
@@ -1115,24 +851,18 @@
         {
             "name": "n-propyl_alcohol",
             "pack": "pack_04_alcohols",
-            "displayed_name": "N-Propyl Alcohol",
+            "displayed_name": "n-Propyl Alcohol",
+            "smiles": "C(CC)O",
             "images": [
                 "assets/pack_04_alcohols/n-propyl_alcohol/_5_n-propyl_alcohol.jpeg",
                 "assets/pack_04_alcohols/n-propyl_alcohol/_6_n-propyl_alcohol.jpeg"
             ],
             "concepts": [
-                "n-Propyl Alcohol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "primary alcohol",
+                "propanol",
+                "solvent",
+                "pharmaceutical intermediate",
+                "disinfectant"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1847680-n-propyl-alcohol"
@@ -1141,23 +871,17 @@
             "name": "phenol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Phenol",
+            "smiles": "C1(=CC=CC=C1)O",
             "images": [
                 "assets/pack_04_alcohols/phenol/_5_phenol.jpeg",
                 "assets/pack_04_alcohols/phenol/_6_phenol.jpeg"
             ],
             "concepts": [
-                "Phenol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "aromatic alcohol",
+                "antiseptic",
+                "precursor to plastics",
+                "acidic alcohol",
+                "toxic"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1849812-phenol"
@@ -1166,23 +890,17 @@
             "name": "sec-amyl_alcohol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Sec-Amyl Alcohol",
+            "smiles": "CC(CCC)O",
             "images": [
                 "assets/pack_04_alcohols/sec-amyl_alcohol/_5_sec-amyl_alcohol.jpeg",
                 "assets/pack_04_alcohols/sec-amyl_alcohol/_6_sec-amyl_alcohol.jpeg"
             ],
             "concepts": [
-                "sec-Amyl Alcohol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "secondary alcohol",
+                "pentanol isomer",
+                "solvent",
+                "intermediate",
+                "chiral center"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1852240-sec-amyl-alcohol"
@@ -1191,23 +909,17 @@
             "name": "tert-butanol",
             "pack": "pack_04_alcohols",
             "displayed_name": "Tert-Butanol",
+            "smiles": "CC(C)(C)O",
             "images": [
                 "assets/pack_04_alcohols/tert-butanol/_4_tert-butanol.jpeg",
                 "assets/pack_04_alcohols/tert-butanol/_6_tert-butanol.jpeg"
             ],
             "concepts": [
-                "tert-Butanol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "pentyl",
-                "teaching",
-                "alcohol",
-                "alcohols",
-                "hydroxyl"
+                "tertiary alcohol",
+                "solvent",
+                "fuel additive",
+                "paint remover",
+                "solid at room temp"
             ],
             "category": "pack_04_alcohols",
             "url": "https://makerworld.com/en/models/1856246-tert-butanol"
@@ -1216,23 +928,17 @@
             "name": "18_crown_6",
             "pack": "pack_05_ethers",
             "displayed_name": "18-Crown-6",
+            "smiles": "O1CCOCCOCCOCCOCCOCC1",
             "images": [
                 "assets/pack_05_ethers/18_crown_6/_5_18_crown_6.jpeg",
                 "assets/pack_05_ethers/18_crown_6/_6_18_crown_6.jpeg"
             ],
             "concepts": [
-                "18-Crown-6",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "cyclic ether",
+                "crown ether",
+                "phase transfer catalyst",
+                "cation binding",
+                "host-guest chemistry"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1866775-18-crown-6"
@@ -1241,23 +947,17 @@
             "name": "1_4-dioxane",
             "pack": "pack_05_ethers",
             "displayed_name": "1,4-Dioxane",
+            "smiles": "O1CCOCC1",
             "images": [
                 "assets/pack_05_ethers/1_4-dioxane/_5_1_4-dioxane.jpeg",
                 "assets/pack_05_ethers/1_4-dioxane/_6_1_4-dioxane.jpeg"
             ],
             "concepts": [
-                "1,4-Dioxane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
+                "cyclic ether",
                 "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "stabilizer",
+                "carcinogen",
+                "hygroscopic"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1862414-1-4-dioxane"
@@ -1266,23 +966,17 @@
             "name": "2-methyltetrahydrofuran",
             "pack": "pack_05_ethers",
             "displayed_name": "2-Methyltetrahydrofuran",
+            "smiles": "CC1OCCC1",
             "images": [
                 "assets/pack_05_ethers/2-methyltetrahydrofuran/_5_2-methyltetrahydrofuran.jpeg",
                 "assets/pack_05_ethers/2-methyltetrahydrofuran/_6_2-methyltetrahydrofuran.jpeg"
             ],
             "concepts": [
-                "2-Methyltetrahydrofuran",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "cyclic ether",
+                "green solvent",
+                "biofuel component",
+                "organometallic solvent",
+                "THF derivative"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1862421-2-methyltetrahydrofuran"
@@ -1291,23 +985,17 @@
             "name": "anisole",
             "pack": "pack_05_ethers",
             "displayed_name": "Anisole",
+            "smiles": "COC1=CC=CC=C1",
             "images": [
                 "assets/pack_05_ethers/anisole/_4_anisole.jpeg",
                 "assets/pack_05_ethers/anisole/_5_anisole.jpeg"
             ],
             "concepts": [
-                "Anisole",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
+                "aromatic ether",
+                "methoxybenzene",
                 "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "perfume precursor",
+                "insect pheromone"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1868097-anisole"
@@ -1316,23 +1004,17 @@
             "name": "dibenzyl_ether",
             "pack": "pack_05_ethers",
             "displayed_name": "Dibenzyl Ether",
+            "smiles": "C(C1=CC=CC=C1)OCC1=CC=CC=C1",
             "images": [
                 "assets/pack_05_ethers/dibenzyl_ether/_5_dibenzyl_ether.jpeg",
                 "assets/pack_05_ethers/dibenzyl_ether/_6_dibenzyl_ether.jpeg"
             ],
             "concepts": [
-                "Dibenzyl ether",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
+                "aromatic ether",
+                "plasticizer",
                 "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "lubricant additive",
+                "symmetric ether"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1873038-dibenzyl-ether"
@@ -1341,23 +1023,17 @@
             "name": "diethyl_ether",
             "pack": "pack_05_ethers",
             "displayed_name": "Diethyl Ether",
+            "smiles": "C(C)OCC",
             "images": [
                 "assets/pack_05_ethers/diethyl_ether/_5_diethyl_ether.jpeg",
                 "assets/pack_05_ethers/diethyl_ether/_6_diethyl_ether.jpeg"
             ],
             "concepts": [
-                "Diethyl Ether",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
+                "linear ether",
                 "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "anesthetic",
+                "extraction solvent",
+                "highly flammable"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1877626-diethyl-ether"
@@ -1366,23 +1042,17 @@
             "name": "diisopropyl_ether",
             "pack": "pack_05_ethers",
             "displayed_name": "Diisopropyl Ether",
+            "smiles": "CC(C)OC(C)C",
             "images": [
                 "assets/pack_05_ethers/diisopropyl_ether/_5_diisopropyl_ether.jpeg",
                 "assets/pack_05_ethers/diisopropyl_ether/_6_diisopropyl_ether.jpeg"
             ],
             "concepts": [
-                "Diisopropyl Ether",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
+                "branched ether",
                 "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "fuel additive",
+                "extraction solvent",
+                "peroxide former"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1878168-diisopropyl-ether"
@@ -1391,23 +1061,17 @@
             "name": "dimethyl_ether",
             "pack": "pack_05_ethers",
             "displayed_name": "Dimethyl Ether",
+            "smiles": "COC",
             "images": [
                 "assets/pack_05_ethers/dimethyl_ether/_5_dimethyl_ether.jpeg",
                 "assets/pack_05_ethers/dimethyl_ether/_6_dimethyl_ether.jpeg"
             ],
             "concepts": [
-                "Dimethyl Ether",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "linear ether",
+                "aerosol propellant",
+                "alternative fuel",
+                "refrigerant",
+                "simplest ether"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1881048-dimethyl-ether"
@@ -1416,23 +1080,17 @@
             "name": "ethylene_oxide",
             "pack": "pack_05_ethers",
             "displayed_name": "Ethylene Oxide",
+            "smiles": "O1CC1",
             "images": [
                 "assets/pack_05_ethers/ethylene_oxide/_5_ethylene_oxide.jpeg",
                 "assets/pack_05_ethers/ethylene_oxide/_6_ethylene_oxide.jpeg"
             ],
             "concepts": [
-                "Ethylene Oxide",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "epoxide",
+                "sterilant",
+                "cyclic ether",
+                "reactive intermediate",
+                "fumigant"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1885502-ethylene-oxide"
@@ -1441,23 +1099,17 @@
             "name": "methyl_tert-butyl_ether",
             "pack": "pack_05_ethers",
             "displayed_name": "Methyl tert-Butyl Ether",
+            "smiles": "COC(C)(C)C",
             "images": [
                 "assets/pack_05_ethers/methyl_tert-butyl_ether/_5_methyl_tert-butyl_ether.jpeg",
                 "assets/pack_05_ethers/methyl_tert-butyl_ether/_6_methyl_tert-butyl_ether.jpeg"
             ],
             "concepts": [
-                "Methyl tert-Butyl Ether",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
+                "branched ether",
+                "fuel additive",
                 "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "MTBE",
+                "medical treatment"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1887540-methyl-tert-butyl-ether"
@@ -1466,23 +1118,17 @@
             "name": "propylene_oxide",
             "pack": "pack_05_ethers",
             "displayed_name": "Propylene Oxide",
+            "smiles": "CC1OC1",
             "images": [
                 "assets/pack_05_ethers/propylene_oxide/_5_propylene_oxide.jpeg",
                 "assets/pack_05_ethers/propylene_oxide/_6_propylene_oxide.jpeg"
             ],
             "concepts": [
-                "Propylene Oxide",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "alkoxy"
+                "epoxide",
+                "cyclic ether",
+                "chiral",
+                "polyurethane precursor",
+                "industrial chemical"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1891473-propylene-oxide"
@@ -1491,23 +1137,17 @@
             "name": "tetrahydrofuran",
             "pack": "pack_05_ethers",
             "displayed_name": "Tetrahydrofuran",
+            "smiles": "O1CCCC1",
             "images": [
                 "assets/pack_05_ethers/tetrahydrofuran/_5_tetrahydrofuran.jpeg",
                 "assets/pack_05_ethers/tetrahydrofuran/_6_tetrahydrofuran.jpeg"
             ],
             "concepts": [
-                "Tetrahydrofuran",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "solvent",
-                "teaching",
-                "ether",
-                "ethers",
-                "thf"
+                "cyclic ether",
+                "aprotic solvent",
+                "polymer precursor",
+                "THF",
+                "heterocycle"
             ],
             "category": "pack_05_ethers",
             "url": "https://makerworld.com/en/models/1894684-tetrahydrofuran"
@@ -1516,23 +1156,17 @@
             "name": "anthracene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Anthracene",
+            "smiles": "C1=CC=CC2=CC3=CC=CC=C3C=C12",
             "images": [
                 "assets/pack_06_aromatics/anthracene/_5_anthracene.jpeg",
                 "assets/pack_06_aromatics/anthracene/_6_anthracene.jpeg"
             ],
             "concepts": [
-                "Anthracene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "polycyclic aromatic",
+                "PAH",
+                "dye precursor",
+                "semiconductor",
+                "fused rings"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1898877-anthracene"
@@ -1541,23 +1175,17 @@
             "name": "benzene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Benzene",
+            "smiles": "C1=CC=CC=C1",
             "images": [
                 "assets/pack_06_aromatics/benzene/_4_benzene.jpeg",
                 "assets/pack_06_aromatics/benzene/_5_benzene.jpeg"
             ],
             "concepts": [
-                "Benzene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "aromatic hydrocarbon",
+                "solvent",
+                "carcinogen",
+                "petrochemical",
+                "planar molecule"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1900677-benzene"
@@ -1566,23 +1194,17 @@
             "name": "biphenyl",
             "pack": "pack_06_aromatics",
             "displayed_name": "Biphenyl",
+            "smiles": "C1(=CC=CC=C1)C1=CC=CC=C1",
             "images": [
                 "assets/pack_06_aromatics/biphenyl/_5_biphenyl.jpeg",
                 "assets/pack_06_aromatics/biphenyl/_6_biphenyl.jpeg"
             ],
             "concepts": [
-                "Biphenyl",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "aromatic hydrocarbon",
+                "fungicide",
+                "heat transfer fluid",
+                "dye carrier",
+                "intermediate"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1903910-biphenyl"
@@ -1591,23 +1213,17 @@
             "name": "chlorobenzene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Chlorobenzene",
+            "smiles": "ClC1=CC=CC=C1",
             "images": [
                 "assets/pack_06_aromatics/chlorobenzene/_5_chlorobenzene.jpeg",
                 "assets/pack_06_aromatics/chlorobenzene/_6_chlorobenzene.jpeg"
             ],
             "concepts": [
-                "Chlorobenzene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "aryl halide",
+                "solvent",
+                "pesticide intermediate",
+                "degreaser",
+                "aromatic"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1908621-chlorobenzene"
@@ -1616,23 +1232,17 @@
             "name": "cumene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Cumene",
+            "smiles": "C(C)(C)C1=CC=CC=C1",
             "images": [
                 "assets/pack_06_aromatics/cumene/_5_cumene.jpeg",
                 "assets/pack_06_aromatics/cumene/_6_cumene.jpeg"
             ],
             "concepts": [
-                "Cumene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "aromatic hydrocarbon",
+                "isopropylbenzene",
+                "phenol precursor",
+                "fuel additive",
+                "solvent"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1910503-cumene"
@@ -1641,23 +1251,17 @@
             "name": "ethylbenzene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Ethylbenzene",
+            "smiles": "C(C)C1=CC=CC=C1",
             "images": [
                 "assets/pack_06_aromatics/ethylbenzene/_5_ethylbenzene.jpeg",
                 "assets/pack_06_aromatics/ethylbenzene/_6_ethylbenzene.jpeg"
             ],
             "concepts": [
-                "Ethylbenzene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "aromatic hydrocarbon",
+                "styrene precursor",
+                "petrochemical",
+                "solvent",
+                "fuel component"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1915282-ethylbenzene"
@@ -1666,23 +1270,17 @@
             "name": "mesitylene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Mesitylene",
+            "smiles": "CC1=CC(=CC(=C1)C)C",
             "images": [
                 "assets/pack_06_aromatics/mesitylene/_5_mesitylene.jpeg",
                 "assets/pack_06_aromatics/mesitylene/_6_mesitylene.jpeg"
             ],
             "concepts": [
-                "Mesitylene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "aromatic hydrocarbon",
+                "trimethylbenzene",
+                "solvent",
+                "electronics industry",
+                "symmetric molecule"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1920131-mesitylene"
@@ -1691,23 +1289,17 @@
             "name": "naphthalene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Naphthalene",
+            "smiles": "C1=CC=CC2=CC=CC=C12",
             "images": [
                 "assets/pack_06_aromatics/naphthalene/_5_naphthalene.jpeg",
                 "assets/pack_06_aromatics/naphthalene/_6_naphthalene.jpeg"
             ],
             "concepts": [
-                "Naphtalene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "polycyclic aromatic",
+                "PAH",
+                "mothballs",
+                "fumigant",
+                "fused rings"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1925198-naphtalene"
@@ -1716,23 +1308,17 @@
             "name": "nitrobenzene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Nitrobenzene",
+            "smiles": "[N+](=O)([O-])C1=CC=CC=C1",
             "images": [
                 "assets/pack_06_aromatics/nitrobenzene/_4_nitrobenzene.jpeg",
                 "assets/pack_06_aromatics/nitrobenzene/_5_nitrobenzene.jpeg"
             ],
             "concepts": [
-                "Nitrobenzene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "nitro compound",
+                "aniline precursor",
+                "solvent",
+                "toxic",
+                "almond odor"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1927357-nitrobenzene"
@@ -1741,23 +1327,17 @@
             "name": "p-xylene",
             "pack": "pack_06_aromatics",
             "displayed_name": "p-Xylene",
+            "smiles": "CC1=CC=C(C=C1)C",
             "images": [
                 "assets/pack_06_aromatics/p-xylene/_5_p-xylene.jpeg",
                 "assets/pack_06_aromatics/p-xylene/_6_p-xylene.jpeg"
             ],
             "concepts": [
-                "p-Xylene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "aromatic hydrocarbon",
+                "polyester precursor",
+                "solvent",
+                "isomer",
+                "industrial chemical"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1942919-p-xylene"
@@ -1766,23 +1346,17 @@
             "name": "phenanthrene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Phenanthrene",
+            "smiles": "C1=CC=CC=2C3=CC=CC=C3C=CC12",
             "images": [
                 "assets/pack_06_aromatics/phenanthrene/_4_phenanthrene.jpeg",
                 "assets/pack_06_aromatics/phenanthrene/_5_phenanthrene.jpeg"
             ],
             "concepts": [
-                "Phenanthrene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "polycyclic aromatic",
+                "PAH",
+                "isomer of anthracene",
+                "dye synthesis",
+                "fused rings"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1932987-phenanthrene"
@@ -1791,23 +1365,17 @@
             "name": "toluene",
             "pack": "pack_06_aromatics",
             "displayed_name": "Toluene",
+            "smiles": "CC1=CC=CC=C1",
             "images": [
                 "assets/pack_06_aromatics/toluene/_5_toluene.jpeg",
                 "assets/pack_06_aromatics/toluene/_6_toluene.jpeg"
             ],
             "concepts": [
-                "Toluene",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hydrocarbon",
-                "teaching",
-                "aromatic",
-                "aromatics",
-                "pah"
+                "aromatic hydrocarbon",
+                "solvent",
+                "paint thinner",
+                "fuel additive",
+                "methylbenzene"
             ],
             "category": "pack_06_aromatics",
             "url": "https://makerworld.com/en/models/1942921-toluene"
@@ -1816,23 +1384,17 @@
             "name": "acetaldehyde",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Acetaldehyde",
+            "smiles": "C(C)=O",
             "images": [
                 "assets/pack_07_carbonyls/acetaldehyde/_5_acetaldehyde.jpeg",
                 "assets/pack_07_carbonyls/acetaldehyde/_6_acetaldehyde.jpeg"
             ],
             "concepts": [
-                "Acetaldehyde",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
                 "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "metabolic byproduct",
+                "industrial intermediate",
+                "hangover cause",
+                "volatile"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1942924-acetaldehyde"
@@ -1841,23 +1403,17 @@
             "name": "acetone",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Acetone",
+            "smiles": "CC(C)=O",
             "images": [
                 "assets/pack_07_carbonyls/acetone/_5_acetone.jpeg",
                 "assets/pack_07_carbonyls/acetone/_6_acetone.jpeg"
             ],
             "concepts": [
-                "Acetone",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "ketone",
+                "solvent",
+                "nail polish remover",
+                "metabolic byproduct",
+                "simplest ketone"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1945940-acetone"
@@ -1866,23 +1422,17 @@
             "name": "acetophenone",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Acetophenone",
+            "smiles": "C1(=CC=CC=C1)C(C)=O",
             "images": [
                 "assets/pack_07_carbonyls/acetophenone/_4_acetophenone.jpeg",
                 "assets/pack_07_carbonyls/acetophenone/_5_acetophenone.jpeg"
             ],
             "concepts": [
-                "Acetophenone",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "aromatic ketone",
+                "fragrance ingredient",
+                "pharmaceutical precursor",
+                "solvent",
+                "sleep aid"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1949414-acetophenone"
@@ -1891,23 +1441,17 @@
             "name": "benzaldehyde",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Benzaldehyde",
+            "smiles": "C(C1=CC=CC=C1)=O",
             "images": [
                 "assets/pack_07_carbonyls/benzaldehyde/_5_benzaldehyde.jpeg",
                 "assets/pack_07_carbonyls/benzaldehyde/_6_benzaldehyde.jpeg"
             ],
             "concepts": [
-                "Benzaldehyde",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "aromatic aldehyde",
+                "almond scent",
+                "flavoring agent",
+                "industrial solvent",
+                "intermediate"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1953583-benzaldehyde"
@@ -1916,23 +1460,17 @@
             "name": "butyraldehyde",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Butyraldehyde",
+            "smiles": "C(CCC)=O",
             "images": [
                 "assets/pack_07_carbonyls/butyraldehyde/_4_butyraldehyde.jpeg",
                 "assets/pack_07_carbonyls/butyraldehyde/_5_butyraldehyde.jpeg"
             ],
             "concepts": [
-                "Butyraldehyde",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
                 "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "plasticizer precursor",
+                "industrial intermediate",
+                "acrid odor",
+                "solvent"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1956963-butyraldehyde"
@@ -1941,23 +1479,17 @@
             "name": "cyclohexanone",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Cyclohexanone",
+            "smiles": "C1(CCCCC1)=O",
             "images": [
                 "assets/pack_07_carbonyls/cyclohexanone/_5_cyclohexanone.jpeg",
                 "assets/pack_07_carbonyls/cyclohexanone/_6_cyclohexanone.jpeg"
             ],
             "concepts": [
-                "Cyclohexanone",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "cyclic ketone",
+                "nylon precursor",
+                "solvent",
+                "industrial chemical",
+                "intermediate"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1963902-cyclohexanone"
@@ -1966,23 +1498,17 @@
             "name": "diethyl_ketone",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Diethyl Ketone",
+            "smiles": "CCC(CC)=O",
             "images": [
                 "assets/pack_07_carbonyls/diethyl_ketone/_5_diethyl_ketone.jpeg",
                 "assets/pack_07_carbonyls/diethyl_ketone/_6_diethyl_ketone.jpeg"
             ],
             "concepts": [
-                "Diethyl Ketone",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "ketone",
+                "solvent",
+                "symmetric molecule",
+                "industrial intermediate",
+                "liquid"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1963940-diethyl-ketone"
@@ -1991,23 +1517,17 @@
             "name": "formaldehyde",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Formaldehyde",
+            "smiles": "C=O",
             "images": [
                 "assets/pack_07_carbonyls/formaldehyde/_5_formaldehyde.jpeg",
                 "assets/pack_07_carbonyls/formaldehyde/_6_formaldehyde.jpeg"
             ],
             "concepts": [
-                "Formaldehyde",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
                 "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "preservative",
+                "disinfectant",
+                "carcinogen",
+                "simplest aldehyde"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1970996-formaldehyde"
@@ -2016,23 +1536,17 @@
             "name": "hexanal",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Hexanal",
+            "smiles": "C(CCCCC)=O",
             "images": [
                 "assets/pack_07_carbonyls/hexanal/_4_hexanal.jpeg",
                 "assets/pack_07_carbonyls/hexanal/_5_hexanal.jpeg"
             ],
             "concepts": [
-                "Hexanal",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
                 "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "flavor compound",
+                "grassy scent",
+                "fruit aroma",
+                "volatile"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1971021-hexanal"
@@ -2041,23 +1555,17 @@
             "name": "methyl_ethyl_ketone",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Methyl Ethyl Ketone",
+            "smiles": "CC(CC)=O",
             "images": [
                 "assets/pack_07_carbonyls/methyl_ethyl_ketone/_5_methyl_ethyl_ketone.jpeg",
                 "assets/pack_07_carbonyls/methyl_ethyl_ketone/_6_methyl_ethyl_ketone.jpeg"
             ],
             "concepts": [
-                "Methyl Ethyl Ketone",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "mek"
+                "ketone",
+                "MEK",
+                "industrial solvent",
+                "welding agent",
+                "liquid"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1974247-methyl-ethyl-ketone"
@@ -2066,23 +1574,17 @@
             "name": "propionaldehyde",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Propionaldehyde",
+            "smiles": "C(CC)=O",
             "images": [
                 "assets/pack_07_carbonyls/propionaldehyde/_5_propionaldehyde.jpeg",
                 "assets/pack_07_carbonyls/propionaldehyde/_6_propionaldehyde.jpeg"
             ],
             "concepts": [
-                "Propionaldehyde",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
                 "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "plastic precursor",
+                "intermediate",
+                "solvent",
+                "reactive"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1977861-propionaldehyde"
@@ -2091,23 +1593,17 @@
             "name": "succinaldehyde",
             "pack": "pack_07_carbonyls",
             "displayed_name": "Succinaldehyde",
+            "smiles": "C(CCC=O)=O",
             "images": [
                 "assets/pack_07_carbonyls/succinaldehyde/_4_succinaldehyde.jpeg",
                 "assets/pack_07_carbonyls/succinaldehyde/_5_succinaldehyde.jpeg"
             ],
             "concepts": [
-                "Succinaldehyde",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "aldehyde",
-                "teaching",
-                "carbonyl",
-                "carbonyls",
-                "ketone"
+                "dialdehyde",
+                "crosslinking agent",
+                "reactive intermediate",
+                "tropinone precursor",
+                "unstable"
             ],
             "category": "pack_07_carbonyls",
             "url": "https://makerworld.com/en/models/1981456-succinaldehyde"
@@ -2116,22 +1612,16 @@
             "name": "acetic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Acetic Acid",
+            "smiles": "C(C)(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/acetic_acid/_5_acetic_acid.jpeg"
             ],
             "concepts": [
-                "Acetic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "carboxylic acid",
+                "vinegar",
+                "preservative",
+                "industrial solvent",
+                "weak acid"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/1986378-acetic-acid"
@@ -2140,22 +1630,16 @@
             "name": "adipic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Adipic Acid",
+            "smiles": "C(CCCCC(=O)O)(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/adipic_acid/_5_adipic_acid.jpeg"
             ],
             "concepts": [
-                "Adipic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "dicarboxylic acid",
+                "nylon precursor",
+                "food additive",
+                "industrial chemical",
+                "polymer production"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/1990173-adipic-acid"
@@ -2164,23 +1648,17 @@
             "name": "benzoic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Benzoic Acid",
+            "smiles": "C(C1=CC=CC=C1)(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/benzoic_acid/_5_benzoic_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/benzoic_acid/_6_benzoic_acid.jpeg"
             ],
             "concepts": [
-                "Benzoic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "aromatic acid",
+                "food preservative",
+                "antifungal",
+                "precursor",
+                "weak acid"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/1993237-benzoic-acid"
@@ -2189,23 +1667,17 @@
             "name": "butyric_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Butyric Acid",
+            "smiles": "C(CCC)(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/butyric_acid/_4_butyric_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/butyric_acid/_5_butyric_acid.jpeg"
             ],
             "concepts": [
-                "Butyric Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "carboxylic acid",
+                "rancid butter smell",
+                "fermentation product",
+                "ester precursor",
+                "short-chain fatty acid"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/1997232-butyric-acid"
@@ -2214,22 +1686,16 @@
             "name": "caproic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Caproic Acid",
+            "smiles": "C(CCCCC)(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/caproic_acid/_5_caproic_acid.jpeg"
             ],
             "concepts": [
-                "Caproic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "carboxylic acid",
+                "fatty acid",
+                "goat smell",
+                "flavoring agent",
+                "lipid component"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/2005242-caproic-acid"
@@ -2238,23 +1704,17 @@
             "name": "formic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Formic Acid",
+            "smiles": "C(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/formic_acid/_4_formic_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/formic_acid/_5_formic_acid.jpeg"
             ],
             "concepts": [
-                "Formic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "carboxylic acid",
+                "ant venom",
+                "preservative",
+                "antibacterial",
+                "simplest acid"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/2005296-formic-acid"
@@ -2263,23 +1723,17 @@
             "name": "lactic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Lactic Acid",
+            "smiles": "OC(C(=O)O)C",
             "images": [
                 "assets/pack_08_carboxylic_acids/lactic_acid/_4_lactic_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/lactic_acid/_5_lactic_acid.jpeg"
             ],
             "concepts": [
-                "Lactic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "alpha-hydroxy acid",
+                "fermentation product",
+                "muscle metabolism",
+                "food preservative",
+                "chiral"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/2010409-lactic-acid"
@@ -2288,23 +1742,17 @@
             "name": "oxalic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Oxalic Acid",
+            "smiles": "C(C(=O)O)(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/oxalic_acid/_4_oxalic_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/oxalic_acid/_5_oxalic_acid.jpeg"
             ],
             "concepts": [
-                "Oxalic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "dicarboxylic acid",
+                "cleaning agent",
+                "rust remover",
+                "kidney stones",
+                "plant toxin"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/2012582-oxalic-acid"
@@ -2313,23 +1761,17 @@
             "name": "propionic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Propionic Acid",
+            "smiles": "C(CC)(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/propionic_acid/_4_propionic_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/propionic_acid/_5_propionic_acid.jpeg"
             ],
             "concepts": [
-                "Propionic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "carboxylic acid",
+                "preservative",
+                "antifungal",
+                "body odor",
+                "intermediate"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/2016571-propionic-acid"
@@ -2338,23 +1780,17 @@
             "name": "salicylic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Salicylic Acid",
+            "smiles": "OC1=C(C(=O)O)C=CC=C1",
             "images": [
                 "assets/pack_08_carboxylic_acids/salicylic_acid/_5_salicylic_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/salicylic_acid/_6_salicylic_acid.jpeg"
             ],
             "concepts": [
-                "Salicylic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "aromatic acid",
+                "plant hormone",
+                "acne treatment",
+                "aspirin precursor",
+                "phenolic acid"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/2019374-salicylic-acid"
@@ -2363,23 +1799,17 @@
             "name": "terephthalic_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Terephthalic Acid",
+            "smiles": "C1(=CC=C(C=C1)C(=O)O)C(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/terephthalic_acid/_5_terephthalic_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/terephthalic_acid/_6_terephthalic_acid.jpeg"
             ],
             "concepts": [
-                "Terephthalic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "aromatic acid",
+                "dicarboxylic acid",
+                "PET plastic precursor",
+                "polyester production",
+                "industrial chemical"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/2024271-terephthalic-acid"
@@ -2388,23 +1818,17 @@
             "name": "valeric_acid",
             "pack": "pack_08_carboxylic_acids",
             "displayed_name": "Valeric Acid",
+            "smiles": "C(CCCC)(=O)O",
             "images": [
                 "assets/pack_08_carboxylic_acids/valeric_acid/_4_valeric_acid.jpeg",
                 "assets/pack_08_carboxylic_acids/valeric_acid/_5_valeric_acid.jpeg"
             ],
             "concepts": [
-                "Valeric Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "carboxylic",
-                "teaching",
-                "acid",
-                "acids",
-                "carboxyl"
+                "carboxylic acid",
+                "valerian root",
+                "unpleasant odor",
+                "ester precursor",
+                "sedative history"
             ],
             "category": "pack_08_carboxylic_acids",
             "url": "https://makerworld.com/en/models/2028901-valeric-acid"
@@ -2413,23 +1837,17 @@
             "name": "acetamide",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Acetamide",
+            "smiles": "C(C)(=O)N",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/acetamide/_4_acetamide.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/acetamide/_5_acetamide.jpeg"
             ],
             "concepts": [
-                "Acetamide",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "primary amide",
+                "solvent",
+                "plasticizer",
+                "hygroscopic",
+                "industrial chemical"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2041188-acetamide"
@@ -2438,23 +1856,17 @@
             "name": "acetic_anhydride",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Acetic Anhydride",
+            "smiles": "C(C)(=O)OC(C)=O",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/acetic_anhydride/_5_acetic_anhydride.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/acetic_anhydride/_6_acetic_anhydride.jpeg"
             ],
             "concepts": [
-                "Acetic Anhydride",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "acid anhydride",
+                "acetylation agent",
+                "synthesis reagent",
+                "heroin precursor",
+                "aspirin production"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2041197-acetic-anhydride"
@@ -2463,23 +1875,17 @@
             "name": "acetyl_chloride",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Acetyl Chloride",
+            "smiles": "C(C)(=O)Cl",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/acetyl_chloride/_5_acetyl_chloride.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/acetyl_chloride/_6_acetyl_chloride.jpeg"
             ],
             "concepts": [
-                "Acetyl Chloride",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "acyl chloride",
+                "acetylation agent",
+                "organic synthesis",
+                "corrosive",
+                "reactive"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2045801-acetyl-chloride"
@@ -2488,23 +1894,17 @@
             "name": "benzoyl_chloride",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Benzoyl Chloride",
+            "smiles": "C(C1=CC=CC=C1)(=O)Cl",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/benzoyl_chloride/_5_benzoyl_chloride.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/benzoyl_chloride/_6_benzoyl_chloride.jpeg"
             ],
             "concepts": [
-                "Benzoyl Chloride",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "acyl chloride",
+                "benzoylation agent",
+                "organic synthesis",
+                "lachrymator",
+                "reactive"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2049811-benzoyl-chloride"
@@ -2513,23 +1913,17 @@
             "name": "caprolactam",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Caprolactam",
+            "smiles": "N1C(CCCCC1)=O",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/caprolactam/_5_caprolactam.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/caprolactam/_6_caprolactam.jpeg"
             ],
             "concepts": [
-                "Caprolacatam",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "lactam",
+                "cyclic amide",
+                "nylon-6 precursor",
+                "monomer",
+                "industrial chemical"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2053742-caprolactam"
@@ -2538,23 +1932,17 @@
             "name": "dimethylformamide",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Dimethylformamide",
+            "smiles": "CN(C=O)C",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/dimethylformamide/_5_dimethylformamide.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/dimethylformamide/_6_dimethylformamide.jpeg"
             ],
             "concepts": [
-                "Dimethylformamide",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
                 "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "polar aprotic solvent",
+                "DMF",
+                "industrial solvent",
+                "organic synthesis"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2060819-dimethylformamide"
@@ -2563,23 +1951,17 @@
             "name": "dimethyl_carbonate",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Dimethyl Carbonate",
+            "smiles": "C(OC)(OC)=O",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/dimethyl_carbonate/_5_dimethyl_carbonate.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/dimethyl_carbonate/_6_dimethyl_carbonate.jpeg"
             ],
             "concepts": [
-                "Dimethyl Carbonate",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "carbonate ester",
+                "green solvent",
+                "methylating agent",
+                "fuel additive",
+                "electrolyte"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2060790-dimethyl-carbonate"
@@ -2588,22 +1970,16 @@
             "name": "ethyl_acetate",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Ethyl Acetate",
+            "smiles": "C(C)(=O)OCC",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/ethyl_acetate/_6_ethyl_acetate.jpeg"
             ],
             "concepts": [
-                "Ethyl Acetate",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "ester",
+                "solvent",
+                "nail polish remover",
+                "fruit smell",
+                "decaffeination agent"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2066667-ethyl-acetate"
@@ -2612,23 +1988,17 @@
             "name": "ethyl_acetoacetate",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Ethyl Acetoacetate",
+            "smiles": "O=C(CC(=O)OCC)C",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/ethyl_acetoacetate/_5_ethyl_acetoacetate.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/ethyl_acetoacetate/_6_ethyl_acetoacetate.jpeg"
             ],
             "concepts": [
-                "Ethyl Acetoacetate",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "ester",
+                "keto-enol tautomerism",
+                "organic synthesis",
+                "flavoring agent",
+                "intermediate"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2066677-ethyl-acetoacetate"
@@ -2637,23 +2007,17 @@
             "name": "methyl_acetate",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Methyl Acetate",
+            "smiles": "C(C)(=O)OC",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/methyl_acetate/_4_methyl_acetate.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/methyl_acetate/_5_methyl_acetate.jpeg"
             ],
             "concepts": [
-                "Methyl Acetate",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "ester",
+                "solvent",
+                "volatile",
+                "glue smell",
+                "paint remover"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2078392-methyl-acetate"
@@ -2662,22 +2026,16 @@
             "name": "methyl_benzoate",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Methyl Benzoate",
+            "smiles": "C(C1=CC=CC=C1)(=O)OC",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/methyl_benzoate/_5_methyl_benzoate.jpeg"
             ],
             "concepts": [
-                "Methyl Benzoate",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "ester",
+                "aromatic",
+                "perfumery",
+                "solvent",
+                "feijoa smell"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2078397-methyl-benzoate"
@@ -2686,23 +2044,17 @@
             "name": "succinic_anhydride",
             "pack": "pack_09_carboxylic_acid_derivatives",
             "displayed_name": "Succinic Anhydride",
+            "smiles": "C1(CCC(=O)O1)=O",
             "images": [
                 "assets/pack_09_carboxylic_acid_derivatives/succinic_anhydride/_5_succinic_anhydride.jpeg",
                 "assets/pack_09_carboxylic_acid_derivatives/succinic_anhydride/_6_succinic_anhydride.jpeg"
             ],
             "concepts": [
-                "Succinic Anhydride",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amide",
-                "chloride",
-                "carboxylic",
-                "acid",
-                "derivative"
+                "cyclic anhydride",
+                "organic synthesis",
+                "pharmaceutical intermediate",
+                "resin curing",
+                "reactive"
             ],
             "category": "pack_09_carboxylic_acid_derivatives",
             "url": "https://makerworld.com/en/models/2094155-succinic-anhydride"
@@ -2711,23 +2063,17 @@
             "name": "aniline",
             "pack": "pack_10_amines",
             "displayed_name": "Aniline",
+            "smiles": "C1(=CC=CC=C1)N",
             "images": [
                 "assets/pack_10_amines/aniline/_5_aniline.jpeg",
                 "assets/pack_10_amines/aniline/_6_aniline.jpeg"
             ],
             "concepts": [
-                "Aniline",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "basic"
+                "primary amine",
+                "aromatic amine",
+                "dye precursor",
+                "toxic",
+                "industrial chemical"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2080562-aniline"
@@ -2736,23 +2082,17 @@
             "name": "benzylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Benzylamine",
+            "smiles": "C1=CC=C(C=C1)CN",
             "images": [
                 "assets/pack_10_amines/benzylamine/_5_benzylamine.jpeg",
                 "assets/pack_10_amines/benzylamine/_6_benzylamine.jpeg"
             ],
             "concepts": [
-                "Benzylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
+                "primary amine",
+                "organic synthesis",
                 "base",
-                "basic"
+                "intermediate",
+                "corrosive"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2094613-benzylamine"
@@ -2761,23 +2101,17 @@
             "name": "diethylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Diethylamine",
+            "smiles": "CCNCC",
             "images": [
                 "assets/pack_10_amines/diethylamine/_5_diethylamine.jpeg",
                 "assets/pack_10_amines/diethylamine/_6_diethylamine.jpeg"
             ],
             "concepts": [
-                "Diethylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "basic"
+                "secondary amine",
+                "corrosive",
+                "organic synthesis",
+                "surfactant precursor",
+                "base"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2094619-diethylamine"
@@ -2786,23 +2120,17 @@
             "name": "dimethylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Dimethylamine",
+            "smiles": "CNC",
             "images": [
                 "assets/pack_10_amines/dimethylamine/_5_dimethylamine.jpeg",
                 "assets/pack_10_amines/dimethylamine/_6_dimethylamine.jpeg"
             ],
             "concepts": [
-                "Dimethylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "basic"
+                "secondary amine",
+                "fishy odor",
+                "industrial intermediate",
+                "solvent precursor",
+                "gas"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2094624-dimethylamine"
@@ -2811,23 +2139,17 @@
             "name": "ethylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Ethylamine",
+            "smiles": "C(C)N",
             "images": [
                 "assets/pack_10_amines/ethylamine/_4_ethylamine.jpeg",
                 "assets/pack_10_amines/ethylamine/_5_ethylamine.jpeg"
             ],
             "concepts": [
-                "Ethylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "basic"
+                "primary amine",
+                "organic synthesis",
+                "herbicide precursor",
+                "gas",
+                "base"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2102200-ethylamine"
@@ -2836,23 +2158,17 @@
             "name": "hexamethylenediamine",
             "pack": "pack_10_amines",
             "displayed_name": "Hexamethylenediamine",
+            "smiles": "C(CCCCCN)N",
             "images": [
                 "assets/pack_10_amines/hexamethylenediamine/_5_hexamethylenediamine.jpeg",
                 "assets/pack_10_amines/hexamethylenediamine/_6_hexamethylenediamine.jpeg"
             ],
             "concepts": [
-                "Hexamethylenediamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "hmda"
+                "diamine",
+                "nylon-66 precursor",
+                "monomer",
+                "corrosive",
+                "industrial chemical"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2102208-hexamethylenediamine"
@@ -2861,23 +2177,17 @@
             "name": "isopropylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Isopropylamine",
+            "smiles": "CC(C)N",
             "images": [
                 "assets/pack_10_amines/isopropylamine/_4_isopropylamine.jpeg",
                 "assets/pack_10_amines/isopropylamine/_5_isopropylamine.jpeg"
             ],
             "concepts": [
-                "Isopropylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
+                "primary amine",
+                "herbicide precursor",
+                "chemical intermediate",
                 "base",
-                "basic"
+                "volatile"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2102217-isopropylamine"
@@ -2886,23 +2196,17 @@
             "name": "methylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Methylamine",
+            "smiles": "CN",
             "images": [
                 "assets/pack_10_amines/methylamine/_5_methylamine.jpeg",
                 "assets/pack_10_amines/methylamine/_6_methylamine.jpeg"
             ],
             "concepts": [
-                "Methylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "basic"
+                "primary amine",
+                "simplest amine",
+                "fishy odor",
+                "drug precursor",
+                "gas"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2102356-methylamine"
@@ -2911,23 +2215,17 @@
             "name": "n_n-diisopropylethylamine",
             "pack": "pack_10_amines",
             "displayed_name": "N,N-Diisopropylethylamine",
+            "smiles": "C(C)(C)N(C(C)C)CC",
             "images": [
                 "assets/pack_10_amines/n_n-diisopropylethylamine/_4_n_n-diisopropylethylamine.jpeg",
                 "assets/pack_10_amines/n_n-diisopropylethylamine/_6_n_n-diisopropylethylamine.jpeg"
             ],
             "concepts": [
-                "N,N-Diisopropylethylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "dipea"
+                "tertiary amine",
+                "Hunig's base",
+                "organic synthesis",
+                "non-nucleophilic base",
+                "reagent"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2104453-n-n-diisopropylethylamine"
@@ -2936,23 +2234,17 @@
             "name": "propylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Propylamine",
+            "smiles": "C(CC)N",
             "images": [
                 "assets/pack_10_amines/propylamine/_5_propylamine.jpeg",
                 "assets/pack_10_amines/propylamine/_6_propylamine.jpeg"
             ],
             "concepts": [
-                "Propylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "basic"
+                "primary amine",
+                "corrosive",
+                "organic synthesis",
+                "solvent",
+                "base"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2104466-propylamine"
@@ -2961,23 +2253,17 @@
             "name": "triethylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Triethylamine",
+            "smiles": "C(C)N(CC)CC",
             "images": [
                 "assets/pack_10_amines/triethylamine/_4_triethylamine.jpeg",
                 "assets/pack_10_amines/triethylamine/_6_triethylamine.jpeg"
             ],
             "concepts": [
-                "Triethylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
+                "tertiary amine",
                 "base",
-                "basic"
+                "organic synthesis",
+                "fishy odor",
+                "catalyst"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2113380-triethylamine"
@@ -2986,23 +2272,17 @@
             "name": "trimethylamine",
             "pack": "pack_10_amines",
             "displayed_name": "Trimethylamine",
+            "smiles": "CN(C)C",
             "images": [
                 "assets/pack_10_amines/trimethylamine/_5_trimethylamine.jpeg",
                 "assets/pack_10_amines/trimethylamine/_6_trimethylamine.jpeg"
             ],
             "concepts": [
-                "Trimethylamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amine",
-                "amines",
-                "nitrogen",
-                "base",
-                "basic"
+                "tertiary amine",
+                "fishy odor",
+                "rotting smell",
+                "metabolic product",
+                "gas"
             ],
             "category": "pack_10_amines",
             "url": "https://makerworld.com/en/models/2113399-trimethylamine"
@@ -3011,23 +2291,17 @@
             "name": "glycine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "Glycine",
+            "smiles": "NCC(=O)O",
             "images": [
                 "assets/pack_11_aminoacids/glycine/_4_glycine.jpeg",
                 "assets/pack_11_aminoacids/glycine/_5_glycine.jpeg"
             ],
             "concepts": [
-                "Glycine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "non-polar",
+                "achiral",
+                "neurotransmitter",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2113520-glycine"
@@ -3036,23 +2310,17 @@
             "name": "l-alanine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Alanine",
+            "smiles": "NC(C(=O)O)C",
             "images": [
                 "assets/pack_11_aminoacids/l-alanine/_4_l-alanine.jpeg",
                 "assets/pack_11_aminoacids/l-alanine/_5_l-alanine.jpeg"
             ],
             "concepts": [
-                "L-Alanine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "non-polar",
+                "aliphatic",
+                "protein building block",
+                "metabolism"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2113529-l-alanine"
@@ -3061,23 +2329,17 @@
             "name": "l-arginine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Arginine",
+            "smiles": "C(C[C@@H](C(=O)O)N)CN=C(N)N",
             "images": [
                 "assets/pack_11_aminoacids/l-arginine/_4_l-arginine.jpeg",
                 "assets/pack_11_aminoacids/l-arginine/_5_l-arginine.jpeg"
             ],
             "concepts": [
-                "L-Arginine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "basic",
+                "positively charged",
+                "nitrogen metabolism",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2115848-l-arginine"
@@ -3086,23 +2348,17 @@
             "name": "l-asparagine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Asparagine",
+            "smiles": "C([C@@H](C(=O)O)N)C(=O)N",
             "images": [
                 "assets/pack_11_aminoacids/l-asparagine/_5_l-asparagine.jpeg",
                 "assets/pack_11_aminoacids/l-asparagine/_6_l-asparagine.jpeg"
             ],
             "concepts": [
-                "L-Asparagine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "polar",
+                "uncharged",
+                "amide side chain",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2115899-l-asparagine"
@@ -3111,23 +2367,17 @@
             "name": "l-aspartic_acid",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Aspartic Acid",
+            "smiles": "NC(C(=O)O)CC(=O)O",
             "images": [
                 "assets/pack_11_aminoacids/l-aspartic_acid/_4_l-aspartic_acid.jpeg",
                 "assets/pack_11_aminoacids/l-aspartic_acid/_5_l-aspartic_acid.jpeg"
             ],
             "concepts": [
-                "L-Aspartic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "acidic",
+                "negatively charged",
+                "neurotransmitter",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2120059-l-aspartic-acid"
@@ -3136,23 +2386,17 @@
             "name": "l-glutamic_acid",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Glutamic Acid",
+            "smiles": "NC(C(=O)O)CCC(=O)O",
             "images": [
                 "assets/pack_11_aminoacids/l-glutamic_acid/_4_l-glutamic_acid.jpeg",
                 "assets/pack_11_aminoacids/l-glutamic_acid/_5_l-glutamic_acid.jpeg"
             ],
             "concepts": [
-                "L-Glutamic Acid",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "acidic",
+                "neurotransmitter",
+                "umami flavor",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2120099-l-glutamic-acid"
@@ -3161,23 +2405,17 @@
             "name": "l-glutamine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Glutamine",
+            "smiles": "C(CC(=O)N)[C@@H](C(=O)O)N",
             "images": [
                 "assets/pack_11_aminoacids/l-glutamine/_4_l-glutamine.jpeg",
                 "assets/pack_11_aminoacids/l-glutamine/_5_l-glutamine.jpeg"
             ],
             "concepts": [
-                "L-Glutamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "polar",
+                "uncharged",
+                "amide side chain",
+                "metabolic fuel"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2127640-l-glutamine"
@@ -3186,23 +2424,17 @@
             "name": "l-histidine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Histidine",
+            "smiles": "C1=C(NC=N1)C[C@@H](C(=O)O)N",
             "images": [
                 "assets/pack_11_aminoacids/l-histidine/_5_l-histidine.jpeg",
                 "assets/pack_11_aminoacids/l-histidine/_6_l-histidine.jpeg"
             ],
             "concepts": [
-                "L-Histidine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "basic",
+                "aromatic",
+                "histamine precursor",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2127656-l-histidine"
@@ -3211,23 +2443,17 @@
             "name": "l-isoleucine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Isoleucine",
+            "smiles": "NC(C(=O)O)C(CC)C",
             "images": [
                 "assets/pack_11_aminoacids/l-isoleucine/_5_l-isoleucine.jpeg",
                 "assets/pack_11_aminoacids/l-isoleucine/_6_l-isoleucine.jpeg"
             ],
             "concepts": [
-                "L-Isoleucine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "non-polar",
+                "branched-chain",
+                "essential amino acid",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2127674-l-isoleucine"
@@ -3236,24 +2462,18 @@
             "name": "l-leucine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Leucine",
+            "smiles": "NC(C(=O)O)CC(C)C",
             "images": [
                 "assets/pack_11_aminoacids/l-leucine/_4_l-leucine.jpeg",
                 "assets/pack_11_aminoacids/l-leucine/_5_l-leucine.jpeg",
                 "assets/pack_11_aminoacids/l-leucine/_6_l-leucine.jpeg"
             ],
             "concepts": [
-                "L-Leucine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "non-polar",
+                "branched-chain",
+                "essential amino acid",
+                "muscle growth"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2127688-l-leucine"
@@ -3262,23 +2482,17 @@
             "name": "l-lysine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Lysine",
+            "smiles": "NC(C(=O)O)CCCCN",
             "images": [
                 "assets/pack_11_aminoacids/l-lysine/_4_l-lysine.jpeg",
                 "assets/pack_11_aminoacids/l-lysine/_6_l-lysine.jpeg"
             ],
             "concepts": [
-                "L-Lysine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "basic",
+                "positively charged",
+                "essential amino acid",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2132328-l-lysine"
@@ -3287,23 +2501,17 @@
             "name": "l-phenylalanine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Phenylalanine",
+            "smiles": "NC(C(=O)O)CC1=CC=CC=C1",
             "images": [
                 "assets/pack_11_aminoacids/l-phenylalanine/_4_l-phenylalanine.jpeg",
                 "assets/pack_11_aminoacids/l-phenylalanine/_5_l-phenylalanine.jpeg"
             ],
             "concepts": [
-                "L-Phenylalanine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "aromatic",
+                "non-polar",
+                "essential amino acid",
+                "neurotransmitter precursor"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2132333-l-phenylalanine"
@@ -3312,23 +2520,17 @@
             "name": "l-proline",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Proline",
+            "smiles": "C1C[C@H](NC1)C(=O)O",
             "images": [
                 "assets/pack_11_aminoacids/l-proline/_4_l-proline.jpeg",
                 "assets/pack_11_aminoacids/l-proline/_5_l-proline.jpeg"
             ],
             "concepts": [
-                "L-Proline",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "cyclic amine",
+                "non-polar",
+                "collagen structure",
+                "protein rigidity"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2138780-l-proline"
@@ -3337,23 +2539,17 @@
             "name": "l-pyrrolysine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Pyrrolysine",
+            "smiles": "C[C@@H]1CC=N[C@H]1C(=O)NCCCC[C@@H](C(=O)O)N",
             "images": [
                 "assets/pack_11_aminoacids/l-pyrrolysine/_5_l-pyrrolysine.jpeg",
                 "assets/pack_11_aminoacids/l-pyrrolysine/_6_l-pyrrolysine.jpeg"
             ],
             "concepts": [
-                "L-Pyrrolysine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "rare amino acid",
+                "methanogenesis",
+                "protein building block",
+                "genetic code expansion"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2135333-l-pyrrolysine"
@@ -3362,23 +2558,17 @@
             "name": "l-serine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Serine",
+            "smiles": "NC(C(=O)O)CO",
             "images": [
                 "assets/pack_11_aminoacids/l-serine/_4_l-serine.jpeg",
                 "assets/pack_11_aminoacids/l-serine/_5_l-serine.jpeg"
             ],
             "concepts": [
-                "L-Serine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "polar",
+                "hydroxyl group",
+                "metabolic intermediate",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2138760-l-serine"
@@ -3387,23 +2577,17 @@
             "name": "l-threonine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Threonine",
+            "smiles": "NC(C(=O)O)C(C)O",
             "images": [
                 "assets/pack_11_aminoacids/l-threonine/_4_l-threonine.jpeg",
                 "assets/pack_11_aminoacids/l-threonine/_5_l-threonine.jpeg"
             ],
             "concepts": [
-                "L-Threonine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "polar",
+                "hydroxyl group",
+                "essential amino acid",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2138774-l-threonine"
@@ -3412,23 +2596,17 @@
             "name": "l-tryptophan",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Tryptophan",
+            "smiles": "C1=CC=C2C(=C1)C(=CN2)C[C@@H](C(=O)O)N",
             "images": [
                 "assets/pack_11_aminoacids/l-tryptophan/_4_l-tryptophan.jpeg",
                 "assets/pack_11_aminoacids/l-tryptophan/_5_l-tryptophan.jpeg"
             ],
             "concepts": [
-                "L-Tryptophan",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "aromatic",
+                "indole ring",
+                "serotonin precursor",
+                "essential amino acid"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2142713-l-tryptophan"
@@ -3437,23 +2615,17 @@
             "name": "l-tyrosine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Tyrosine",
+            "smiles": "C1=CC(=CC=C1C[C@@H](C(=O)O)N)O",
             "images": [
                 "assets/pack_11_aminoacids/l-tyrosine/_4_l-tyrosine.jpeg",
                 "assets/pack_11_aminoacids/l-tyrosine/_5_l-tyrosine.jpeg"
             ],
             "concepts": [
-                "L-Tyrosine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "aromatic",
+                "polar",
+                "dopamine precursor",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2142732-l-tyrosine"
@@ -3462,22 +2634,16 @@
             "name": "l-valine",
             "pack": "pack_11_aminoacids",
             "displayed_name": "L-Valine",
+            "smiles": "NC(C(=O)O)C(C)C",
             "images": [
                 "assets/pack_11_aminoacids/l-valine/_4_l-valine.jpeg"
             ],
             "concepts": [
-                "L-Valine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "amino",
-                "amine",
-                "acid",
-                "acids",
-                "amino acid"
+                "amino acid",
+                "non-polar",
+                "branched-chain",
+                "essential amino acid",
+                "protein building block"
             ],
             "category": "pack_11_aminoacids",
             "url": "https://makerworld.com/en/models/2147552-l-valine"
@@ -3486,23 +2652,17 @@
             "name": "dichloromethane",
             "pack": "pack_12_alkyl_halides",
             "displayed_name": "Dichloromethane",
+            "smiles": "C(Cl)Cl",
             "images": [
                 "assets/pack_12_alkyl_halides/dichloromethane/_5_dichloromethane.jpeg",
                 "assets/pack_12_alkyl_halides/dichloromethane/_6_dichloromethane.jpeg"
             ],
             "concepts": [
-                "dichloromethane",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "halide",
-                "alkyl ",
                 "alkyl halide",
-                "chloride",
-                "dcm"
+                "solvent",
+                "DCM",
+                "paint stripper",
+                "volatile"
             ],
             "category": "pack_12_alkyl_halides",
             "url": "https://makerworld.com/en/models/2147575-dichloromethane"
@@ -3511,23 +2671,17 @@
             "name": "freon_134a",
             "pack": "pack_12_alkyl_halides",
             "displayed_name": "Freon 134a",
+            "smiles": "C(C(F)(F)F)F",
             "images": [
                 "assets/pack_12_alkyl_halides/freon_134a/_4_freon_134a.jpeg",
                 "assets/pack_12_alkyl_halides/freon_134a/_5_freon_134a.jpeg"
             ],
             "concepts": [
-                "Freon 134a",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "halide",
-                "alkyl ",
                 "alkyl halide",
-                "chloride",
-                "bromide"
+                "refrigerant",
+                "HFC",
+                "greenhouse gas",
+                "aerosol propellant"
             ],
             "category": "pack_12_alkyl_halides",
             "url": "https://makerworld.com/en/models/2152203-freon-134a"
@@ -3536,23 +2690,17 @@
             "name": "vinyl_chloride",
             "pack": "pack_12_alkyl_halides",
             "displayed_name": "Vinyl Chloride",
+            "smiles": "ClC=C",
             "images": [
                 "assets/pack_12_alkyl_halides/vinyl_chloride/_4_vinyl_chloride.jpeg",
                 "assets/pack_12_alkyl_halides/vinyl_chloride/_5_vinyl_chloride.jpeg"
             ],
             "concepts": [
-                "Vinyl Chloride",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "halide",
-                "alkyl ",
-                "alkyl halide",
-                "chloride",
-                "bromide"
+                "organochloride",
+                "monomer",
+                "PVC precursor",
+                "carcinogen",
+                "gas"
             ],
             "category": "pack_12_alkyl_halides",
             "url": "https://makerworld.com/en/models/2152251-vinyl-chloride"
@@ -3561,23 +2709,17 @@
             "name": "1_2_4-triazole",
             "pack": "pack_13_heterocycles",
             "displayed_name": "1,2,4-Triazole",
+            "smiles": "C1=NC=NN1",
             "images": [
                 "assets/pack_13_heterocycles/1_2_4-triazole/_5_1_2_4-triazole.jpeg",
                 "assets/pack_13_heterocycles/1_2_4-triazole/_6_1_2_4-triazole.jpeg"
             ],
             "concepts": [
-                "1,2,4-Triazole",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "azole",
+                "antifungal pharmacophore",
+                "aromatic",
+                "nitrogen ring"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2157232-1-2-4-triazole"
@@ -3586,23 +2728,17 @@
             "name": "furan",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Furan",
+            "smiles": "C1=COC=C1",
             "images": [
                 "assets/pack_13_heterocycles/furan/_4_furan.jpeg",
                 "assets/pack_13_heterocycles/furan/_5_furan.jpeg"
             ],
             "concepts": [
-                "Furan",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "oxygen ring",
+                "volatile",
+                "intermediate"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2157244-furan"
@@ -3611,23 +2747,17 @@
             "name": "imidazole",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Imidazole",
+            "smiles": "C1=CN=CN1",
             "images": [
                 "assets/pack_13_heterocycles/imidazole/_4_imidazole.jpeg",
                 "assets/pack_13_heterocycles/imidazole/_5_imidazole.jpeg"
             ],
             "concepts": [
-                "Imidazole",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "nitrogen ring",
+                "biological buffer",
+                "histidine component"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2157380-imidazole"
@@ -3636,23 +2766,17 @@
             "name": "isoxazole",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Isoxazole",
+            "smiles": "C1=CON=C1",
             "images": [
                 "assets/pack_13_heterocycles/isoxazole/_4_isoxazole.jpeg",
                 "assets/pack_13_heterocycles/isoxazole/_5_isoxazole.jpeg"
             ],
             "concepts": [
-                "Isoxazole",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "nitrogen-oxygen ring",
+                "pharmacophore",
+                "organic synthesis"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2157378-isoxazole"
@@ -3661,23 +2785,17 @@
             "name": "oxazole",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Oxazole",
+            "smiles": "C1=COC=N1",
             "images": [
                 "assets/pack_13_heterocycles/oxazole/_4_oxazole.jpeg",
                 "assets/pack_13_heterocycles/oxazole/_5_oxazole.jpeg"
             ],
             "concepts": [
-                "Oxazole",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "nitrogen-oxygen ring",
+                "biochemical",
+                "organic synthesis"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2160664-oxazole"
@@ -3686,23 +2804,17 @@
             "name": "pyrazine",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Pyrazine",
+            "smiles": "C1=CN=CC=N1",
             "images": [
                 "assets/pack_13_heterocycles/pyrazine/_4_pyrazine.jpeg",
                 "assets/pack_13_heterocycles/pyrazine/_6_pyrazine.jpeg"
             ],
             "concepts": [
-                "Pyrazine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "diazine",
+                "flavor component",
+                "nitrogen ring"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2160671-pyrazine"
@@ -3711,23 +2823,17 @@
             "name": "pyridine",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Pyridine",
+            "smiles": "N1=CC=CC=C1",
             "images": [
                 "assets/pack_13_heterocycles/pyridine/_4_pyridine.jpeg",
                 "assets/pack_13_heterocycles/pyridine/_5_pyridine.jpeg"
             ],
             "concepts": [
-                "Pyridine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "base",
+                "solvent",
+                "unpleasant odor"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2173892-pyridine"
@@ -3736,23 +2842,17 @@
             "name": "pyrimidine",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Pyrimidine",
+            "smiles": "C1=CN=CN=C1",
             "images": [
                 "assets/pack_13_heterocycles/pyrimidine/_4_pyrimidine.jpeg",
                 "assets/pack_13_heterocycles/pyrimidine/_5_pyrimidine.jpeg"
             ],
             "concepts": [
-                "Pyrimidine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "diazine",
+                "DNA base component",
+                "nitrogen ring"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2173899-pyrimidine"
@@ -3761,23 +2861,17 @@
             "name": "pyrrole",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Pyrrole",
+            "smiles": "C1=CNC=C1",
             "images": [
                 "assets/pack_13_heterocycles/pyrrole/_4_pyrrole.jpeg",
                 "assets/pack_13_heterocycles/pyrrole/_5_pyrrole.jpeg"
             ],
             "concepts": [
-                "Pyrrole",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "nitrogen ring",
+                "heme component",
+                "polymer precursor"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2173922-pyrrole"
@@ -3786,23 +2880,17 @@
             "name": "tetrazole",
             "pack": "pack_13_heterocycles",
             "displayed_name": "Tetrazole",
+            "smiles": "C1=NNN=N1",
             "images": [
                 "assets/pack_13_heterocycles/tetrazole/_4_tetrazole.jpeg",
                 "assets/pack_13_heterocycles/tetrazole/_5_tetrazole.jpeg"
             ],
             "concepts": [
-                "Tetrazole",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "hetero",
-                "cycle",
-                "cycles ",
                 "heterocycle",
-                "heterocycles"
+                "aromatic",
+                "high nitrogen content",
+                "explosive",
+                "pharmaceuticals"
             ],
             "category": "pack_13_heterocycles",
             "url": "https://makerworld.com/en/models/2178616-tetrazole"
@@ -3811,23 +2899,17 @@
             "name": "acetylcholine",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "Acetylcholine",
+            "smiles": "C(C)(=O)OCC[N+](C)(C)C",
             "images": [
                 "assets/pack_14_neurotransmitters/acetylcholine/_5_acetylcholine.jpeg",
                 "assets/pack_14_neurotransmitters/acetylcholine/_6_acetylcholine.jpeg"
             ],
             "concepts": [
-                "Acetylcholine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "neurotransmitter",
+                "cholinergic system",
+                "muscle contraction",
+                "memory",
+                "ester"
             ],
             "category": "pack_14_neurotransmitters",
             "url": "https://makerworld.com/en/models/2178571-acetylcholine"
@@ -3836,23 +2918,17 @@
             "name": "adrenaline",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "Adrenaline",
+            "smiles": "CNC[C@@H](C1=CC(=C(C=C1)O)O)O",
             "images": [
                 "assets/pack_14_neurotransmitters/adrenaline/_4_adrenaline.jpeg",
                 "assets/pack_14_neurotransmitters/adrenaline/_5_adrenaline.jpeg"
             ],
             "concepts": [
-                "Adrenaline",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "hormone",
+                "neurotransmitter",
+                "fight or flight",
+                "catecholamine",
+                "epinephrine"
             ],
             "category": "pack_14_neurotransmitters",
             "url": "https://makerworld.com/en/models/2181716-adrenaline"
@@ -3861,23 +2937,17 @@
             "name": "anandamide",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "Anandamide",
+            "smiles": "CCCCC\\C=C/C\\C=C/C\\C=C/C\\C=C/CCCC(=O)NCCO",
             "images": [
                 "assets/pack_14_neurotransmitters/anandamide/_5_anandamide.jpeg",
                 "assets/pack_14_neurotransmitters/anandamide/_6_anandamide.jpeg"
             ],
             "concepts": [
-                "Anandamide",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "neurotransmitter",
+                "endocannabinoid",
+                "fatty acid amide",
+                "bliss molecule",
+                "lipid signaling"
             ],
             "category": "pack_14_neurotransmitters",
             "url": "https://makerworld.com/en/models/2181747-anandamide"
@@ -3886,23 +2956,17 @@
             "name": "beta-alanine",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "beta-Alanine",
+            "smiles": "NCCC(O)=O",
             "images": [
                 "assets/pack_14_neurotransmitters/beta-alanine/_4_beta-alanine.jpeg",
                 "assets/pack_14_neurotransmitters/beta-alanine/_5_beta-alanine.jpeg"
             ],
             "concepts": [
-                "beta-Alanine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "amino acid",
+                "neurotransmitter",
+                "carnosine precursor",
+                "muscle endurance",
+                "supplement"
             ],
             "category": "pack_14_neurotransmitters",
             "url": "https://makerworld.com/en/models/2189693-beta-alanine"
@@ -3911,47 +2975,36 @@
             "name": "dopamine",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "Dopamine",
+            "smiles": "NCCC1=CC(O)=C(O)C=C1",
             "images": [
                 "assets/pack_14_neurotransmitters/dopamine/_5_dopamine.jpeg",
                 "assets/pack_14_neurotransmitters/dopamine/_6_dopamine.jpeg"
             ],
             "concepts": [
-                "Dopamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "neurotransmitter",
+                "catecholamine",
+                "reward system",
+                "motor control",
+                "pleasure"
             ],
-            "category": "pack_14_neurotransmitters"
+            "category": "pack_14_neurotransmitters",
+            "url": "https://makerworld.com/en/models/1363210-chemically-accurate-dopamine"
         },
         {
             "name": "gamma-aminobutyric_acid",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "gamma-Aminobutyric Acid (GABA)",
+            "smiles": "NCCCC(=O)O",
             "images": [
                 "assets/pack_14_neurotransmitters/gamma-aminobutyric_acid/_4_gamma-aminobutyric_acid.jpeg",
                 "assets/pack_14_neurotransmitters/gamma-aminobutyric_acid/_6_gamma-aminobutyric_acid.jpeg"
             ],
             "concepts": [
-                "gamma-Aminobutyric Acid (GABA)",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "gaba",
-                "hormones"
+                "neurotransmitter",
+                "inhibitory",
+                "amino acid",
+                "nervous system regulation",
+                "calming"
             ],
             "category": "pack_14_neurotransmitters",
             "url": "https://makerworld.com/en/models/2189724-gamma-aminobutyric-acid-gaba"
@@ -3960,23 +3013,17 @@
             "name": "histamine",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "Histamine",
+            "smiles": "NCCC1=CNC=N1",
             "images": [
                 "assets/pack_14_neurotransmitters/histamine/_5_histamine.jpeg",
                 "assets/pack_14_neurotransmitters/histamine/_6_histamine.jpeg"
             ],
             "concepts": [
-                "Histamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "neurotransmitter",
+                "immune response",
+                "allergy mediator",
+                "inflammation",
+                "wakefulness"
             ],
             "category": "pack_14_neurotransmitters",
             "url": "https://makerworld.com/en/models/2194496-histamine"
@@ -3985,23 +3032,17 @@
             "name": "melatonin",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "Melatonin",
+            "smiles": "CC(=O)NCCC1=CNC2=C1C=C(C=C2)OC",
             "images": [
                 "assets/pack_14_neurotransmitters/melatonin/_4_melatonin.jpeg",
                 "assets/pack_14_neurotransmitters/melatonin/_5_melatonin.jpeg"
             ],
             "concepts": [
-                "Melatonin",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "hormone",
+                "sleep regulation",
+                "circadian rhythm",
+                "antioxidant",
+                "pineal gland"
             ],
             "category": "pack_14_neurotransmitters",
             "url": "https://makerworld.com/en/models/2194521-melatonin"
@@ -4010,23 +3051,17 @@
             "name": "noradrenaline",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "Noradrenaline",
+            "smiles": "C1=CC(=C(C=C1[C@H](CN)O)O)O",
             "images": [
                 "assets/pack_14_neurotransmitters/noradrenaline/_4_noradrenaline.jpeg",
                 "assets/pack_14_neurotransmitters/noradrenaline/_5_noradrenaline.jpeg"
             ],
             "concepts": [
-                "Noradrenaline",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "hormone",
+                "neurotransmitter",
+                "norepinephrine",
+                "stress response",
+                "catecholamine"
             ],
             "category": "pack_14_neurotransmitters",
             "url": "https://makerworld.com/en/models/2199816-noradrenaline"
@@ -4035,48 +3070,36 @@
             "name": "serotonin",
             "pack": "pack_14_neurotransmitters",
             "displayed_name": "Serotonin",
+            "smiles": "C1=CC2=C(C=C1O)C(=CN2)CCN",
             "images": [
                 "assets/pack_14_neurotransmitters/serotonin/_4_serotonin.jpeg",
                 "assets/pack_14_neurotransmitters/serotonin/_6_serotonin.jpeg"
             ],
             "concepts": [
-                "Serotonin",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "neuro",
-                "transmitter",
-                "neurotransmitters ",
-                "brain",
-                "hormones"
+                "neurotransmitter",
+                "mood regulation",
+                "happiness",
+                "tryptamine derivative",
+                "digestive function"
             ],
-            "category": "pack_14_neurotransmitters"
+            "category": "pack_14_neurotransmitters",
+            "url": "https://makerworld.com/en/models/735943-chemically-accurate-serotonin"
         },
         {
             "name": "amphetamine",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Amphetamine",
+            "smiles": "CC(CC1=CC=CC=C1)N",
             "images": [
                 "assets/pack_15_psychoactive_molecules/amphetamine/_4_amphetamine.jpeg",
                 "assets/pack_15_psychoactive_molecules/amphetamine/_6_amphetamine.jpeg"
             ],
             "concepts": [
-                "Amphetamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
-                "adderall",
-                "speed",
-                "dextroamphetamine",
-                ""
+                "stimulant",
+                "central nervous system",
+                "phenethylamine",
+                "ADHD medication",
+                "psychoactive"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2199872-amphetamine"
@@ -4085,23 +3108,17 @@
             "name": "caffeine",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Caffeine",
+            "smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
             "images": [
                 "assets/pack_15_psychoactive_molecules/caffeine/_5_caffeine.jpeg",
                 "assets/pack_15_psychoactive_molecules/caffeine/_6_caffeine.jpeg"
             ],
             "concepts": [
-                "Caffeine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
                 "stimulant",
-                "xanthine",
-                "coffee"
+                "xanthine alkaloid",
+                "adenosine antagonist",
+                "coffee",
+                "psychoactive"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2205362-caffeine"
@@ -4110,23 +3127,17 @@
             "name": "cocaine",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Cocaine",
+            "smiles": "CN1[C@H]2CC[C@@H]1[C@H]([C@H](C2)OC(=O)C3=CC=CC=C3)C(=O)OC",
             "images": [
                 "assets/pack_15_psychoactive_molecules/cocaine/_5_cocaine.jpeg",
                 "assets/pack_15_psychoactive_molecules/cocaine/_6_cocaine.jpeg"
             ],
             "concepts": [
-                "Cocaine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
                 "stimulant",
-                "crack",
-                "tropane"
+                "tropane alkaloid",
+                "local anesthetic",
+                "dopamine reuptake inhibitor",
+                "illegal drug"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2205349-cocaine"
@@ -4135,23 +3146,17 @@
             "name": "dmt",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Dimethyl Tryptamine (DMT)",
+            "smiles": "CN(C)CCC1=CNC2=CC=CC=C21",
             "images": [
                 "assets/pack_15_psychoactive_molecules/dmt/_5_dmt.jpeg",
                 "assets/pack_15_psychoactive_molecules/dmt/_6_dmt.jpeg"
             ],
             "concepts": [
-                "Dimethyl Tryptamine (DMT)",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
-                "tryptamine",
                 "psychedelic",
-                "indole"
+                "tryptamine",
+                "hallucinogen",
+                "entheogen",
+                "serotonin receptor agonist"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2227333-dimethyl-tryptamine-dmt"
@@ -4160,23 +3165,17 @@
             "name": "fentanyl",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Fentanyl",
+            "smiles": "CCC(=O)N(C1CCN(CC1)CCC2=CC=CC=C2)C3=CC=CC=C3",
             "images": [
                 "assets/pack_15_psychoactive_molecules/fentanyl/_4_fentanyl.jpeg",
                 "assets/pack_15_psychoactive_molecules/fentanyl/_6_fentanyl.jpeg"
             ],
             "concepts": [
-                "Fentanyl",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
-                "opioid",
+                "synthetic opioid",
                 "analgesic",
-                "duragesic"
+                "pain relief",
+                "potent",
+                "anesthetic"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2227357-fentanyl"
@@ -4185,23 +3184,17 @@
             "name": "ghb",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "gamma-Hydroxybutyrate (GHB)",
+            "smiles": "C(CC(=O)O)CO",
             "images": [
                 "assets/pack_15_psychoactive_molecules/ghb/_4_ghb.jpeg",
                 "assets/pack_15_psychoactive_molecules/ghb/_6_ghb.jpeg"
             ],
             "concepts": [
-                "gamma-Hydroxybutyrate (GHB)",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
+                "depressant",
+                "neurotransmitter",
+                "anesthetic",
                 "psychoactive",
-                "hydroxybutyrate",
-                "ghb",
-                "xyrem"
+                "sleep aid"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2227390-gamma-hydroxybutyrate-ghb"
@@ -4210,23 +3203,17 @@
             "name": "heroin",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Heroin",
+            "smiles": "CC(=O)O[C@H]1C=C[C@H]2[C@H]3CC4=C5[C@]2([C@H]1OC5=C(C=C4)OC(=O)C)CCN3C",
             "images": [
                 "assets/pack_15_psychoactive_molecules/heroin/_4_heroin.jpeg",
                 "assets/pack_15_psychoactive_molecules/heroin/_5_heroin.jpeg"
             ],
             "concepts": [
-                "Heroin",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
-                "diacetylmorphine",
                 "opioid",
-                "semisynthetic"
+                "morphine derivative",
+                "euphoriant",
+                "illegal drug",
+                "painkiller"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2241531-heroin"
@@ -4235,47 +3222,36 @@
             "name": "lsd",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Lysergic Acid Diethylamide (LSD)",
+            "smiles": "CCN(CC)C(=O)[C@H]1CN([C@@H]2CC3=CNC4=CC=CC(=C34)C2=C1)C",
             "images": [
                 "assets/pack_15_psychoactive_molecules/lsd/_4_lsd.jpeg",
                 "assets/pack_15_psychoactive_molecules/lsd/_5_lsd.jpeg"
             ],
             "concepts": [
-                "Lysergic Acid Diethylamide (LSD)",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
                 "psychedelic",
-                "ergoline",
-                "lsd"
+                "hallucinogen",
+                "ergoline derivative",
+                "serotonin receptor agonist",
+                "acid"
             ],
-            "category": "pack_15_psychoactive_molecules"
+            "category": "pack_15_psychoactive_molecules",
+            "url": "https://makerworld.com/en/models/2241541-lysergic-acid-diethylamide-lsd"
         },
         {
             "name": "mdma",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "3,4-Methylenedioxymethamphetamine (MDMA)",
+            "smiles": "C[C@H](CC1=CC2=C(C=C1)OCO2)NC",
             "images": [
                 "assets/pack_15_psychoactive_molecules/mdma/_5_mdma.jpeg",
                 "assets/pack_15_psychoactive_molecules/mdma/_6_mdma.jpeg"
             ],
             "concepts": [
-                "3,4-Methylenedioxymethamphetamine (MDMA)",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
-                "entactogen",
-                "ecstasy",
-                "molly"
+                "empathogen",
+                "stimulant",
+                "psychedelic",
+                "amphetamine derivative",
+                "serotonin release"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2241554-3-4-methylenedioxymethamphetamine-mdma"
@@ -4284,23 +3260,17 @@
             "name": "mescaline",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Mescaline",
+            "smiles": "COC1=CC(=CC(=C1OC)OC)CCN",
             "images": [
                 "assets/pack_15_psychoactive_molecules/mescaline/_4_mescaline.jpeg",
                 "assets/pack_15_psychoactive_molecules/mescaline/_6_mescaline.jpeg"
             ],
             "concepts": [
-                "Mescaline",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
+                "psychedelic",
                 "phenethylamine",
-                "peyote",
-                "psychedelic"
+                "hallucinogen",
+                "cactus alkaloid",
+                "serotonin receptor agonist"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2250012-mescaline"
@@ -4309,23 +3279,17 @@
             "name": "methamphetamine",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Methamphetamine",
+            "smiles": "C[C@@H](CC1=CC=CC=C1)NC",
             "images": [
                 "assets/pack_15_psychoactive_molecules/methamphetamine/_4_methamphetamine.jpeg",
                 "assets/pack_15_psychoactive_molecules/methamphetamine/_6_methamphetamine.jpeg"
             ],
             "concepts": [
-                "Methamphetamine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
-                "meth",
                 "stimulant",
-                "amphetamine"
+                "neurotoxic",
+                "addictive",
+                "amphetamine derivative",
+                "illegal drug"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2250065-methamphetamine"
@@ -4334,23 +3298,17 @@
             "name": "nicotine",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Nicotine",
+            "smiles": "CN1CCC[C@H]1C2=CN=CC=C2",
             "images": [
                 "assets/pack_15_psychoactive_molecules/nicotine/_5_nicotine.jpeg",
                 "assets/pack_15_psychoactive_molecules/nicotine/_6_nicotine.jpeg"
             ],
             "concepts": [
-                "Nicotine",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
                 "stimulant",
-                "tobacco",
-                "alkaloid"
+                "alkaloid",
+                "acetylcholine agonist",
+                "addictive",
+                "insecticide"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2255209-nicotine"
@@ -4359,22 +3317,16 @@
             "name": "oxycodone",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Oxycodone",
+            "smiles": "CN1CC[C@]23[C@@H]4C(=O)CC[C@]2([C@H]1CC5=C3C(=C(C=C5)OC)O4)O",
             "images": [
                 "assets/pack_15_psychoactive_molecules/oxycodone/_5_oxycodone.jpeg"
             ],
             "concepts": [
-                "Oxycodone",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
-                "oxy",
-                "oxycontin",
-                "opioid"
+                "opioid",
+                "analgesic",
+                "pain relief",
+                "semi-synthetic",
+                "addictive"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2255218-oxycodone"
@@ -4383,23 +3335,17 @@
             "name": "pcp",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "Phencyclidine (PCP)",
+            "smiles": "C1CCC(CC1)(C2=CC=CC=C2)N3CCCCC3",
             "images": [
                 "assets/pack_15_psychoactive_molecules/pcp/_5_pcp.jpeg",
                 "assets/pack_15_psychoactive_molecules/pcp/_6_pcp.jpeg"
             ],
             "concepts": [
-                "Phencyclidine (PCP)",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
-                "dissociative",
-                "arylcyclohexylamine",
-                "angel dust"
+                "dissociative anesthetic",
+                "hallucinogen",
+                "NMDA antagonist",
+                "illegal drug",
+                "psychoactive"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2266351-phencyclidine-pcp"
@@ -4408,23 +3354,17 @@
             "name": "thc",
             "pack": "pack_15_psychoactive_molecules",
             "displayed_name": "delta-9-Tetrahydrocannabinol (THC)",
+            "smiles": "CCCCCC1=CC(=C2[C@@H]3C=C(CC[C@H]3C(OC2=C1)(C)C)C)O",
             "images": [
                 "assets/pack_15_psychoactive_molecules/thc/_4_thc.jpeg",
                 "assets/pack_15_psychoactive_molecules/thc/_5_thc.jpeg"
             ],
             "concepts": [
-                "delta-9-Tetrahydrocannabinol (THC)",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "psychoactive",
                 "cannabinoid",
-                "cannabis",
-                "weed"
+                "psychoactive",
+                "analgesic",
+                "antiemetic",
+                "lipid"
             ],
             "category": "pack_15_psychoactive_molecules",
             "url": "https://makerworld.com/en/models/2266359-delta-9-tetrahydrocannabinol-thc"
@@ -4433,23 +3373,17 @@
             "name": "aspirin",
             "pack": "pack_16_prescription_drugs",
             "displayed_name": "Aspirin",
+            "smiles": "CC(=O)OC1=CC=CC=C1C(=O)O",
             "images": [
                 "assets/pack_16_prescription_drugs/aspirin/_4_aspirin.jpeg",
                 "assets/pack_16_prescription_drugs/aspirin/_6_aspirin.jpeg"
             ],
             "concepts": [
-                "Aspirin",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "prescription",
-                "acetylsalicylic acid",
+                "NSAID",
                 "analgesic",
-                "medicine"
+                "antipyretic",
+                "blood thinner",
+                "anti-inflammatory"
             ],
             "category": "pack_16_prescription_drugs",
             "url": "https://makerworld.com/en/models/2284547-aspirin"
@@ -4458,23 +3392,17 @@
             "name": "ibuprofen",
             "pack": "pack_16_prescription_drugs",
             "displayed_name": "Ibuprofen",
+            "smiles": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
             "images": [
                 "assets/pack_16_prescription_drugs/ibuprofen/_4_ibuprofen.jpeg",
                 "assets/pack_16_prescription_drugs/ibuprofen/_5_ibuprofen.jpeg"
             ],
             "concepts": [
-                "Ibuprofen",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "prescription",
-                "medicine",
-                "nsaid",
-                "advil"
+                "NSAID",
+                "analgesic",
+                "anti-inflammatory",
+                "antipyretic",
+                "pain relief"
             ],
             "category": "pack_16_prescription_drugs",
             "url": "https://makerworld.com/en/models/2284559-ibuprofen"
@@ -4483,47 +3411,36 @@
             "name": "lisinopril",
             "pack": "pack_16_prescription_drugs",
             "displayed_name": "Lisinopril",
+            "smiles": "C1C[C@H](N(C1)C(=O)[C@H](CCCCN)N[C@@H](CCC2=CC=CC=C2)C(=O)O)C(=O)O",
             "images": [
                 "assets/pack_16_prescription_drugs/lisinopril/_5_lisinopril.jpeg",
                 "assets/pack_16_prescription_drugs/lisinopril/_6_lisinopril.jpeg"
             ],
             "concepts": [
-                "Lisinopril",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "prescription",
-                "medicine",
-                "hypertension",
-                "ace inhibitor"
+                "ACE inhibitor",
+                "antihypertensive",
+                "heart failure treatment",
+                "peptide derivative",
+                "medication"
             ],
-            "category": "pack_16_prescription_drugs"
+            "category": "pack_16_prescription_drugs",
+            "url": "https://makerworld.com/en/models/2294216-lisinopril"
         },
         {
             "name": "metformin",
             "pack": "pack_16_prescription_drugs",
             "displayed_name": "Metformin",
+            "smiles": "CN(C)C(=N)N=C(N)N",
             "images": [
                 "assets/pack_16_prescription_drugs/metformin/_5_metformin.jpeg",
                 "assets/pack_16_prescription_drugs/metformin/_6_metformin.jpeg"
             ],
             "concepts": [
-                "Metformin",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "prescription",
-                "medicine",
-                "glucophage",
-                "diabetes"
+                "antidiabetic",
+                "biguanide",
+                "blood sugar regulation",
+                "insulin sensitizer",
+                "medication"
             ],
             "category": "pack_16_prescription_drugs",
             "url": "https://makerworld.com/en/models/2294234-metformin"
@@ -4532,23 +3449,17 @@
             "name": "metoprolol",
             "pack": "pack_16_prescription_drugs",
             "displayed_name": "Metoprolol",
+            "smiles": "CC(C)NCC(COC1=CC=C(C=C1)CCOC)O",
             "images": [
                 "assets/pack_16_prescription_drugs/metoprolol/_4_metoprolol.jpeg",
                 "assets/pack_16_prescription_drugs/metoprolol/_5_metoprolol.jpeg"
             ],
             "concepts": [
-                "Metoprolol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "prescription",
-                "medicine",
-                "lopressor",
-                "beta blocker"
+                "beta blocker",
+                "antihypertensive",
+                "heart rate regulation",
+                "cardiovascular drug",
+                "medication"
             ],
             "category": "pack_16_prescription_drugs",
             "url": "https://makerworld.com/en/models/2302842-metoprolol"
@@ -4557,23 +3468,17 @@
             "name": "paracetamol",
             "pack": "pack_16_prescription_drugs",
             "displayed_name": "Paracetamol",
+            "smiles": "CC(=O)NC1=CC=C(C=C1)O",
             "images": [
                 "assets/pack_16_prescription_drugs/paracetamol/_4_paracetamol.jpeg",
                 "assets/pack_16_prescription_drugs/paracetamol/_6_paracetamol.jpeg"
             ],
             "concepts": [
-                "Paracetamol",
-                "chemistry",
-                "chemical",
-                "molecule",
-                "molecules",
-                "organic chemistry",
-                "organic",
-                "drug",
-                "prescription",
-                "medicine",
-                "tylenol",
-                "analgesic"
+                "analgesic",
+                "antipyretic",
+                "pain relief",
+                "acetaminophen",
+                "medication"
             ],
             "category": "pack_16_prescription_drugs",
             "url": "https://makerworld.com/en/models/2302848-paracetamol"
