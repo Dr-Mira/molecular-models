@@ -888,6 +888,17 @@
     const openBtn = document.getElementById('open-methods-btn');
     const closeBtn = document.getElementById('close-methods-btn');
 
+    // --- UMAMI EVENT HELPER ---
+    function track(eventName, data = {}) {
+      try {
+        if (window.umami && typeof window.umami.track === "function") {
+          window.umami.track(eventName, data);
+        }
+      } catch (e) {
+        // fail silently
+      }
+    }
+
     function openModal() {
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -983,6 +994,7 @@
     function render(items) {
       const container = document.getElementById("catalog");
       container.innerHTML = "";
+
       if (items.length === 0) {
         container.innerHTML = `<div class="empty-state">No molecules found matching your search.</div>`;
         return;
@@ -994,21 +1006,63 @@
         card._images = m.images || [];
         card._imgIndex = 0;
 
-        const firstImage = (card._images.length > 0) ? card._images[0] : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
+        const firstImage = (card._images.length > 0)
+          ? card._images[0]
+          : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
+
         const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
         const downloadUrl = (m.url || m.URL || 'https://makerworld.com/en/@Mira/collections?order=title&status=2');
-        const displayTitle = m.displayed_name || m.name;
+        const displayTitle = m.displayed_name || m.name || "unknown";
 
-        // NOTE: Badges removed from image wrapper as requested
+        // Put tracking data on the card (handy for debugging / future)
+        card.dataset.modelName = displayTitle;
+        card.dataset.modelPack = m.pack || "";
+        card.dataset.modelUrl = downloadUrl;
+
         card.innerHTML = `
-        <div class="card-image-wrapper">
-          <img src="${firstImage}" class="card-img" alt="${displayTitle}" loading="lazy" onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'">
-        </div>
-        <div class="card-content">
-          <h3>${displayTitle}</h3>
-          ${smilesHtml}
-          <a href="${downloadUrl}" target="_blank" class="btn-action">Download Model</a>
-        </div>`;
+      <div class="card-image-wrapper" role="button" tabindex="0" aria-label="Open model: ${displayTitle}">
+        <img src="${firstImage}" class="card-img" alt="${displayTitle}" loading="lazy"
+          onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'">
+      </div>
+      <div class="card-content">
+        <h3>${displayTitle}</h3>
+        ${smilesHtml}
+        <a href="${downloadUrl}" target="_blank" class="btn-action" rel="noopener noreferrer">Download Model</a>
+      </div>
+    `;
+
+        // --- TRACK: card/image click ---
+        const imgWrapper = card.querySelector(".card-image-wrapper");
+        const trackCardClick = () => {
+          track("model_card_click", {
+            model: displayTitle,
+            pack: m.pack || "unknown",
+            url: downloadUrl,
+            smiles: m.smiles || ""
+          });
+        };
+
+        imgWrapper.addEventListener("click", trackCardClick);
+
+        // Optional: allow keyboard "Enter" / "Space" on the image wrapper
+        imgWrapper.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            trackCardClick();
+          }
+        });
+
+        // --- TRACK: download click ---
+        const downloadLink = card.querySelector(".btn-action");
+        downloadLink.addEventListener("click", () => {
+          track("model_download_click", {
+            model: displayTitle,
+            pack: m.pack || "unknown",
+            url: downloadUrl,
+            smiles: m.smiles || ""
+          });
+        });
+
         container.appendChild(card);
       });
     }
