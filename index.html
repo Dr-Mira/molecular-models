@@ -373,7 +373,6 @@
       color: var(--text-muted);
       border: 1px solid transparent;
       text-transform: capitalize;
-      /* Capitalizes Alkanes, Alkenes, etc */
     }
 
     .pack-item:hover {
@@ -504,22 +503,9 @@
     .card h3 {
       font-size: 1.25rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.25rem; /* Increased margin since smiles are gone */
       text-transform: capitalize;
       color: var(--text-main);
-    }
-
-    .smiles-code {
-      display: inline-block;
-      font-family: 'JetBrains Mono', 'Monaco', monospace;
-      font-size: 0.8rem;
-      background: var(--code-bg);
-      padding: 4px 8px;
-      border-radius: 4px;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      word-break: break-all;
-      border: 1px solid var(--border);
     }
 
     .btn-action {
@@ -710,37 +696,14 @@
     }
 
     /* CPK Colors */
-    .bg-white {
-      background-color: #ffffff;
-    }
-
-    .bg-black {
-      background-color: #1a1a1a;
-    }
-
-    .bg-red {
-      background-color: #ef4444;
-    }
-
-    .bg-blue {
-      background-color: #3b82f6;
-    }
-
-    .bg-yellow {
-      background-color: #eab308;
-    }
-
-    .bg-green {
-      background-color: #22c55e;
-    }
-
-    .bg-orange {
-      background-color: #f97316;
-    }
-
-    .bg-purple {
-      background-color: #a855f7;
-    }
+    .bg-white { background-color: #ffffff; }
+    .bg-black { background-color: #1a1a1a; }
+    .bg-red { background-color: #ef4444; }
+    .bg-blue { background-color: #3b82f6; }
+    .bg-yellow { background-color: #eab308; }
+    .bg-green { background-color: #22c55e; }
+    .bg-orange { background-color: #f97316; }
+    .bg-purple { background-color: #a855f7; }
 
     .citation {
       font-size: 0.75rem;
@@ -755,7 +718,6 @@
 <body>
 
   <header>
-    <!-- Grouped: Brand + Methods Button -->
     <div class="header-left-group">
       <div class="brand">
         <h1>3D Printable Molecular Models</h1>
@@ -767,7 +729,6 @@
       </button>
     </div>
 
-    <!-- Grouped: Search + Theme -->
     <div class="header-controls">
       <div class="search-wrapper">
         <span class="search-icon">🔍</span>
@@ -836,27 +797,13 @@
         <div class="info-box">
           <span class="info-box-title">Recommended CPK Color Palette</span>
           <div class="cpk-palette">
-            <div class="cpk-item">
-              <div class="cpk-dot bg-white"></div> Hydrogen
-            </div>
-            <div class="cpk-item">
-              <div class="cpk-dot bg-black"></div> Carbon
-            </div>
-            <div class="cpk-item">
-              <div class="cpk-dot bg-red"></div> Oxygen
-            </div>
-            <div class="cpk-item">
-              <div class="cpk-dot bg-blue"></div> Nitrogen
-            </div>
-            <div class="cpk-item">
-              <div class="cpk-dot bg-yellow"></div> Sulfur
-            </div>
-            <div class="cpk-item">
-              <div class="cpk-dot bg-green"></div> Chlorine
-            </div>
-            <div class="cpk-item">
-              <div class="cpk-dot bg-orange"></div> Phosphorus
-            </div>
+            <div class="cpk-item"><div class="cpk-dot bg-white"></div> Hydrogen</div>
+            <div class="cpk-item"><div class="cpk-dot bg-black"></div> Carbon</div>
+            <div class="cpk-item"><div class="cpk-dot bg-red"></div> Oxygen</div>
+            <div class="cpk-item"><div class="cpk-dot bg-blue"></div> Nitrogen</div>
+            <div class="cpk-item"><div class="cpk-dot bg-yellow"></div> Sulfur</div>
+            <div class="cpk-item"><div class="cpk-dot bg-green"></div> Chlorine</div>
+            <div class="cpk-item"><div class="cpk-dot bg-orange"></div> Phosphorus</div>
           </div>
         </div>
 
@@ -888,15 +835,12 @@
     const openBtn = document.getElementById('open-methods-btn');
     const closeBtn = document.getElementById('close-methods-btn');
 
-    // --- UMAMI EVENT HELPER ---
     function track(eventName, data = {}) {
       try {
         if (window.umami && typeof window.umami.track === "function") {
           window.umami.track(eventName, data);
         }
-      } catch (e) {
-        // fail silently
-      }
+      } catch (e) {}
     }
 
     function openModal() {
@@ -926,7 +870,6 @@
         } else if (data.value && Array.isArray(data.value)) {
           molecules = data.value;
         } else {
-          console.error("Unknown JSON structure", data);
           molecules = [];
         }
         buildPackList();
@@ -942,7 +885,6 @@
     function buildPackList() {
       const packSet = new Set();
       molecules.forEach(m => { if (m.pack) packSet.add(m.pack); });
-      // Sort naturally so pack_01 comes before pack_02
       const sortedPacks = Array.from(packSet).sort();
       const packListEl = document.getElementById('pack-list');
 
@@ -951,7 +893,6 @@
       sortedPacks.forEach(pack => {
         const li = document.createElement('li');
         li.className = 'pack-item';
-        // Remove "pack_XX_" and underscores, then CSS handles capitalization
         li.textContent = cleanPackName(pack);
         li.addEventListener('click', (e) => filterByPack(pack, e.target));
         packListEl.appendChild(li);
@@ -984,10 +925,8 @@
       render(filtered);
     });
 
-    // Helper to strip "pack_01_" prefix and replace underscores with spaces
     function cleanPackName(pack) {
       if (!pack) return "";
-      // Regex: Remove start of string if it looks like "pack_" followed by digits and underscore
       return pack.replace(/^pack_\d+_/, "").replace(/_/g, " ");
     }
 
@@ -1010,28 +949,25 @@
           ? card._images[0]
           : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
 
-        const smilesHtml = m.smiles ? `<code class="smiles-code">${m.smiles}</code>` : '';
         const downloadUrl = (m.url || m.URL || 'https://makerworld.com/en/@Mira/collections?order=title&status=2');
         const displayTitle = m.displayed_name || m.name || "unknown";
 
-        // Put tracking data on the card (handy for debugging / future)
         card.dataset.modelName = displayTitle;
         card.dataset.modelPack = m.pack || "";
         card.dataset.modelUrl = downloadUrl;
 
+        // SMILES code has been removed from the template below
         card.innerHTML = `
-      <div class="card-image-wrapper" role="button" tabindex="0" aria-label="Open model: ${displayTitle}">
-        <img src="${firstImage}" class="card-img" alt="${displayTitle}" loading="lazy"
-          onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'">
-      </div>
-      <div class="card-content">
-        <h3>${displayTitle}</h3>
-        ${smilesHtml}
-        <a href="${downloadUrl}" target="_blank" class="btn-action" rel="noopener noreferrer">Download Model</a>
-      </div>
-    `;
+          <div class="card-image-wrapper" role="button" tabindex="0" aria-label="Open model: ${displayTitle}">
+            <img src="${firstImage}" class="card-img" alt="${displayTitle}" loading="lazy"
+              onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'">
+          </div>
+          <div class="card-content">
+            <h3>${displayTitle}</h3>
+            <a href="${downloadUrl}" target="_blank" class="btn-action" rel="noopener noreferrer">Download Model</a>
+          </div>
+        `;
 
-        // --- TRACK: card/image click ---
         const imgWrapper = card.querySelector(".card-image-wrapper");
         const trackCardClick = () => {
           track("model_card_click", {
@@ -1043,8 +979,6 @@
         };
 
         imgWrapper.addEventListener("click", trackCardClick);
-
-        // Optional: allow keyboard "Enter" / "Space" on the image wrapper
         imgWrapper.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -1052,7 +986,6 @@
           }
         });
 
-        // --- TRACK: download click ---
         const downloadLink = card.querySelector(".btn-action");
         downloadLink.addEventListener("click", () => {
           track("model_download_click", {
@@ -1067,7 +1000,6 @@
       });
     }
 
-    // --- Carousel & Animation Logic (Unchanged) ---
     function initCarousels() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1156,8 +1088,6 @@
       }
       type();
     }
-
-
   </script>
 </body>
 
