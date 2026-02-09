@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main code
+        uses: actions/checkout@v4
+
+      - name: Checkout private assets
+        uses: actions/checkout@v4
+        with:
+          repository: Dr-Mira/molecular-models-assets
+          path: assets
+          token: ${{ secrets.ASSETS_REPO_TOKEN }}
+          persist-credentials: false
+
+      - name: Verify Assets
+        run: |
+          ls -la assets
+          find assets -maxdepth 2 -not -path '*/.*'
+
+      - name: Generate molecules.json
+        shell: pwsh
+        run: |
+          ./generate_json.ps1
+          
+          # Debug: List file to prove existence
+          Get-ChildItem "molecules.json"
+          
+          if (-not (Test-Path "molecules.json")) {
+            Write-Error "molecules.json NOT FOUND in $(Get-Location)"
+            exit 1
+          }
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

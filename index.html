@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Molecular Models Showcase</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="68976dce-dcfb-40bc-9717-6e6be5ec0e98"></script>
+
+  <style>
+    /* 
+      THEME CONFIGURATION 
+    */
+    :root {
+      /* Light Mode */
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --input-bg: #ffffff;
+      --card-placeholder: #f1f5f9;
+      --code-bg: #f1f5f9;
+      --overlay-bg: rgba(255, 255, 255, 0.8);
+
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    [data-theme="dark"] {
+      /* Dark Mode */
+      --primary: #6366f1;
+      --primary-hover: #818cf8;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --input-bg: #0f172a;
+      --card-placeholder: #020617;
+      --code-bg: #0f172a;
+      --overlay-bg: rgba(15, 23, 42, 0.8);
+
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text-main);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      color: var(--text-main);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--surface);
+      background: rgba(var(--surface), 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    [data-theme="light"] header {
+      background: rgb(255 255 255 / 0.85);
+    }
+
+    [data-theme="dark"] header {
+      background: rgb(15 23 42 / 0.85);
+    }
+
+    @media (min-width: 900px) {
+      header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    /* Left side of header */
+    .header-left-group {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-right: auto;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .brand h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .brand p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Header Button */
+    .btn-header {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+      height: fit-content;
+    }
+
+    .btn-header:hover {
+      background: var(--bg);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    @media (max-width: 900px) {
+      .header-left-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+      }
+
+      .btn-header {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Right side of header */
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      flex: 1;
+      justify-content: space-between;
+      max-width: 800px;
+    }
+
+    @media (min-width: 900px) {
+      .header-controls {
+        justify-content: flex-end;
+        width: auto;
+        min-width: 400px;
+      }
+    }
+
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.6rem 1rem 0.6rem 2.8rem;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      background: var(--input-bg);
+      color: var(--text-main);
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgb(79 70 229 / 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      font-size: 1rem;
+    }
+
+    /* Theme Switch */
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .theme-switch {
+      display: inline-block;
+      height: 24px;
+      position: relative;
+      width: 46px;
+    }
+
+    .theme-switch input {
+      display: none;
+    }
+
+    .slider {
+      background-color: #cbd5e1;
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      background-color: #fff;
+      bottom: 2px;
+      content: "";
+      height: 20px;
+      left: 2px;
+      position: absolute;
+      transition: .4s;
+      width: 20px;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .slider .icon-sun,
+    .slider .icon-moon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px;
+      line-height: 1;
+    }
+
+    .slider .icon-sun {
+      left: 6px;
+      color: #f59e0b;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .slider .icon-moon {
+      right: 6px;
+      color: #f1f5f9;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    input:checked+.slider {
+      background-color: var(--primary);
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(22px);
+    }
+
+    input:checked+.slider .icon-sun {
+      opacity: 1;
+    }
+
+    input:checked+.slider .icon-moon {
+      opacity: 0;
+    }
+
+    [data-theme="dark"] .slider {
+      background-color: #334155;
+    }
+
+    /* Layout */
+    main {
+      width: 100%;
+      margin: 0;
+      padding: 2rem 0 2rem 0;
+      display: flex;
+      gap: 0;
+    }
+
+    .sidebar {
+      width: 320px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-radius: 0 16px 16px 0;
+      border: 1px solid var(--border);
+      border-left: none;
+      padding: 1.5rem;
+      position: sticky;
+      top: 110px;
+      height: fit-content;
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+      box-shadow: var(--shadow-sm);
+      scrollbar-width: thin;
+      scrollbar-color: var(--text-muted) transparent;
+      z-index: 40;
+    }
+
+    .sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      background-color: var(--border);
+      border-radius: 20px;
+    }
+
+    .pack-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pack-item {
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      text-transform: capitalize;
+    }
+
+    .pack-item:hover {
+      background: var(--bg);
+      color: var(--text-main);
+      border-color: var(--border);
+    }
+
+    .pack-item.active {
+      background: var(--primary);
+      color: white;
+      font-weight: 500;
+      border-color: transparent;
+    }
+
+    .pack-item.all-packs {
+      font-weight: 600;
+      color: var(--text-main);
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      text-transform: none;
+    }
+
+    .pack-item.all-packs.active {
+      color: white;
+      border-bottom-color: var(--border);
+    }
+
+    .content-area {
+      flex: 1;
+      min-width: 0;
+      padding-right: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding-bottom: 3rem;
+      justify-items: center;
+      width: 85%;
+      margin: 0 auto;
+      max-width: 1920px;
+    }
+
+    @media (max-width: 1100px) {
+      main {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+
+      .sidebar {
+        width: 100%;
+        position: static;
+        border-left: 1px solid var(--border);
+        border-radius: 16px;
+        max-height: none;
+      }
+
+      .grid {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .card-image-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 85%;
+      background: var(--card-placeholder);
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    [data-theme="dark"] .card-img {
+      opacity: 0.9;
+    }
+
+    [data-theme="dark"] .card:hover .card-img {
+      opacity: 1;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      text-transform: capitalize;
+      color: var(--text-main);
+    }
+
+    .btn-action {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 10px;
+      transition: background 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-action:hover {
+      background: var(--primary-hover);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      background: var(--surface);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--text-muted);
+      grid-column: 1 / -1;
+    }
+
+    /* 
+      MODAL STYLES 
+    */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      width: 100%;
+      max-width: 700px;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modal-overlay.open .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .close-modal {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.25rem;
+      line-height: 1;
+      border-radius: 8px;
+    }
+
+    .close-modal:hover {
+      background: var(--bg);
+      color: var(--text-main);
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .modal-body h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+    }
+
+    .modal-body h3:first-child {
+      margin-top: 0;
+    }
+
+    .modal-body p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+
+    .modal-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+
+    .modal-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .info-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .info-box-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .cpk-palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .cpk-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .cpk-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /* CPK Colors */
+    .bg-white {
+      background-color: #ffffff;
+    }
+
+    .bg-black {
+      background-color: #1a1a1a;
+    }
+
+    .bg-red {
+      background-color: #ef4444;
+    }
+
+    .bg-blue {
+      background-color: #3b82f6;
+    }
+
+    .bg-yellow {
+      background-color: #eab308;
+    }
+
+    .bg-green {
+      background-color: #22c55e;
+    }
+
+    .bg-orange {
+      background-color: #f97316;
+    }
+
+    .bg-purple {
+      background-color: #a855f7;
+    }
+
+    .citation {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* 
+      MOLECULE DETAIL MODAL 
+    */
+    .molecule-modal-content {
+      max-width: 850px;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .molecule-modal-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .modal-content {
+        max-height: 85vh;
+        overflow-y: auto;
+      }
+
+      .modal-media-side {
+        min-height: 150px;
+        max-height: 25vh;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+
+      .modal-info-side {
+        padding: 0.75rem 1rem;
+        gap: 0.4rem;
+        overflow-y: visible;
+        /* Disable independent scroll */
+      }
+
+      .modal-molecule-name {
+        font-size: 1.25rem;
+        margin-bottom: 0;
+        line-height: 1.2;
+      }
+
+      .modal-print-specs {
+        margin: 0.25rem 0 0.5rem 0;
+        font-size: 0.85rem;
+        padding-left: 1rem;
+      }
+
+      .modal-description {
+        font-size: 0.9rem;
+        margin-top: 0;
+      }
+    }
+
+    .modal-media-side {
+      background: var(--card-placeholder);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid var(--border);
+      min-height: 350px;
+    }
+
+    .modal-media-side img,
+    .modal-media-side video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-info-side {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      /* Reduced from 1.25rem */
+      overflow-y: auto;
+    }
+
+    .modal-molecule-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+
+    .modal-print-specs {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin: 0.25rem 0 0.5rem 0;
+      /* Tighter margins */
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .modal-print-specs li {
+      color: var(--primary);
+      /* Bullet color */
+    }
+
+    .modal-print-specs li strong {
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-right: 0.25rem;
+    }
+
+    .modal-print-specs li span {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .modal-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+
+    .modal-footer-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 1rem;
+      padding-top: 1.5rem;
+    }
+
+    .btn-modal-close {
+      flex: 1;
+      padding: 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-main);
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-modal-close:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+
+    .btn-modal-download {
+      flex: 2;
+      padding: 0.8rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .btn-modal-download:hover {
+      background: var(--primary-hover);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-left-group">
+      <div class="brand">
+        <h1>3D Printable Molecular Models</h1>
+        <p>Digital downloads for education & research<br>Calculated with molecular force fields</p>
+      </div>
+
+      <button id="open-methods-btn" class="btn-header">
+        <span>ℹ️ Methods & Info</span>
+      </button>
+    </div>
+
+    <div class="header-controls">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" class="search-input" placeholder="Search molecules..." aria-label="Search">
+      </div>
+
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider">
+            <span class="icon-sun">☀️</span>
+            <span class="icon-moon">🌙</span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <ul class="pack-list" id="pack-list">
+        <li class="pack-item all-packs active" data-pack="all">All Molecules</li>
+      </ul>
+    </aside>
+
+    <div class="content-area">
+      <div id="catalog" class="grid"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 · Molecular Models · <a href="https://makerworld.com/en/%40Mira/collections?order=title&status=2"
+        target="_blank">View on MakerWorld</a></p>
+  </footer>
+
+  <!-- MODAL STRUCTURE -->
+  <div id="methods-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Methods & Notes</h2>
+        <button id="close-methods-btn" class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <h3>Methods</h3>
+        <p>The models were generated using a custom Python script. Rough sketch is generated from SMILES, then the
+          atomic
+          XYZ coordinates are optimized with Merck Molecular Force Field [1]. Atoms are modeled as balls with van der
+          Walls radii [2].
+          The atoms are connected with bonds, the bond order was chosen to represent a major resonance contributor,
+          and is hardcoded by me into the SMILES. At this stage, the model is visually verified and colored to comply
+          with the corresponding PubChem database entry [3]. Finally, the model is exported as STL, and manually colored
+          with CPK coloring palette in a slicer.</p>
+
+        <h3>Force Fields</h3>
+        <p>Force fields are mathematical models used to describe interactions between atoms and molecules. They are
+          based on empirical parameters that represent the forces and energies associated with different types of atomic
+          interactions. I used MMFF94 in this project, which provides good accuracy across a range of organic and
+          drug-like molecules. The core MMFF94 parameterization is based on high-quality quantum calculations.</p>
+
+        <h3>Printing Notes</h3>
+        <ul>
+          <li><strong>Material:</strong> Optimized/tested for print with Bambu PLA and Elegoo PLA+.</li>
+          <li><strong>Style:</strong> Ball-and-stick type (easiest to color, rigid, aesthetic).</li>
+          <li><strong>Orientation:</strong> Oriented for optimal strength/waste/time compromise.</li>
+          <li><strong>Supports:</strong> Removable with care. Suggest using PETG as a support interface.</li>
+        </ul>
+
+        <div class="info-box">
+          <span class="info-box-title">Recommended CPK Color Palette</span>
+          <div class="cpk-palette">
+            <div class="cpk-item">
+              <div class="cpk-dot bg-white"></div> Hydrogen
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-black"></div> Carbon
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-red"></div> Oxygen
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-blue"></div> Nitrogen
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-yellow"></div> Sulfur
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-green"></div> Chlorine
+            </div>
+            <div class="cpk-item">
+              <div class="cpk-dot bg-orange"></div> Phosphorus
+            </div>
+          </div>
+        </div>
+
+        <div class="citation">
+          [1] Halgren, T.A., Merck molecular force field. I. Basis, form, scope, parameterization, and performance of
+          MMFF94. J. Comput. Chem., 1996, 17, 490-519.<br>
+          [2] Alvarez, S., A cartography of the van der Waals territories. Dalton Trans., 2013, 42, 8617-8636.<br>
+          [3] PubChem. https://pubchem.ncbi.nlm.nih.gov/
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOLECULE DETAIL MODAL -->
+  <div id="molecule-modal" class="modal-overlay">
+    <div class="modal-content molecule-modal-content">
+      <div class="modal-media-side">
+        <img id="modal-img" src="" alt="">
+        <video id="modal-video" loop muted playsinline style="display: none;"></video>
+      </div>
+      <div class="modal-info-side">
+        <h2 class="modal-molecule-name" id="modal-name">Molecule Name</h2>
+
+        <ul class="modal-print-specs">
+          <li><strong>Model Weight:</strong> <span id="modal-weight">XX</span></li>
+        </ul>
+
+        <div class="modal-description" id="modal-description">
+          Molecule description goes here.
+        </div>
+
+
+        <div class="modal-footer-actions">
+          <button class="btn-modal-close" id="close-molecule-btn">Close</button>
+          <a href="#" target="_blank" class="btn-modal-download" id="modal-download-link">Download Model</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- THEME LOGIC ---
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'dark') toggleSwitch.checked = true;
+    }
+    toggleSwitch.addEventListener('change', (e) => {
+      const theme = e.target.checked ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    });
+
+    const methodsModal = document.getElementById('methods-modal');
+    const openMethodsBtn = document.getElementById('open-methods-btn');
+    const closeMethodsBtn = document.getElementById('close-methods-btn');
+
+    const moleculeModal = document.getElementById('molecule-modal');
+    const closeMoleculeBtn = document.getElementById('close-molecule-btn');
+
+    function track(eventName, data = {}) {
+      try {
+        if (window.umami && typeof window.umami.track === "function") {
+          window.umami.track(eventName, data);
+        } else {
+          console.log("Track:", eventName, data);
+        }
+      } catch (e) { }
+    }
+
+    let currentMolecule = null;
+
+    function openModal(m) {
+      if (m === 'methods') {
+        methodsModal.classList.add('open');
+      } else {
+        currentMolecule = m;
+        // Populate molecule modal
+        document.getElementById('modal-name').textContent = m.displayed_name || m.name;
+        document.getElementById('modal-weight').textContent = m.weight || "XX";
+        document.getElementById('modal-description').textContent = m.description || "A detailed 3D printable model of this molecule, calculated with molecular force fields for accurate geometry.";
+        const downloadUrl = m.url || m.URL || "#";
+        document.getElementById('modal-download-link').href = downloadUrl;
+
+        // Media
+        const modalImg = document.getElementById('modal-img');
+        const modalVideo = document.getElementById('modal-video');
+
+        modalImg.src = (m.images && m.images.length > 0) ? m.images[0] : "";
+        modalImg.style.display = 'block';
+        modalVideo.style.display = 'none';
+        modalVideo.pause();
+
+        // Check for video (pack1 special test for now)
+        // Later we can check for all packs if we have a way to verify file existence
+        // For now, let's try to load it if it's in a specific pack or based on name
+        const videoPath = `assets/${m.pack}/${m.name}/${m.name}.mp4`;
+
+        // We attempt to load the video and show it if successful
+        const tempVideo = document.createElement('video');
+        tempVideo.src = videoPath;
+        tempVideo.oncanplay = () => {
+          modalVideo.src = videoPath;
+          modalVideo.style.display = 'block';
+          modalImg.style.display = 'none';
+          modalVideo.play();
+        };
+
+        moleculeModal.classList.add('open');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      methodsModal.classList.remove('open');
+      moleculeModal.classList.remove('open');
+      document.getElementById('modal-video').pause();
+      document.body.style.overflow = '';
+    }
+
+    openMethodsBtn.addEventListener('click', () => openModal('methods'));
+    closeMethodsBtn.addEventListener('click', closeModal);
+    closeMoleculeBtn.addEventListener('click', closeModal);
+
+    document.getElementById('modal-download-link').addEventListener('click', () => {
+      if (currentMolecule) {
+        track("model_download_click", {
+          model: currentMolecule.displayed_name || currentMolecule.name || "unknown",
+          pack: currentMolecule.pack || "unknown",
+          url: currentMolecule.url || currentMolecule.URL || "#",
+          weight: currentMolecule.weight || "极简",
+          source: "modal"
+        });
+      }
+    });
+
+    [methodsModal, moleculeModal].forEach(m => {
+      m.addEventListener('click', (e) => { if (e.target === m) closeModal(); });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // --- APP LOGIC ---
+    let molecules = [];
+    let currentPackFilter = 'all';
+
+    // Helper: Shuffle array (Fisher-Yates)
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    fetch("./molecules.json?t=" + new Date().getTime())
+      .then(res => res.json())
+      .then(data => {
+        let rawMolecules = [];
+        if (Array.isArray(data)) {
+          rawMolecules = data;
+        } else if (data.value && Array.isArray(data.value)) {
+          rawMolecules = data.value;
+        }
+
+        // Randomize the order immediately on load
+        molecules = shuffleArray(rawMolecules);
+
+        buildPackList();
+        render(molecules);
+        initCarousels();
+        initPlaceholderAnimation(molecules);
+      })
+      .catch(err => {
+        console.error("Failed to load data:", err);
+        document.getElementById('catalog').innerHTML = `<div class="empty-state">Error loading data. Check console.</div>`;
+      });
+
+    function buildPackList() {
+      const packSet = new Set();
+      molecules.forEach(m => { if (m.pack) packSet.add(m.pack); });
+      const sortedPacks = Array.from(packSet).sort();
+      const packListEl = document.getElementById('pack-list');
+
+      document.querySelector('.all-packs').addEventListener('click', (e) => filterByPack('all', e.target));
+
+      sortedPacks.forEach(pack => {
+        const li = document.createElement('li');
+        li.className = 'pack-item';
+        li.textContent = cleanPackName(pack);
+        li.addEventListener('click', (e) => filterByPack(pack, e.target));
+        packListEl.appendChild(li);
+      });
+    }
+
+    function filterByPack(pack, targetElement) {
+      currentPackFilter = pack;
+      document.querySelectorAll('.pack-item').forEach(item => item.classList.remove('active'));
+      if (targetElement) targetElement.classList.add('active');
+
+      if (pack === 'all') {
+        render(molecules);
+      } else {
+        render(molecules.filter(m => m.pack === pack));
+      }
+      initCarousels();
+    }
+
+    document.getElementById("search").addEventListener("input", (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      let filtered = molecules;
+      if (currentPackFilter !== 'all') filtered = filtered.filter(m => m.pack === currentPackFilter);
+      if (term) {
+        filtered = filtered.filter(m => {
+          const searchString = [m.name, m.displayed_name, m.pack, m.smiles, m.category, ...(m.concepts || [])].join(" ").toLowerCase();
+          return searchString.includes(term);
+        });
+      }
+      render(filtered);
+    });
+
+    function cleanPackName(pack) {
+      if (!pack) return "";
+      return pack.replace(/^pack_\d+_/, "").replace(/_/g, " ");
+    }
+
+    function render(items) {
+      const container = document.getElementById("catalog");
+      container.innerHTML = "";
+
+      if (items.length === 0) {
+        container.innerHTML = `<div class="empty-state">No molecules found matching your search.</div>`;
+        return;
+      }
+
+      items.forEach(m => {
+        const card = document.createElement("article");
+        card.className = "card";
+        card._images = m.images || [];
+        card._imgIndex = 0;
+
+        const firstImage = (card._images.length > 0)
+          ? card._images[0]
+          : "https://placehold.co/600x400/e2e8f0/64748b?text=No+Image";
+
+        const downloadUrl = (m.url || m.URL || 'https://makerworld.com/en/@Mira/collections?order=title&status=2');
+        const displayTitle = m.displayed_name || m.name || "unknown";
+
+        card.dataset.modelName = displayTitle;
+        card.dataset.modelPack = m.pack || "";
+        card.dataset.modelUrl = downloadUrl;
+
+        card.innerHTML = `
+          <div class="card-image-wrapper" role="button" tabindex="0" aria-label="Open model: ${displayTitle}">
+            <img src="${firstImage}" class="card-img" alt="${displayTitle}" loading="lazy"
+              onerror="this.src='https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'">
+          </div>
+          <div class="card-content">
+            <h3>${displayTitle}</h3>
+            <a href="${downloadUrl}" target="_blank" class="btn-action" rel="noopener noreferrer">Download Model</a>
+          </div>
+        `;
+
+        const imgWrapper = card.querySelector(".card-image-wrapper");
+        const openDetail = () => {
+          track("model_details_open", {
+            model: displayTitle,
+            pack: m.pack || "unknown",
+            weight: m.weight || "XX"
+          });
+          openModal(m);
+        };
+
+        imgWrapper.addEventListener("click", openDetail);
+        imgWrapper.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openDetail();
+          }
+        });
+
+        const downloadLink = card.querySelector(".btn-action");
+        downloadLink.addEventListener("click", () => {
+          track("model_download_click", {
+            model: displayTitle,
+            pack: m.pack || "unknown",
+            url: downloadUrl,
+            weight: m.weight || "XX"
+          });
+        });
+
+        container.appendChild(card);
+      });
+    }
+
+    function initCarousels() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) startCardCarousel(entry.target);
+          else stopCardCarousel(entry.target);
+        });
+      }, { rootMargin: '100px', threshold: 0.1 });
+
+      document.querySelectorAll('.card').forEach(card => {
+        if (card._images && card._images.length > 1) observer.observe(card);
+      });
+    }
+
+    function startCardCarousel(card) {
+      if (card._carouselTimeout) return;
+      const scheduleNext = () => {
+        const delay = Math.floor(Math.random() * 10000) + 10000;
+        card._carouselTimeout = setTimeout(() => {
+          cycleCardImage(card);
+          scheduleNext();
+        }, delay);
+      };
+      card._carouselTimeout = setTimeout(scheduleNext, Math.random() * 5000);
+    }
+
+    function stopCardCarousel(card) {
+      if (card._carouselTimeout) { clearTimeout(card._carouselTimeout); card._carouselTimeout = null; }
+    }
+
+    function cycleCardImage(card) {
+      const images = card._images;
+      const wrapper = card.querySelector('.card-image-wrapper');
+      const currentImg = card.querySelector('.card-img');
+      if (!wrapper || !currentImg) return;
+
+      card._imgIndex = (card._imgIndex + 1) % images.length;
+      const nextImg = document.createElement('img');
+      nextImg.src = images[card._imgIndex];
+      nextImg.className = 'card-img';
+      nextImg.style.transform = 'translateX(-100%)';
+
+      wrapper.appendChild(nextImg);
+      nextImg.offsetHeight;
+      currentImg.style.transform = 'translateX(100%)';
+      nextImg.style.transform = 'translateX(0)';
+
+      setTimeout(() => { if (currentImg.parentNode === wrapper) wrapper.removeChild(currentImg); }, 800);
+    }
+
+    function initPlaceholderAnimation(data) {
+      const input = document.getElementById("search");
+      const conceptSet = new Set();
+      data.forEach(m => {
+        if (m.displayed_name) conceptSet.add(m.displayed_name);
+        else if (m.name) conceptSet.add(m.name);
+      });
+      const words = Array.from(conceptSet);
+      if (words.length === 0) return;
+
+      let currentWordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typeSpeed = 120;
+
+      function type() {
+        if (input.value.length > 0) { setTimeout(type, 2000); return; }
+        const currentWord = words[currentWordIndex];
+        if (isDeleting) {
+          input.setAttribute('placeholder', "Search: " + currentWord.substring(0, charIndex - 1));
+          charIndex--;
+          typeSpeed = 60;
+        } else {
+          input.setAttribute('placeholder', "Search: " + currentWord.substring(0, charIndex + 1));
+          charIndex++;
+          typeSpeed = 120;
+        }
+        if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          typeSpeed = 5000;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          currentWordIndex = Math.floor(Math.random() * words.length);
+          typeSpeed = 500;
+        }
+        setTimeout(type, typeSpeed);
+      }
+      type();
+    }
+  </script>
+</body>
+
+</html>
