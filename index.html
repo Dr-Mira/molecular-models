@@ -577,6 +577,10 @@
       visibility: visible;
     }
 
+    .modal-overlay.open .modal-content {
+      transform: scale(1) translateY(0);
+    }
+
     .modal-content {
       background: var(--surface);
       width: 100%;
@@ -588,12 +592,8 @@
       border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      transform: scale(0.95);
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .modal-overlay.open .modal-content {
-      transform: scale(1);
+      transform: scale(0.9) translateY(40px);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
     }
 
     .modal-header {
@@ -802,11 +802,69 @@
       min-height: 350px;
     }
 
+    /* Shimmer Effect */
+    .shimmer-loader {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.2) 50%,
+          transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      z-index: 5;
+      pointer-events: none;
+      display: none;
+    }
+
+    [data-theme="dark"] .shimmer-loader {
+      background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.05) 50%,
+          transparent 100%);
+      background-size: 200% 100%;
+    }
+
+    .media-loading .shimmer-loader {
+      display: block;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
     .modal-media-side img,
     .modal-media-side video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: opacity 0.5s ease;
+    }
+
+    .modal-media-side img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .modal-media-side video {
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+    }
+
+    .video-ready video {
+      opacity: 1;
+    }
+
+    .video-ready img {
+      opacity: 0;
     }
 
     .modal-info-side {
@@ -1024,9 +1082,10 @@
   <!-- MOLECULE DETAIL MODAL -->
   <div id="molecule-modal" class="modal-overlay">
     <div class="modal-content molecule-modal-content">
-      <div class="modal-media-side">
+      <div class="modal-media-side" id="modal-media-container">
+        <div class="shimmer-loader"></div>
         <img id="modal-img" src="" alt="">
-        <video id="modal-video" loop muted playsinline style="display: none;"></video>
+        <video id="modal-video" loop muted playsinline></video>
       </div>
       <div class="modal-info-side">
         <h2 class="modal-molecule-name" id="modal-name">Molecule Name</h2>
@@ -1093,28 +1152,53 @@
         const downloadUrl = m.url || m.URL || "#";
         document.getElementById('modal-download-link').href = downloadUrl;
 
-        // Media
+        // Reset Media State
         const modalImg = document.getElementById('modal-img');
         const modalVideo = document.getElementById('modal-video');
+        const mediaContainer = document.getElementById('modal-media-container');
 
+        mediaContainer.classList.remove('video-ready');
+        mediaContainer.classList.add('media-loading');
+
+        // Set thumbnail immediately but keep hidden while loading video
         modalImg.src = (m.images && m.images.length > 0) ? m.images[0] : "";
-        modalImg.style.display = 'block';
-        modalVideo.style.display = 'none';
-        modalVideo.pause();
+        modalImg.style.opacity = '0';
 
-        // Check for video (pack1 special test for now)
-        // Later we can check for all packs if we have a way to verify file existence
-        // For now, let's try to load it if it's in a specific pack or based on name
+        modalVideo.pause();
+        modalVideo.src = ""; // Clear source to stop any previous loading
+
+        // Attempt to load video
         const videoPath = `assets/${m.pack}/${m.name}/${m.name}.mp4`;
 
-        // We attempt to load the video and show it if successful
+        // Create a new video object to check for existence/readiness without affecting UI yet
         const tempVideo = document.createElement('video');
         tempVideo.src = videoPath;
-        tempVideo.oncanplay = () => {
+
+        const onVideoReady = () => {
           modalVideo.src = videoPath;
-          modalVideo.style.display = 'block';
-          modalImg.style.display = 'none';
-          modalVideo.play();
+          modalVideo.play().then(() => {
+            mediaContainer.classList.remove('media-loading');
+            mediaContainer.classList.add('video-ready');
+          }).catch(e => {
+            console.log("Autoplay blocked or video error", e);
+            mediaContainer.classList.remove('media-loading');
+          });
+        };
+
+        tempVideo.oncanplaythrough = onVideoReady;
+
+        // Fallback if video fails or doesn't exist (e.g. 2s timeout)
+        const videoTimeout = setTimeout(() => {
+          if (!mediaContainer.classList.contains('video-ready')) {
+            mediaContainer.classList.remove('media-loading');
+            modalImg.style.opacity = '1';
+          }
+        }, 2500);
+
+        tempVideo.onerror = () => {
+          clearTimeout(videoTimeout);
+          mediaContainer.classList.remove('media-loading');
+          modalImg.style.opacity = '1';
         };
 
         moleculeModal.classList.add('open');
