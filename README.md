@@ -1,4 +1,4 @@
-# 3D Printed Molecular Models for Chemistry Education
+# 3D Printable Molecular Models for Chemistry Education
 
 Molecular structures calculated with quantum mechanics, optimized and tested for 3D printing.
 
@@ -6,10 +6,10 @@ Molecular structures calculated with quantum mechanics, optimized and tested for
 This project provides a searchable database of scientific-grade, 3D-printable molecular models. Designed for educators, students, and chemistry enthusiasts, these models offer physical intuition that standard plastic kits often lack, preserving accurate bond angles and relative atomic sizes.
 
 ## Features
-- **Scientific Accuracy**: Geometries optimized using MMFF (Merck Molecular Force Field) and DFT (Density Functional Theory) refinement.
-- **CPK Standards**: Color-coded according to typical CPK conventions for easy identification.
+- **Scientific Accuracy**: Geometries pre-optimized using MMFF (Merck Molecular Force Field) and refined by DFT (Density Functional Theory).
+- **CPK Standards**: Color-coded according to typical CPK conventions.
 - **Ready to Print**: Optimized for consumer FDM printers (tested on Bambu Lab P1S).
-- **Free Library**: Browse the collection and download models via MakerWorld.
+- **Free Library**: Searchable [catalogue](https://dr-mira.github.io/molecular-models/?utm_source=github), with free download of all models on MakerWorld.
 
 ## Methods
 Molecular geometries were obtained through a two-stage optimization pipeline implemented in a custom Python script. Starting from SMILES notation, the script generates ~2,000 conformers using the Merck Molecular Force Field (MMFF94) [1] to broadly sample the conformational space. The top 5 lowest-energy conformers from this classical screening are then refined using density functional theory (DFT) at the ωB97X-D/def2-SVP level [2]. The lowest-energy DFT-optimized structure is selected as the final geometry. Atoms are rendered as spheres scaled to van der Waals radii [3], and bond orders correspond to the dominant resonance contributor as encoded in the input SMILES. Each model is visually verified against PubChem [4], exported as STL, and manually colored with the CPK convention in a slicer. Running on an Intel Core i7-8700 utilizing all six cores, the pipeline averaged approximately 6 hours per molecule.
