@@ -1,6 +1,6 @@
 # 3D Printed Molecular Models for Chemistry Education
 
-Physically accurate, 3D-printable molecular models generated from SMILES and optimized for classroom use.
+Molecular structures calculated with quantum mechanics, optimized and tested for 3D printing.
 
 ## Overview
 This project provides a searchable database of scientific-grade, 3D-printable molecular models. Designed for educators, students, and chemistry enthusiasts, these models offer physical intuition that standard plastic kits often lack, preserving accurate bond angles and relative atomic sizes.
@@ -26,17 +26,6 @@ Final geometry optimizations are performed with the ωB97X-D functional [6] pair
 - **Orientation**: Oriented for optimal strength/waste/time compromise.
 - **Supports**: Removable with care. Suggest using PETG as a support interface.
 
-### Recommended CPK Color Palette
-| Element | Color |
-| :--- | :--- |
-| **Hydrogen** | White |
-| **Carbon** | Black |
-| **Oxygen** | Red |
-| **Nitrogen** | Blue |
-| **Sulfur** | Yellow |
-| **Chlorine** | Green |
-| **Phosphorus** | Orange |
-
 ## References
 1. Halgren, T. A. Merck Molecular Force Field. I. Basis, Form, Scope, Parameterization, and Performance of MMFF94. *J. Comput. Chem.* **1996**, *17*, 490–519.
 2. Smith, D. G. A.; Burns, L. A.; Simmonett, A. C.; Parrish, R. M.; Schieber, M. C.; *et al.* Psi4 1.4: Open-Source Software for High-Throughput Quantum Chemistry. *J. Chem. Phys.* **2020**, *152*, 184108.
@@ -46,6 +35,3 @@ Final geometry optimizations are performed with the ωB97X-D functional [6] pair
 6. Chai, J.-D.; Head-Gordon, M. Long-Range Corrected Hybrid Density Functionals with Damped Atom–Atom Dispersion Corrections. *Phys. Chem. Chem. Phys.* **2008**, *10*, 6615–6620.
 7. Weigend, F.; Ahlrichs, R. Balanced Basis Sets of Split Valence, Triple Zeta Valence and Quadruple Zeta Valence Quality for H to Rn: Design and Assessment of Accuracy. *Phys. Chem. Chem. Phys.* **2005**, *7*, 3297–3305.
 8. Goerigk, L.; Grimme, S. A Thorough Benchmark of Density Functional Methods for General Main Group Thermochemistry, Kinetics, and Noncovalent Interactions. *Phys. Chem. Chem. Phys.* **2011**, *13*, 6670–6688.
-
----
-*Disclosure: Models are free to download; links to MakerWorld may earn me a small commission.*
