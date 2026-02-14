@@ -1313,17 +1313,24 @@
       });
 
     function buildPackList() {
-      const packSet = new Set();
-      molecules.forEach(m => { if (m.pack) packSet.add(m.pack); });
-      const sortedPacks = Array.from(packSet).sort();
+      const packCounts = {};
+      molecules.forEach(m => {
+        if (m.pack) {
+          packCounts[m.pack] = (packCounts[m.pack] || 0) + 1;
+        }
+      });
+
+      const sortedPacks = Object.keys(packCounts).sort();
       const packListEl = document.getElementById('pack-list');
 
-      document.querySelector('.all-packs').addEventListener('click', (e) => filterByPack('all', e.target));
+      const allPacksEl = document.querySelector('.all-packs');
+      allPacksEl.textContent = `All Molecules (${molecules.length})`;
+      allPacksEl.addEventListener('click', (e) => filterByPack('all', e.target));
 
       sortedPacks.forEach(pack => {
         const li = document.createElement('li');
         li.className = 'pack-item';
-        li.textContent = cleanPackName(pack);
+        li.textContent = `${cleanPackName(pack)} (${packCounts[pack]})`;
         li.addEventListener('click', (e) => filterByPack(pack, e.target));
         packListEl.appendChild(li);
       });
