@@ -3,7 +3,7 @@
         {
             "name": "butane",
             "pack": "pack_01_alkanes",
-            "displayed_name": "butane",
+            "displayed_name": "Butane",
             "smiles": "CCCC",
             "images": [
                 "assets/pack_01_alkanes/butane/_4_butane.jpg",
