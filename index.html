@@ -1020,13 +1020,13 @@
         <h3>Methods</h3>
         <p>Molecular geometries were obtained through a two-stage optimization pipeline implemented in a custom Python
           script. Starting from SMILES notation, the script generates ~2,000 conformers using the Merck Molecular Force
-          Field (MMFF94) [1] to broadly sample the conformational space. The top 5 lowest-energy conformers from this
+          Field (MMFF94) [1] to broadly sample the conformational space. The top 10 lowest-energy conformers from this
           classical screening are then refined using density functional theory (DFT) at the ωB97X-D/def2-SVP level [2].
           The lowest-energy DFT-optimized structure is selected as the final geometry. Atoms are rendered as
           spheres scaled to van der Waals radii [3], and bond orders correspond to the dominant resonance contributor as
           encoded in the input SMILES. Each model is visually verified against PubChem [4], exported as STL, and
-          manually colored with the CPK convention in a slicer. Running on an Intel Core i7-8700 utilizing all six
-          cores, the pipeline averaged approximately 6 hours per molecule.</p>
+          manually colored with the CPK convention in a slicer. Running on an Intel Core i7-14700T using all 20
+          cores, the pipeline averaged approximately 10 minutes per molecule.</p>
 
         <h3>Force Fields</h3>
         <p>The initial conformational search relies on MMFF94, a well-established classical force field parameterized
