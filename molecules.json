@@ -3848,7 +3848,43 @@
             "url": "https://makerworld.com/en/models/2302848-paracetamol",
             "description": "Paracetamol, also known as acetaminophen, is a common medication used to treat pain and fever. While its exact mechanism of action is still being studied, it is thought to work primarily by inhibiting prostaglandin synthesis in the central nervous system. It is often preferred over NSAIDs for people with stomach issues or those at risk of bleeding, but it must be taken carefully as high doses can cause severe liver damage.",
             "weight": "2.2 g"
+        },
+
+                {
+            "name": "chemistry_clock",
+            "displayed_name": "Chemistry Clock",
+            "pack": "miscellaneous",
+            "images": [
+                "assets/miscellaneous/chemistry_clock.jpg"
+            ],
+            "concepts": [
+                "decor",
+                "clock",
+                "time"
+            ],
+            "category": "miscellaneous",
+            "url": "https://makerworld.com/en/models/2632432-chemistry-clock",
+            "description": "The molecules itself are calculated with proper quantum mechanic, just like the rest of molecules. I use hydrocarbons with increasing number of carbons 1-12.",
+            "weight": "233 g"
+        },
+                {
+            "name": "display_stand",
+            "displayed_name": "Display Stand",
+            "pack": "miscellaneous",
+            "images": [
+                "assets/miscellaneous/display_stand.jpg"
+            ],
+            "concepts": [
+                "household",
+                "decor",
+                "display",
+                "stand"
+            ],
+            "category": "miscellaneous",
+            "url": "https://makerworld.com/cs/models/2632432-chemistry-clock#profileId-2907008",
+            "description": "This rotating display stand is designed around the Bambu Clock Components Kit 011. The clock kit works nicely as a slow rotating base for displaying small molecule models. Showcase videos are sped up. One rotation takes one minute.",
+            "weight": "ca 60 g"
         }
     ],
-    "Count": 183
+    "Count": 184
 }

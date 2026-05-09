@@ -1277,7 +1277,32 @@
 
     // --- APP LOGIC ---
     let molecules = [];
-    let currentPackFilter = 'all';
+    let currentPackFilter = 'molecules';
+
+    function isMiscellaneous(item) {
+      const category = (item.category || "").toLowerCase();
+      const pack = (item.pack || "").toLowerCase();
+      return category.includes('misc') || pack.includes('misc');
+    }
+
+    function getFilteredMolecules(searchTerm = "") {
+      let filtered = molecules;
+
+      if (currentPackFilter === 'miscellaneous') {
+        filtered = filtered.filter(isMiscellaneous);
+      } else {
+        filtered = filtered.filter(m => !isMiscellaneous(m));
+      }
+
+      if (searchTerm) {
+        filtered = filtered.filter(m => {
+          const searchString = [m.name, m.displayed_name, m.pack, m.smiles, m.category, ...(m.concepts || [])].join(" ").toLowerCase();
+          return searchString.includes(searchTerm);
+        });
+      }
+
+      return filtered;
+    }
 
     // Helper: Shuffle array (Fisher-Yates)
     function shuffleArray(array) {
@@ -1302,7 +1327,7 @@
         molecules = shuffleArray(rawMolecules);
 
         buildPackList();
-        render(molecules);
+        render(getFilteredMolecules());
         initCarousels();
         initPlaceholderAnimation(molecules);
       })
@@ -1312,27 +1337,23 @@
       });
 
     function buildPackList() {
-      const packCounts = {};
-      molecules.forEach(m => {
-        if (m.pack) {
-          packCounts[m.pack] = (packCounts[m.pack] || 0) + 1;
-        }
-      });
-
-      const sortedPacks = Object.keys(packCounts).sort();
       const packListEl = document.getElementById('pack-list');
+      packListEl.innerHTML = '';
 
-      const allPacksEl = document.querySelector('.all-packs');
-      allPacksEl.textContent = `All Molecules (${molecules.length})`;
-      allPacksEl.addEventListener('click', (e) => filterByPack('all', e.target));
+      const miscellaneousCount = molecules.filter(isMiscellaneous).length;
+      const moleculesCount = molecules.length - miscellaneousCount;
 
-      sortedPacks.forEach(pack => {
-        const li = document.createElement('li');
-        li.className = 'pack-item';
-        li.textContent = `${cleanPackName(pack)} (${packCounts[pack]})`;
-        li.addEventListener('click', (e) => filterByPack(pack, e.target));
-        packListEl.appendChild(li);
-      });
+      const moleculesLi = document.createElement('li');
+      moleculesLi.className = 'pack-item all-packs active';
+      moleculesLi.textContent = `Molecules (${moleculesCount})`;
+      moleculesLi.addEventListener('click', (e) => filterByPack('molecules', e.target));
+      packListEl.appendChild(moleculesLi);
+
+      const miscellaneousLi = document.createElement('li');
+      miscellaneousLi.className = 'pack-item';
+      miscellaneousLi.textContent = `Miscellaneous (${miscellaneousCount})`;
+      miscellaneousLi.addEventListener('click', (e) => filterByPack('miscellaneous', e.target));
+      packListEl.appendChild(miscellaneousLi);
     }
 
     function filterByPack(pack, targetElement) {
@@ -1340,25 +1361,14 @@
       document.querySelectorAll('.pack-item').forEach(item => item.classList.remove('active'));
       if (targetElement) targetElement.classList.add('active');
 
-      if (pack === 'all') {
-        render(molecules);
-      } else {
-        render(molecules.filter(m => m.pack === pack));
-      }
+      const term = document.getElementById("search").value.toLowerCase().trim();
+      render(getFilteredMolecules(term));
       initCarousels();
     }
 
     document.getElementById("search").addEventListener("input", (e) => {
       const term = e.target.value.toLowerCase().trim();
-      let filtered = molecules;
-      if (currentPackFilter !== 'all') filtered = filtered.filter(m => m.pack === currentPackFilter);
-      if (term) {
-        filtered = filtered.filter(m => {
-          const searchString = [m.name, m.displayed_name, m.pack, m.smiles, m.category, ...(m.concepts || [])].join(" ").toLowerCase();
-          return searchString.includes(term);
-        });
-      }
-      render(filtered);
+      render(getFilteredMolecules(term));
     });
 
     function cleanPackName(pack) {
