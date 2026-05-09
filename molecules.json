@@ -3855,7 +3855,7 @@
             "displayed_name": "Chemistry Clock",
             "pack": "miscellaneous",
             "images": [
-                "assets/miscellaneous/chemistry_clock.jpg"
+                "assets/miscellaneous/chemistry_clock/chemistry_clock.jpg"
             ],
             "concepts": [
                 "decor",
@@ -3872,7 +3872,7 @@
             "displayed_name": "Display Stand",
             "pack": "miscellaneous",
             "images": [
-                "assets/miscellaneous/display_stand.jpg"
+                "assets/miscellaneous/display_stand/display_stand.jpg"
             ],
             "concepts": [
                 "household",
